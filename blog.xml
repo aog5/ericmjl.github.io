@@ -2,13 +2,48 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2017-11-16T00:00:00Z</updated>
+  <updated>2017-11-30T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/">
+    <title type="text">PyData NYC 2017 Recap</title>
+    <id>urn:uuid:08109ae3-b5f2-3035-a564-d3ca4a21ae25</id>
+    <updated>2017-11-30T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;With that, we’ve finished the first two days of PyData NYC! Here's some of my highlights of the conference.&lt;/p&gt;
+&lt;h2 id=&quot;keynotes&quot;&gt;Keynotes&lt;/h2&gt;&lt;p&gt;There were three keynotes, one each by Kerstin Kleese van Dam, Thomas Sargent, and Andrew Gelman. Interestingly enough, they didn't do what I would expect most academics to do -- give talks highlighting the accomplishments of their research groups. Rather, Kerstin gave a talk that highlighted the use of PyData tools at Brookhaven National Labs. Thomas Sargent gave a philosophical talk on what economic models really are (they're &quot;games&quot;, in a mathematical sense), and I took back the importance of being able to implement models, otherwise, &quot;you're just bull*****ing&quot;.&lt;/p&gt;
+&lt;p&gt;Andrew Gelman surprised me the most - he gave a wide-ranging talk about the problems we have in statistical analysis workflows. He emphasized that &quot;robustness checks&quot; are basically scams, because they're basically methods whose purpose is reassurance. He had a really cool example that highlighted that we need to understand our models by modifying our models, perhaps even using a graph of models to identify perturbations to our model that will help us understand our model. He also peppered his talk with anecdotes about how he made mistakes in his analysis workflows. I took home a different philosophy of data analysis: when we evaluate how &quot;good&quot; a model is, the operative question is, &quot;compared against what?&quot;&lt;/p&gt;
+&lt;h2 id=&quot;talks&quot;&gt;Talks&lt;/h2&gt;&lt;p&gt;The talks were, for me, the highlight of the conference. A lot of good learning material around. Here's the talks from which I learned actionable new material.&lt;/p&gt;
+&lt;h3 id=&quot;analyzing-nba-foul-calls-using-python&quot;&gt;Analyzing NBA Foul Calls using Python&lt;/h3&gt;&lt;p&gt;This talk by the prolific PyMC blogger Austin Rochford is one that I really enjoyed. The take-home that I got from him was towards the end of his talk, in which I picked up three ways to diagnose probabilistic programming models.&lt;/p&gt;
+&lt;p&gt;The first was the use of residuals - which I now know can be used for classification problems as well as regression problems.&lt;/p&gt;
+&lt;p&gt;The second was the use of the energy plots in PyMC3, where if the &quot;energy transition&quot; and &quot;marginal energy distribution&quot; plots match up (especially in the tails), then we know that the NUTS sampler did a great job.&lt;/p&gt;
+&lt;p&gt;The third was the use of the Gelman-Rubin statistic to measure the in-chain vs. between-chain variation; measures close to 1 are generally considered good.&lt;/p&gt;
+&lt;h3 id=&quot;scikit-learn-compatible-model-stacking&quot;&gt;&lt;code&gt;scikit-learn&lt;/code&gt;-compatible model stacking&lt;/h3&gt;&lt;p&gt;This talk was a great one because it shows how to use model stacking (also known as &quot;ensembling&quot;, a technique commonly used in Kaggle competitions) to enable better predictions.&lt;/p&gt;
+&lt;p&gt;Conceptually, model stacking works like this: I train a set of model individually on a problem, and use the predictions from those models as features for a meta-model. The meta-model should perform, at worst, on par with the best model inside the ensemble, but may also perform better. This idea was first explored in Polley and van der Laan's work, available &lt;a href=&quot;http://biostats.bepress.com/ucbbiostat/paper266&quot;&gt;online&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Civis Analytics has released their implementation of model stacking in their &lt;a href=&quot;https://github.com/civisanalytics/civisml-extensions&quot;&gt;GitHub repository&lt;/a&gt;, and it's available on PyPI. The best part of it? They didn't try inventing a new API, they kept a &lt;code&gt;scikit-learn&lt;/code&gt;-compatible API. Kudos to them!&lt;/p&gt;
+&lt;h3 id=&quot;stream-processing-with-dask&quot;&gt;Stream Processing with Dask&lt;/h3&gt;&lt;p&gt;Matthew Rocklin, as usual, gave an entertaining and informative talk on the use of Streamz, a lightweight library he built, to explore the use of Dask for streaming applications. The examples he gave were amazing showcases of the library's capabilities. Given the right project, I'd love to try this out!&lt;/p&gt;
+&lt;h3 id=&quot;asynchronous-python:-a-gentle-introduction&quot;&gt;Asynchronous Python: A Gentle Introduction&lt;/h3&gt;&lt;p&gt;This talk, delivered by James Cropcho, defined what asynchronous programming was all about. For me, things finally clicked at the end when I asked him for an example of how asynchronous programming would be done in data analytics workflows -- to which he responded, &quot;If you're querying for data and then performing a calculation, then async is a good idea.&quot;&lt;/p&gt;
+&lt;p&gt;The idea behind this is as such: web queries written serially are often &quot;blocking&quot;, meaning we can't do anything while we wait for the web query to return. If we want to do a calculation on the returned data point, we have to wait for it to return first. On the other hand, if written asynchronously, we could potentially do a calculation on the previous data point while waiting for the current result to return, shaving the total time off potentially by some considerable fraction.&lt;/p&gt;
+&lt;h3 id=&quot;turning-pymc3-into-scikit-learn&quot;&gt;Turning PyMC3 into &lt;code&gt;scikit-learn&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;This talk was by Nicole Carlson, and she did a tremendously great job delivering this talk. In it, she walked through how to wrap a PyMC3 model inside a &lt;code&gt;scikit-learn&lt;/code&gt; estimator, including details on how to implement the &lt;code&gt;.fit()&lt;/code&gt;, &lt;code&gt;.predict()&lt;/code&gt;, and &lt;code&gt;.predict_proba()&lt;/code&gt; methods. The code in &lt;a href=&quot;https://github.com/parsing-science/ps-toolkit/blob/master/ps_toolkit/pymc3_models/HLR.py&quot;&gt;her repository&lt;/a&gt; provides a great base example to copy from.&lt;/p&gt;
+&lt;p&gt;One thing I can't emphasize enough is that from a user experience standpoint, it's super important to follow idioms that people are used to. What Nicole did in this talk is to show how we can provide such idioms to end-users, rather than inventing a slightly modified wheel. Props to her for that!&lt;/p&gt;
+&lt;h3 id=&quot;an-attempt-at-demystifying-bayesian-deep-learning&quot;&gt;An Attempt at Demystifying Bayesian Deep Learning&lt;/h3&gt;&lt;p&gt;This talk was my own, put at the end of the 2nd day. The title definitely contributed to the hype. I popped into the room early, but then left for the restroom. When I got back, there was a lineup in the front door and in the back door. Totally unexpected. That said, big credit to the Boston Bayesians organizers Jordi and Colin, who let me do the talk as a rehearsal for PyData, so I felt very grounded.&lt;/p&gt;
+&lt;p&gt;The talk went mostly smoothly. I think I was channeling my colleague, Brant Peterson, with his sense of humour during that time. There was one really hilarious hiccup - right after mentioning that I wouldn't overdo the &quot;math&quot; and &quot;equations&quot;, I accidentally opened an adjacent tab with an alternate version of the slides... with, surprise surprise, a math equation on it! During the Q&amp;A, when I shared the point of not needing to do train/test splits in Bayesian analysis, I could sense the jaws dropping and eyes widening in disbelief; more than just a handful of people came up and asked for the reference later on.&lt;/p&gt;
+&lt;p&gt;Having done the talk, I now realize how much people will appreciate a lighthearted and lightweight introduction to a topic that's very dense and filled with jargon. Conference speakers, we need to do more of this!&lt;/p&gt;
+&lt;p&gt;From an emotional standpoint, many people brought me joy with their positive comments on the visuals and structure of the talk. Others put out positive comments on Twitter, which I collected together in a Moment. It was very encouraging, especially on this deep learning journey that I'm on right now.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;twitter-moment&quot; href=&quot;https://twitter.com/i/moments/924970479869448193?ref_src=twsrc%5Etfw&quot;&gt;Memory: Bayesian Deep Learning Demystified&lt;/a&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tutorials&quot;&gt;Tutorials&lt;/h2&gt;&lt;h3 id=&quot;interactive-matplotlib-figures&quot;&gt;Interactive &lt;code&gt;matplotlib&lt;/code&gt; Figures&lt;/h3&gt;&lt;p&gt;This was something I totally didn't realize was possible before - we can create interactive &lt;code&gt;matplotlib&lt;/code&gt; figures very easily! I have cloned the repository, and I think it'll be neat to hack on some projects at work to use this.&lt;/p&gt;
+&lt;h3 id=&quot;linear-regression-three-ways&quot;&gt;Linear Regression Three Ways&lt;/h3&gt;&lt;p&gt;This one was by Colin Carroll, a software engineer at the MIT Media Lab (previously at Kensho). I sat in and learned a good deal of math from him. One thing new I learned was how we can specify a model without requiring the use of observed variables. Any sampling we do will take into account the hierarchical and mathematical relationships we've done. This makes it neat to implement Bayesian nets to test how things will look under different scenarios!&lt;/p&gt;
+&lt;h3 id=&quot;top-to-bottom-line-by-line&quot;&gt;Top-To-Bottom, Line-By-Line&lt;/h3&gt;&lt;p&gt;This one was led by the ever-entertaining, ever-surprising James Powell. I wish the tutorial was recorded, because even though this is a &quot;novice&quot; tutorial, it nonetheless was still an eye-opening talk. Anybody who thinks they know Python should go listen to James' talks, whenever he gives them live - it's bound to be entertaining and eye-opening!&lt;/p&gt;
+&lt;h2 id=&quot;overall-thoughts&quot;&gt;Overall Thoughts&lt;/h2&gt;&lt;p&gt;I'm glad I made it to PyData NYC 2017 this year. Made many new friends and connections, and caught up with old friends in the PyData community. As always, learned a ton as well!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/16/bayesian-learning-and-overfitting/">
     <title type="text">Bayesian Learning and Overfitting</title>
     <id>urn:uuid:aa1fbb3d-1db8-3f41-afd8-02927a0fb440</id>
@@ -1665,29 +1700,6 @@ Hello Eric!
 Hello Eric!
 Hello Eric!
 &lt;/pre&gt;&lt;/div&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2016/12/20/female-doctors-are-better-than-male-doctors-for-real/">
-    <title type="text">Female Doctors are Better than Male Doctors - For Real?</title>
-    <id>urn:uuid:89a95d1a-3661-349f-bf53-8ae5d11489c2</id>
-    <updated>2016-12-20T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2016/12/20/female-doctors-are-better-than-male-doctors-for-real/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;For real. Read on for the statistical perspective on why.&lt;/p&gt;
-&lt;p&gt;I saw this article published by JAMA, posted by a number of my friends on Facebook. The claim here was that patients treated by women doctors show lower readmission rates than patients treated by men, controlling for as many other factors as can be plausibly controlled for.&lt;/p&gt;
-&lt;p&gt;When I saw the clickbait-y headlines and posts by my mostly left-leaning friends basically going &quot;women are better than men&quot;, my first instinct was &quot;go check the stats&quot;. (I'm probably best labelled as centrist.) Indeed, I think I would have made Prof. Allen Downey proud - I didn't buy the p-values at face value. Rather, I was most interested in the effect size.&lt;/p&gt;
-&lt;p&gt;If you check the main figure on the paper, it'll look like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://jamanetwork.com/data/Journals/INTEMED/0/m_ioi160102f1.png&quot; alt=&quot;Figure 1, linked from the article&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Peeking into the text for a bit more context for mortality (it's roughly the same magnitude difference elsewhere).&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Physician Sex and Patient Mortality&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The final sample for the analyses of 30-day mortality rates included 1 583 028 hospitalizations treated by 57 896 physicians. Overall 30-day mortality for the entire sample was 179 162 (11.32%). Patients cared for by female physicians had lower 30-day mortality than did patients treated by male physicians (10.82% vs 11.49%; risk difference [RD], –0.67%; 95% CI, –0.80% to –0.54%; P &lt; .001; number needed to treat [NNT] to prevent 1 death, 149) after accounting for patient characteristics (Table 2). The difference in mortality persisted after adjustment for hospital fixed effects (female physicians, 10.91% vs male physicians, 11.46%; adjusted RD, –0.55%; 95% CI, –0.67% to –0.42%; P &lt; .001; NNT, 182). Further adjusting for physician characteristics had a limited effect on these results (female physicians, 11.07% vs male physicians, 11.49%; adjusted RD, –0.43%; 95% CI –0.57% to –0.28%; P &lt; .001; NNT, 233).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If you look at just the difference between the two 'treatment' groups (male-treated vs. female-treated patients), there only seems to be a 0.42% difference in mortality rates after controlling for hospital patient characteristics, hospital fixed effects, physician characteristics, length of stay, use of care, discharge location, patient volume, and physicians’ years of practice. Damn, that's a really small difference! The effect size (here improperly defined as ratio of larger to smaller) is only 1.03. Hardly an effect worth mentioning, isn't it?&lt;/p&gt;
-&lt;p&gt;Wrong!&lt;/p&gt;
-&lt;p&gt;That 0.42% difference occurred from a sample size of more than ~1.5 million hospitalizations. This is mortality that we're speaking of here, so in context, we're talking about ~6,600+ fewer deaths when women treat patients. 6,600+! Hospitalizations happen frequently and in large numbers, so a small percentage difference still means large numbers of people. If you happen to be pro-life, this is something that you really should care about.&lt;/p&gt;
-&lt;p&gt;I still take issue with the article's emphasis on &quot;statistically significant or not&quot; method of reporting the results, but I think that's a flaw of the medical literature publishing culture, and something that the authors probably had to conform to in order to successfully publish the results. Nonetheless, if you even just skim the text of the paper, the data are consistent across all comparisons made, regardless of whether the results were &quot;statistically significant&quot; or not. That's pretty strong evidence, in my opinion.&lt;/p&gt;
 </content>
   </entry>
 </feed>

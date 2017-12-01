@@ -14,7 +14,7 @@
     </style>
 
     <!-- Syntax Highlighter. Use both pygments and hl.js. -->
-    <link rel="stylesheet" href="../static/pygments.css">
+    <link rel="stylesheet" href="../../../../../static/pygments.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="/static/css/custom.css">
 </head>
 
-<title>Blog - Eric J. Ma's Personal Site</title>
+<title>PyData NYC 2017 Recap - Eric J. Ma's Personal Site</title>
 <body class="body">
     <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#local-links" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,12 +90,11 @@
     <div class="container">
         
   
-    
   <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
   
-    <h1><a href="../blog/2017/11/30/pydata-nyc-2017-recap/">PyData NYC 2017 Recap</a></h1>
+    <h1>PyData NYC 2017 Recap</h1>
   
   <p class="meta">
     written by
@@ -132,133 +131,23 @@
 
   </div>
 
-    <p><i>Did you enjoy this blog post? <a href="../blog/2017/11/30/pydata-nyc-2017-recap/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2017/11/16/bayesian-learning-and-overfitting/">Bayesian Learning and Overfitting</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-11-16
-  </p>
-  <p>Yesterday, after I did my Boston Bayesians dry run talk, there was a point raised that I had only heard of once before: Bayesian learning methods don't overfit. Which means we're allowed to use all the data on hand. The point holds for simple Bayesian networks, and for more complicated deep neural nets.</p>
-<p>Though I believe it, I wasn't 100% convinced of this myself, so I decided to check it up. I managed to get my hands on Radford Neal's book, Bayesian Learning for Neural Networks, and found the following quotable paragraphs:</p>
-<blockquote class="blockquote blockquote-success">
-<p>It is a common belief, however, that restricting the complexity of the models used for such tasks is a good thing, not just because of the obvious computational savings from using a simple model, but also because it is felt that too complex a model will overfit the training data, and perform poorly when applied to new cases. This belief is certainly justified if the model parameters are estimated by maximum likelihood. I will argue here that concern about overfitting is not a good reason to limit complexity in a Bayesian context.</p></blockquote><p>A few paragraphs later, after explaining the frequentist procedure:</p>
-<blockquote class="blockquote">
-<p>From a Bayesian perspective, adjusting the complexity of the model based on the amount of training data makes no sense. A Bayesian defines a model, selects a prior, collects data, computes the posterior, and then makes predictions. There is no provision in the Bayesian framework for changing the model or the prior depending on how much data was collected. If the model and prior are correct for a thousand observations, they are correct for ten observations as well (though the impact of using an incorrect prior might be more serious with fewer observations). In practice, we might sometimes switch to a simpler model if it turns out that we have little data, and we feel that we will consequently derive little benefit from using a complex, computationally expensive model, but this would be a concession to practicality, rather than a theoretically desirable procedure.</p></blockquote><p>Finally, in the following section after describing how neural networks are built:</p>
-<blockquote class="blockquote">
-<p>In a Bayesian model of this type, the role of the hyperparameters controlling the priors for weights is roughly analogous to the role of a weight decay constant in conventional training. With Bayesian training, values for these hyperparameters (more precisely, a distribution of values) can be found without the need for a validation set.</p></blockquote><p>This seems to dovetail well with the following convoluted intuition that I've had: <strong>if I fit a Bayesian model on the "training" set of the data, then update it with the "test" set, it's equivalent to just training with the whole dataset. With wide priors, if I fit with a smaller dataset, my posterior distribution will be wider than if I fit with the entire dataset. So... where possible, just train with the entire dataset.</strong> That said, I've not had sufficient grounding in Bayesian stats (after all, still a newcomer) to justify this.</p>
-<p>I certainly have more reading/learning to do here. Looks like something neat to explore in the short-term.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2017/11/16/bayesian-learning-and-overfitting/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2017/11/14/the-value-of-thinking-simply/">The Value of Thinking Simply</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-11-14
-  </p>
-  <p>Einstein has a famous quote that most people don't hear about.</p>
-<blockquote class="blockquote">
-<p class="mb-0">It can scarcely be denied that the supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.</p>
-<footer class="blockquote-footer">Albert Einstein</footer></blockquote><p>It instead, most people hear the misquote:</p>
-<blockquote class="blockquote text">
-<p>Everything should be made as simple as possible, but no simpler. </p>
-<footer class="blockquote-footer">Misquoted version</footer></blockquote><p>Though a misquote, it's still a fair (though lopsided -- missing a sufficient translation of the latter half) simplification of the original.</p>
-<p>In my work, I'm reminded of this point. I can choose to go for the complex fancy thing, but if I don't start from first principles, or start with simplistic approximations, I will struggle to have a sufficiently firm grasp on a problem to start tackling it. And therein lies the key, I think, in making progress on creative, intellectual work.</p>
-<p>The past week, I've noticed myself not wasting time on mindless coding (which usually amounts to re-running code with tweaks), and instead devoting more time to strategic thinking. As an activity, strategic thinking isn't just sitting there and thinking. For me, it involves writing and re-writing what I'm thinking, drawing and re-drawing what I'm seeing, and arranging and composing the pieces that are floating in my mind. During that time of writing, drawing, arranging and composing, I'm questioning myself, "What if I didn't have this piece?". Soon enough, the "simplest complex version" (SCV) of whatever I'm working on begins to emerge -- but it never really is the final version! I go back and prototype it in code, and then get stuck on something, and realize I left something out in that SCV, and re-draw the entire SCV from scratch.</p>
-<p>Here's my misquote, then, offered up:</p>
-<blockquote class="blockquote">
-<p>Sufficiently simple, and only necessarily complex.</p>
-<footer class="blockquote-footer">A further mutated version.</footer></blockquote>
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2017/11/14/the-value-of-thinking-simply/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/">Boston Bayesians Talk: An Attempt at Demystifying Bayesian Deep Learning</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-11-03
-  </p>
-  <p>It's confirmed! I will be rehearsing my PyData NYC talk <a href="https://www.meetup.com/Boston-Bayesians/events/244731222">at Boston Bayesians</a>, held at McKinsey's office.</p>
-<p>This time round, I've challenged myself with making the slides without using PowerPoint or Keynote, and I think I've successfully done it! Check them out:</p>
-<ul>
-<li><a href="https://github.com/ericmjl/bayesian-deep-learning-demystified">GitHub repository</a></li>
-<li><a href="https://ericmjl.github.io/bayesian-deep-learning-demystified">Online slides</a></li>
-</ul>
-<p>Side note, I'm starting to really love what we can do with the web!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2017/10/31/always-check-your-data/">Always Check Your Data</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-10-31
-  </p>
-  <p>True story, just happened today. I was trying to fit a Poisson likelihood to estimate event cycle times (in discreet weeks). For certain columns, everything went perfectly fine. Yet for other columns, I was getting negative infinity’s likelihoods, and was banging my head over this problem for over an hour and a half.</p>
-<p>As things turned out, those columns that gave me negative infinity likelihood initializations were doing so because of negative values in the data. Try fitting a Poisson likelihood, which only has positive support, on that!</p>
-<p><img src="https://i.imgflip.com/1yl6ki.jpg" alt=""></p>
-<p>This lost hour and a half was a good lesson in data checking/testing: <strong>always be sure to sanity check basic stats associated with the data - bounds (min/max), central tendency (mean/median/mode) and spread (variance, quartile range) - always check!</strong></p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2017/10/31/always-check-your-data/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-
-  
-  <div class="pagination">
-    
-      <span class="disabled">&laquo; Previous</span>
-    
-    | 1 |
-    
-      <a href="../blog/page/2/">Next &raquo;</a>
-    
-  </div>
-
+  <a name="disqus"></a>
+  <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/pydata-nyc-2017-recap"; this.page.url = "http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//ericmjl.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
 
     </div>
 
