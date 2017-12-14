@@ -2,13 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2017-11-30T00:00:00Z</updated>
+  <updated>2017-12-13T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2017/12/13/visual-studio-code-a-new-microsoft/">
+    <title type="text">Visual Studio Code: A New Microsoft?</title>
+    <id>urn:uuid:edf0c31f-74d9-39eb-a09f-a61e861ff480</id>
+    <updated>2017-12-13T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2017/12/13/visual-studio-code-a-new-microsoft/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;During my week attending PyData NYC 2017, which was effectively a mini-mini-sabbatical from work, I got a chance to try out Visual Studio Code. Part of it was curiosity, having seen so many PyData participants using it; part of it was because of Steve Dowell, a core CPython contributor who works at Microsoft, who mentioned about the Python-friendly tools they added into VSCode.&lt;/p&gt;
+&lt;p&gt;I think VSCode is representative of a new Microsoft.&lt;/p&gt;
+&lt;p&gt;But first, let me describe what using it is like.&lt;/p&gt;
+&lt;h2 id=&quot;user-interface&quot;&gt;User Interface&lt;/h2&gt;&lt;p&gt;First off, the UI is beautiful. It's impossible to repeat enough how important the UI is. With minimal configuration, I made it basically match Atom's UI, which I had grown used to. It has an integrated terminal, and the colours are... wow. That shade of green, blue and red are amazing, ever just so slightly muted compared to the Terminal or iTerm. The background shade of black matches well with the rest of VSCode, and the colour scheme is changeable to match that of Atom's. The design feels... just right. Wow!&lt;/p&gt;
+&lt;h2 id=&quot;git-integration&quot;&gt;Git Integration&lt;/h2&gt;&lt;p&gt;Secondly, the integration with Git rivals Atom; in fact, there's a one-click &quot;sync&quot; button! It also has nice &lt;code&gt;git commit -am&lt;/code&gt; analog where I can add and commit all of the files simultaneously.&lt;/p&gt;
+&lt;h2 id=&quot;intellisense&quot;&gt;Intellisense&lt;/h2&gt;&lt;p&gt;Thirdly, IntelliSense is just amazing! I like how I can use it to look up a function signature just by mousing over the function name.&lt;/p&gt;
+&lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;&lt;p&gt;Finally, it’s fully open source and back able, in the same vein as Atom, minus the bloat that comes from building on top of electron. Impressive stuff!&lt;/p&gt;
+&lt;h2 id=&quot;other-thoughts&quot;&gt;Other Thoughts&lt;/h2&gt;&lt;p&gt;Now, on the new Microsoft.&lt;/p&gt;
+&lt;p&gt;Only at the recent PyData NYC did I learn that Microsoft has hired almost half of the core CPython developers! Not only that, they are encouraged to continue their contributions into the CPython code base. In my view, that’s a pretty awesome development! It means the Python programming language will continue to have a strong corporate backing while also enjoying community support. Its a sign of a healthy ecosystem, IMO, and also a sign of Microsoft’s support for Open Source Software!&lt;/p&gt;
+&lt;p&gt;I’m more and more impressed by what Microsoft is doing for the Open Source community. I’m hoping they’ll continue up with this!!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/">
     <title type="text">PyData NYC 2017 Recap</title>
     <id>urn:uuid:08109ae3-b5f2-3035-a564-d3ca4a21ae25</id>
@@ -1637,74 +1657,6 @@ $ rm dist/*
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;&lt;p&gt;With that, that was it! Through this project, I was able to learn more about the insides of Python packaging &amp; distribution, making my Python tools accessible through the command line, developing web &amp; cross-platform interfaces, and working with really popular frameworks (Flask, click, pywebview). Big learning journey, only made possible because of some time taken off to let my mind wander away from other real work.&lt;/p&gt;
 &lt;p&gt;Do I see this fitting in with my current work? Yep, absolutely. There's some times in research where nothing beats building a prototype of a final product that I'm envisioning, for example, the front-end to a&lt;/p&gt;
 &lt;p&gt;I'd love to get feedback on how it could be improved, but more importantly, contributions are really welcome! Please be kind in feedback, I'm still a relative newbie with web development, so keeping things positive would help keep things encouraging. Hope you enjoyed the post!&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2016/12/24/how-to-make-your-python-scripts-callable-from-the-command-line/">
-    <title type="text">How to make your Python scripts callable from the command-line</title>
-    <id>urn:uuid:08003a89-beab-3cd1-9def-4bb761224c67</id>
-    <updated>2016-12-24T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2016/12/24/how-to-make-your-python-scripts-callable-from-the-command-line/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;So you've written this awesome Python module/script that does awesome stuff, but now you want to call it from the command line. I'm going to show you how to make this happen.&lt;/p&gt;
-&lt;p&gt;First off, create your Python script. Below, borrowing from the &lt;a href=&quot;http://click.pocoo.org/5/&quot;&gt;Click&lt;/a&gt; package documentation, I'm going to show a script that is just slightly more complex than a simple &quot;hello world&quot;.&lt;/p&gt;
-&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# helloworld.py&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;click&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@click.command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@click.option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;--count&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Number of greetings.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@click.option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;--name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prompt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Your name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-              &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;The person to greet.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Simple program that greets NAME for a total of COUNT times.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;!&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;vm&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let's say this script is saved as &lt;code&gt;helloworld.py&lt;/code&gt; in your project directory:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;+-- my_project/
-    +-- helloworld.py
-    +-- LICENSE
-    +-- README.md
-    +-- setup.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;What you'd want to put in your &lt;code&gt;setup.py&lt;/code&gt; script is the following:&lt;/p&gt;
-&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;setuptools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;r+&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;helloworld&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2016.12.24&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;long_description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.md&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Eric J. Ma&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author_email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ericmajinglong@gmail.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;py_modules&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;helloworld&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;license&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;LICENSE&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;entry_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;console_scripts&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;&amp;#39;aloha = helloworld:hello&amp;#39;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The key magic point here is &lt;code&gt;entry_points&lt;/code&gt;. What this portion is effectively saying is, &quot;attach the 'hello' function under the &lt;code&gt;helloworld&lt;/code&gt; script to the console command &lt;code&gt;aloha&lt;/code&gt;. (I'm being playful here for clarity; it may make much more sense to name your console command the same name as the Python module you're distributing.)&lt;/p&gt;
-&lt;p&gt;Now, if you open a new terminal session, you can run &lt;code&gt;helloworld.py&lt;/code&gt; using the &lt;code&gt;aloha&lt;/code&gt; command, and use all of the command-line arguments that Click provides:&lt;/p&gt;
-&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ aloha --count &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;
-Your name: Eric
-Hello Eric!
-Hello Eric!
-Hello Eric!
-&lt;/pre&gt;&lt;/div&gt;
 </content>
   </entry>
 </feed>
