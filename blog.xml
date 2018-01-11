@@ -2,13 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-01-08T00:00:00Z</updated>
+  <updated>2018-01-10T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/1/10/offline-time/">
+    <title type="text">Offline Time</title>
+    <id>urn:uuid:9068e2bf-6f5e-3c23-a72f-c28b96d31b22</id>
+    <updated>2018-01-10T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/1/10/offline-time/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I was locked out of my work computer due to password reasons. (It's not human error - something about corporate management tools locked me out. Okay, well, that's human error too.) That said, I inadvertently gained a full two hours of offline time on Monday.&lt;/p&gt;
+&lt;p&gt;Those two hours turned out to be pretty productive. I spent some time sketching out my work projects, trying to make better sense of how the project could fit in a disease area researcher's workflow, and figuring out derivative analyses that could enhance the value to them. This was something I probably wouldn't be able to accomplish if I had the regular distractions of my computer nearby.&lt;/p&gt;
+&lt;p&gt;Seems like Cal Newport's &quot;digital distraction de-cluttering&quot; is a good thing to do. I must do more of it.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/">
     <title type="text">Bayesian Uncertainty: A More Nuanced View</title>
     <id>urn:uuid:ac107438-c56c-3961-9fb0-b41c8a66858a</id>
@@ -1360,22 +1373,6 @@ conda env update -f environment.yml
 &lt;p&gt;I'll grant that, yes, many mathematicians and statisticians I know, are one of those types where doing and learning math doesn't have to be tied to some applied goal, and for whom math is viewed as intrinsically fun. But... I'm not one of those types, and it was for this reason I nearly abandoned quantitative thinking in my undergrad. Math was boring after Science One, because I wasn't shown how it was applicable to real-world problems in upper-year courses. Yet, after this PhD, I'll have essentially developed an area of expertise in some hybrid of statistical evolutionary biology and deep learning for biochemistry. Makes me wonder whether the current mode of puzzle-/theory-driven math (and perhaps even CS) is actually driving off people who might not be interested in the intrinsic fun of math, and are more interested in the applied fun?&lt;/p&gt;
 &lt;p&gt;Science One math was taught by Leah Keshet and Mark MacLean. The part I remember most vividly was learning about differential equations as applied to ecological problems and biochemical reaction kinetics. Along the way, we had to learn differentiation and integration... not for differentiation and integration's sake, but for figuring out useful properties of these two wildly different systems. &lt;em&gt;Now that was amazing math.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;What do I mean by algebra-blind?&lt;/em&gt; I basically mean that I tend to confuse algebraic symbols, and can't hold them in my head without having some lookup-table/glossary for what they mean. The lookup-table of algebraic symbols to their meaning was a hack that I never mastered until I finished formal math education; yet it was extremely helpful to have when I was discussing math with my collaborators up at Harvard. Most of my score deductions in math tests came from confusing algebraic symbols with one another...&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/1/3/on-openness-equals-source-code-inspectability/">
-    <title type="text">On &quot;Openness = Source Code Inspectability&quot;</title>
-    <id>urn:uuid:a61f9380-238f-30b2-a3e2-fb031bce42ea</id>
-    <updated>2017-01-03T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/1/3/on-openness-equals-source-code-inspectability/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;One tenet of open science is the notion of &quot;being able to inspect the source code&quot;. It's a good, lofty goal, but it comes with a big assumption that I think needs to be made clear.&lt;/p&gt;
-&lt;p&gt;This assumption is that scientists who are reviewing papers that incorporate code are capable of accurately interpreting the source code in a reasonable amount of time, have a sufficient working knowledge of the language that the work is implemented in, while also possessing sufficient domain knowledge to review the paper.&lt;/p&gt;
-&lt;p&gt;That middle point is the current sore point. In certain fields, such as artificial intelligence/machine learning and computational biology (both my pet fields), this is not an issue, as the substrate of scientific work is code. On the other hand, there's the scenario of experimental work that is analyzed with custom code. Here, the substrate of the scientific work is not primarily the code, it is the experiment. Reviewers who evaluate this type of work may not necessarily have the expertise to inspect the source code of the pipeline. I am not aware of journals whose editors make the extra effort to solicit a team of reviewers capable of covering both experimental design and code inspection.&lt;/p&gt;
-&lt;p&gt;To be just a tad more pedantic, I'd insist that code inspection is important. Having myself reviewed a paper for PLoS Computational Biology, I was interested in the &lt;em&gt;accuracy&lt;/em&gt; of the implementation (done in R), not simply whether I could re-run the code and obtain the same results (&lt;em&gt;reproducibility&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;(Side note: though I'm a Python person, I'd be happy to review R code, though I would do so with the recognition that I'm not as well-versed in R idioms and coding patterns as I am with Python's. I'd be less-than-fully-qualified under the &quot;sufficient working knowledge&quot; criteria.)&lt;/p&gt;
-&lt;p&gt;In summary, my claim here is that openness requires more scientists who are also technically qualified, in order to achieve the goal of reproducibility + veracity. Without the ability to inspect source code, we're only left with reproducibility, which is not good enough.&lt;/p&gt;
 </content>
   </entry>
 </feed>
