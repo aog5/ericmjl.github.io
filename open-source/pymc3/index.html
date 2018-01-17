@@ -93,10 +93,13 @@
     
 <div class="project-container">
     <h3>PyMC3</h3>
-    <p><p>I found a bug in PyMC3's multinomial random variate sampler, related to floating point precision issues while moving numbers from the GPU to the CPU, when working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian analysis recipes repository</a>. Specifically, we get probability values that sum to infinitesimally larger than one. I thus submitted a patch that fixed that converts the probabilities to <code>float64</code> precision and re-normalizes the probabilities to 1, before using them for random sampling.</p>
+    <p><p>I have made multiple PRs to PyMC3, which were bug fixes, documentation and small feature additions.</p>
+<h3 id="bug-fix">Bug Fix</h3><p>I found a bug in PyMC3's multinomial random variate sampler, related to floating point precision issues while moving numbers from the GPU to the CPU, when working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian analysis recipes repository</a>. Specifically, we get probability values that sum to infinitesimally larger than one. I thus submitted a patch that fixed that converts the probabilities to <code>float64</code> precision and re-normalizes the probabilities to 1, before using them for random sampling.</p>
+<h3 id="documentation">Documentation</h3><p>I contributed small changes to the docs, to make it super clear that precision and standard deviation parameterizations were alternate parameterizations, and only one was needed.</p>
+<h3 id="feature-addition">Feature Addition</h3><p>I contributed the definition of a "mode" for the Weibull distribution, so that I could use it in a Mixture Weibull.</p>
 </p>
     
-        <p>Learn More: <a href="https://github.com/pymc-devs/pymc3/pull/2470">Pull Request</a></p>
+        <p>Learn More: <a href="https://github.com/pymc-devs/pymc3/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+author%3Aericmjl+">Pull Requests</a></p>
     
 </div>
 
