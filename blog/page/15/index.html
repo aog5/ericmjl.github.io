@@ -95,6 +95,33 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2016/10/11/collaborations-between-experimentalists-and-statisticians/">Collaborations Between Experimentalists and Statisticians</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-10-11
+  </p>
+  <p>I just saw an awesome pair of blog posts by <a href="http://simplystatistics.org/2013/10/09/the-care-and-feeding-of-your-scientist-collaborator/">Roger Peng</a> and <a href="http://simplystatistics.org/2013/10/08/the-care-and-feeding-of-the-biostatistician/">Elizabeth Matsui</a>, detailing how scientists and statisticians can work together more effectively. Highly recommended read! In the duration of my PhD, I've been one of two resident statisticians for our research group (it's a relative expertise thing - I know enough to be dangerous), and so the article really resonated with me. Here's my summary.</p>
+<p>Firstly, both ought to take the time to learn each others' core concepts and methods. For the experimentalist, learn some basics about distributions of a random variable and what 'inference' really means beyond p=0.05 (FYI, p<0.05 ≠ inference). For the statistician, take the time to learn some of the basic (bio)chemistry, the experimental setup, and how difficult it is to collect data.</p>
+<p>Secondly, have some patience! Both sides will need some time to learn the ins-and-outs of the data collection, analysis, inference reasoning process and the likes.</p>
+<p>Thirdly, involve the statistician earlier on in a collaboration, not towards the end. The statistician can help make sense of the scientific question in terms of the data collected, and thus can help with the experimental design.</p>
+<p>Fourthly, and this point really matters for PIs, give the statistician sufficient support, particularly on the grants. 1% effort doesn't cut it. Even 5% is on the low side of reasonable. Something more like 10-20% effort makes more sense.</p>
+<p>Finally, a statistician's primary goal should be to advance the science through the proper deployment of statistics. A scientist's primary goal is to help identify the most important problems of a (sub-(sub-))field to solve. Together as collaborators, they can find the right experimental design towards this pair of goals.</p>
+<p>I'll add in a pointer of my own here - as a statistician, it really shouldn't be about helping your scientist collaborator find "what's significant", which (ahem) often means p<0.05. My view of inference has, over the past year, turned Bayesian, and I'm now increasingly confident in the notion that Bayesian-style reasoning is not only the most natural way to reason through the data, it's actually the right way to do inference on scientific data. Given priors, some perhaps uninformative, about the state of nature, our goal in science is to compute the probability distribution over some parameters of nature.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/10/11/collaborations-between-experimentalists-and-statisticians/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2016/10/9/reproducible-pi-manifesto/">Reproducible PI Manifesto</a></h1>
   
   <p class="meta">
@@ -187,31 +214,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/9/22/paper-review/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2016/9/16/why-uncertainty-matters/">Why Uncertainty Matters</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2016-09-16
-  </p>
-  <p>Uncertainty is part and parcel of the process of doing science; in effect it's a <a href="http://www.senseaboutscience.org/data/files/resources/127/SAS012_MSU_ONLINE.pdf">currency of science</a>. What scientists do is essentially quantitatively measure or qualitatively describe some property of the natural, physical world. Because of the limitations of our instrumentation, uncertainty in our measurements will crop up.</p>
-<p>Quantified uncertainty is especially important, because we can use it to identify which parts of the world we need to measure more, if the data are not useful enough for something practical. For example, does the uncertainty surrounding a predicted drug resistance value encompass a clinically-relevant cutoff (the cut-off problem)? If it does, perhaps we need to measure again to gain more precision in our estimated drug resistance value.</p>
-<p>Machine learning models are becoming important in science, but uncertainty isn't explicitly incorporated in most of the off-the-shelf tools that are available (e.g. <code>scikit-learn</code>). This is a limitation of the current state-of-the-art tools, but is by no means a reason not to use them. That said, without uncertainty being modelled and propagated from measurement to data to prediction, we run into the "cut-off" problem with predicted values - what if a prediction had a large uncertainty around it, and encompassed an actionable cut-off value? And what if the action taken were incorrect on the basis of the false certainty surrounding a prediction?</p>
-<p>If we don't take the "black-box" ML approach, and instead decide to compose our own models that try to explain the world, the model prediction ± uncertainty may not overlap with our measurement ± uncertainty. This tells us that our model has missing parts that cannot explain the data fully, and the model needs to be extended.</p>
-<p>And so I think uncertainty matters. It matters because it tells us where we need more data. It matters because uncertainty can help inform whether or not we can be confident in taking action given the data. It matters because it can help tell us whether our models of the world are good enough at explaining the data collected. For these reasons, and many more, I think uncertainty really matters.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/9/16/why-uncertainty-matters/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

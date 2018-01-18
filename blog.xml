@@ -2,13 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-01-10T00:00:00Z</updated>
+  <updated>2018-01-18T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/1/18/pymc3-docs-weibull-patches-merged/">
+    <title type="text">PyMC3 docs + Weibull patches merged!</title>
+    <id>urn:uuid:bf58dfdb-811c-3ae2-a502-f789c2867530</id>
+    <updated>2018-01-18T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/1/18/pymc3-docs-weibull-patches-merged/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I recently had a few PRs merged into the PyMC3 codebase. Really happy about it, and just like my previous bug fix, I thought I'd share a bit about how those PRs came about.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/pymc-devs/pymc3/pull/2789&quot;&gt;first PR&lt;/a&gt; was an update to the docs on when to specify precision and when to specify standard deviation. They're related, so only one has to be specified, but I sometimes am sloppy when reading the docs and didn't pick up on that. Thus, I added a few lines to make sure this was crystal clear to sloppy readers like me.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/pymc-devs/pymc3/pull/2799&quot;&gt;next PR&lt;/a&gt; was an update to the Mixture model docs, in which I added an example of the new API for specifying components of mixture models. It previously wasn't clear how to do this, as there were no examples provided, so I put in a documentation PR specifying examples.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/pymc-devs/pymc3/pull/2804&quot;&gt;final PR&lt;/a&gt; was a patch to the Weibull distribution. I wanted to play around with trying mixture Weibulls at work, but mixture Weibulls wouldn't work because it didn't have a mode specified. I checked on Wikipedia, and found that Weibull's mode is conditional on the value of its parameters, and thus put in a PR to make this happen. &lt;a href=&quot;https://github.com/ericmjl/bayesian-analysis-recipes/blob/master/notebooks/mixture-model.ipynb&quot;&gt;Trying it out on some simulated/toy data&lt;/a&gt;, it worked! Thus, the devs allowed it to be merged.&lt;/p&gt;
+&lt;p&gt;A few lessons I've learned along the way:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(1) Docs are an awesome place to start.&lt;/strong&gt; In fact, I made a few formatting mistakes in my first and second PRs that gave an opportunity for another guy to fix! Nothing is too small to be made as a contribution. FWIW, my first contribution to open source software were documentation fixes for &lt;code&gt;matplotlib&lt;/code&gt;, and that was a superb learning journey!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(2) Friendly maintainers are crucial.&lt;/strong&gt; The PyMC dev team can basically be described as, &quot;generally super nice!&quot; From the online and in-person interactions I've had with them, there's little in the way of egos, they're always learning, always being generally helpful. If they weren't that way, I very likely would have second thoughts trying putting in a PR there.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(3) Open source lets me fix bugs I find.&lt;/strong&gt; This lets me work at the pace that I need to, without having to wait for commercial vendors to provide update patches. If the patch that I find turns out to be useful for others, then the work I did can possibly save a ton of people's time as well. Win-win scenario!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/10/offline-time/">
     <title type="text">Offline Time</title>
     <id>urn:uuid:9068e2bf-6f5e-3c23-a72f-c28b96d31b22</id>
@@ -1359,20 +1377,6 @@ conda env update -f environment.yml
 &lt;p&gt;Fourthly, I saw how Bokeh server allows us to write custom Python code for callbacks. At least for me, it's much more user-friendly this way, as I find JS idioms to be a bit wonky. Maybe I'm just not used to them. Either way, being able to use custom Python means I'm able to do things like filtering Pandas DataFrames before pushing the data onto the plot.&lt;/p&gt;
 &lt;p&gt;Finally, I got to use the VBar contribution I made to the Bokeh library last year! Though I eventually moved my bar plots to the &quot;charts&quot;-level API, my initial implementation was done using the &quot;plotting&quot;-level API. It brought me a modicum of satisfaction to use the &lt;code&gt;vbar&lt;/code&gt; glyph, something that I had contributed (of course, acknowledging the amount of hand-holding provided by Sarah Bird and Bryan Van De Ven, who are the lead developers of Bokeh).&lt;/p&gt;
 &lt;p&gt;My code can be found online &lt;a href=&quot;https://github.com/ericmjl/iacs2017&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/1/5/on-learning-math/">
-    <title type="text">On Learning Math</title>
-    <id>urn:uuid:b82c5bec-f938-34c7-a487-2549994f4359</id>
-    <updated>2017-01-05T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/1/5/on-learning-math/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;Though I will admit to being somewhat algebra-blind (more on that later), I wasn't necessarily &lt;em&gt;bad&lt;/em&gt; at math concepts. I did have one big problem with the way I was learning math, though - it always seemed to be more theoretical and less applied, as if solving puzzles for solving puzzles' sake was the best way to approach learning math.&lt;/p&gt;
-&lt;p&gt;I'll grant that, yes, many mathematicians and statisticians I know, are one of those types where doing and learning math doesn't have to be tied to some applied goal, and for whom math is viewed as intrinsically fun. But... I'm not one of those types, and it was for this reason I nearly abandoned quantitative thinking in my undergrad. Math was boring after Science One, because I wasn't shown how it was applicable to real-world problems in upper-year courses. Yet, after this PhD, I'll have essentially developed an area of expertise in some hybrid of statistical evolutionary biology and deep learning for biochemistry. Makes me wonder whether the current mode of puzzle-/theory-driven math (and perhaps even CS) is actually driving off people who might not be interested in the intrinsic fun of math, and are more interested in the applied fun?&lt;/p&gt;
-&lt;p&gt;Science One math was taught by Leah Keshet and Mark MacLean. The part I remember most vividly was learning about differential equations as applied to ecological problems and biochemical reaction kinetics. Along the way, we had to learn differentiation and integration... not for differentiation and integration's sake, but for figuring out useful properties of these two wildly different systems. &lt;em&gt;Now that was amazing math.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;What do I mean by algebra-blind?&lt;/em&gt; I basically mean that I tend to confuse algebraic symbols, and can't hold them in my head without having some lookup-table/glossary for what they mean. The lookup-table of algebraic symbols to their meaning was a hack that I never mastered until I finished formal math education; yet it was extremely helpful to have when I was discussing math with my collaborators up at Harvard. Most of my score deductions in math tests came from confusing algebraic symbols with one another...&lt;/p&gt;
 </content>
   </entry>
 </feed>
