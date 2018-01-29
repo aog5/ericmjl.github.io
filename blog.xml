@@ -2,13 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-01-18T00:00:00Z</updated>
+  <updated>2018-01-29T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/1/29/refactor-notebook-code/">
+    <title type="text">Refactor Notebook Code</title>
+    <id>urn:uuid:7c009a1d-1d8f-3965-b5ee-6e1a1b8dab85</id>
+    <updated>2018-01-29T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/1/29/refactor-notebook-code/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;Jupyter notebooks that are filled with complex analyses can get unwieldy. Refactoring repeated code out into functions placed in modules should be standard practice, but from the sampling of Jupyter notebooks I've seen, I don't think this is standard practice.&lt;/p&gt;
+&lt;p&gt;When should code be refactored? As soon as we start copying/pasting it! Making sure I have self-contained functions ensures that lingering state in my notebook doesn't cause unexpected behaviour. (Side note: learning the &quot;functional&quot; programming mindset can be very useful here!)&lt;/p&gt;
+&lt;p&gt;But won't this slow down my pace? Isn't it faster to just copy and paste the code, and tweak what I need? Yes, but a small speed hit is going to be traded for a massive bump in rigour. Just today, I saw the effects of &quot;lingering state&quot; in my notebooks causing my plots to display different things before and after refactoring. It's not a good sign for any analysis if this happens.&lt;/p&gt;
+&lt;p&gt;In short, refactor your code.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/18/pymc3-docs-weibull-patches-merged/">
     <title type="text">PyMC3 docs + Weibull patches merged!</title>
     <id>urn:uuid:bf58dfdb-811c-3ae2-a502-f789c2867530</id>
@@ -1351,32 +1365,6 @@ conda env update -f environment.yml
 &lt;p&gt;I also went back and thought more about the other coding problem, asked by my final interviewer. It was a frequentist statistics question, and I had been very much in a Bayesian frame of mind when he asked the question, so I was tripped up by my own biases when that happened. (There are foundational philosophical differences between the Bayesian and frequentist statistical mind sets, but I won't go in that direction.)&lt;/p&gt;
 &lt;p&gt;Three of my other interviewers are very interested in the biological question behind what I was working on, and so I had a much smoother time (I think) with them. One was a wet bench scientist, and the other two do computation work as part of the computational biology team. I also think that my time with them played to my strengths, which are translating the biological problems into code, rather than making algorithms efficient. Not that I'm ruling out learning how to write efficient algorithms, though - I'd definitely love to master that! I say that my time with them played to my strengths because I was able to show them the thought process of how I turned a biological problem into a computable problem, and was able to highlight where the limitations of what I did were. My third and fourth interviewers took a deep interest in my work, and I was really, really happy to share with them what I'd been doing.&lt;/p&gt;
 &lt;p&gt;Overall, a very fun experience! Big thanks to the HR and Comp Bio teams there, it was an intense day, but it was also very fun. I'm now just waiting for my red-eye flight to go back to Boston to teach a Data Carpentry workshop at Tufts Medical. Hope I survive till noon tomorrow!&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/1/17/building-bokeh-apps/">
-    <title type="text">Building Bokeh Apps!</title>
-    <id>urn:uuid:c4372020-1787-3eea-8253-c9e1e6ea99cc</id>
-    <updated>2017-01-17T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/1/17/building-bokeh-apps/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;I finally did it - I built a Bokeh server app for myself!&lt;/p&gt;
-&lt;p&gt;All of last week, I brought my UROP student Vivian and a fellow church friend Lin to the &quot;Data Science with Python&quot; &lt;a href=&quot;http://computefest.seas.harvard.edu&quot;&gt;skill-building workshop series&lt;/a&gt;, hosted by the &lt;a href=&quot;http://iacs.seas.harvard.edu&quot;&gt;Harvard IACS&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As I already knew most of what was going to be taught, I decided that it'd be a fun thing to try playing with the dataset that they used for the contest. (Having a contest was also extra motivation to try building something I've never done before.)&lt;/p&gt;
-&lt;p&gt;The goal of the contest was &quot;to build a visualization of the UCI forest dataset that would help an analyst make decisions&quot;. The UCI forest dataset basically asks us to predict forest cover type from cartographic variables. As I had always wanted to use Bokeh to build a data dashboard, I thought I should give it a shot with the UCI dataset.&lt;/p&gt;
-&lt;p&gt;What I eventually built were two things. The first one was a linked scatter-plot dashboard to visualize how the quantitative variables varied with one another and how they grouped by forest cover type. Here, the user can select the two variables that they want to visualize together, using drop-down menus.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../../../../../blog/2017/1/17/building-bokeh-apps/bokehscatter-full.png&quot;&gt;&lt;img src=&quot;../../../../../blog/2017/1/17/building-bokeh-apps/bokehscatter-small.png&quot; alt=&quot;Bokeh scatterplot&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The second one was a bar chart showing the mutual information between the categorical variable values and the forest cover type. Here, the user can select from over 40+ variables, and their mutual information score will be displayed as one of the bars in the bar chart.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../../../../../blog/2017/1/17/building-bokeh-apps/bokehselect-full.png&quot;&gt;&lt;img src=&quot;../../../../../blog/2017/1/17/building-bokeh-apps/bokehselect-small.png&quot; alt=&quot;Bokeh select&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As usual, I copied heavily from the examples and then modified it for my own use. Breaking the copied app helped me figure out where my cognitive blind spots were.&lt;/p&gt;
-&lt;p&gt;Here's what I've learned.&lt;/p&gt;
-&lt;p&gt;Firstly, I finally have wrapped my head around callback functions and their use in GUI applications. The idea behind callbacks is that when I click on a GUI element (e.g. button) or change the GUI element's state (e.g. selecting a checkbox, typing into a textbox), that function is called that &quot;does something&quot;. What's that something? Well, it's any action I decide that needs to be taken.&lt;/p&gt;
-&lt;p&gt;Secondly, I finally figured out how non-intimidating Bokeh server really is. It's like... Flask, except for data visualizations. And it takes care of most of the HTML hard lifting for the data visualization portion.&lt;/p&gt;
-&lt;p&gt;Thirdly, I finally got 'linked plots' working, in which the axes scales or data selections are shared across plots. I noticed it works when using the mid-level &quot;plotting&quot; interface, but doesn't work when using the high-level &quot;charts&quot; interface. Definitely something to keep in mind.&lt;/p&gt;
-&lt;p&gt;Fourthly, I saw how Bokeh server allows us to write custom Python code for callbacks. At least for me, it's much more user-friendly this way, as I find JS idioms to be a bit wonky. Maybe I'm just not used to them. Either way, being able to use custom Python means I'm able to do things like filtering Pandas DataFrames before pushing the data onto the plot.&lt;/p&gt;
-&lt;p&gt;Finally, I got to use the VBar contribution I made to the Bokeh library last year! Though I eventually moved my bar plots to the &quot;charts&quot;-level API, my initial implementation was done using the &quot;plotting&quot;-level API. It brought me a modicum of satisfaction to use the &lt;code&gt;vbar&lt;/code&gt; glyph, something that I had contributed (of course, acknowledging the amount of hand-holding provided by Sarah Bird and Bryan Van De Ven, who are the lead developers of Bokeh).&lt;/p&gt;
-&lt;p&gt;My code can be found online &lt;a href=&quot;https://github.com/ericmjl/iacs2017&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
 </feed>
