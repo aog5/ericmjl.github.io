@@ -95,6 +95,32 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2017/8/24/reading-and-writing-docs-the-overlooked-programming-skill/">Reading &amp; Writing Docs: The Overlooked Programming Skill?</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2017-08-24
+  </p>
+  <p>I recently read a blog article by DataCamp's CTO (Dieter) on how to scale their projects and their engineering team - it's a <a href="https://medium.com/datacamp/technical-vision-part-1-5f016c163340">great read</a>! In the article, Dieter states that the only way to scale an engineering team is to have well-written docs. I can see the benefits to doing it this way - we minimize the number of channels that any coder needs to use to find out information; the docs should be the place where the intent and technical detail of the code are simultaneously documented alongside usage examples.</p>
+<p>Thus, in the final weeks up to starting my new job at Novartis as a Data Scientist, I decided to make sure I have the practice of writing, reading and publishing docs as good as muscle memory. I can already envision cases where, while conducting and building analyses, I end up writing a bunch of generally-useful functions that should be documented as well. What I write may eventually need to be used by someone else, including my future self; keeping track of how exactly a function is intended to be used is going to be very useful.</p>
+<p>I think reading and writing docs is an overlooked skill in programming. It's probably because this isn't a test of "creative capacity" (i.e. can you build something new), which is the "sexy" thing. It's more a test of "maintenance capacity" - and this is given less value and importance in the coding world. But it's incredibly important - many basic problems can be solved by reading the docs... but also, so many problems can be avoided by writing really good docs! The onus is on both parties - package maintainers <em>and</em> developers - to write <em>and</em> read good docs.</p>
+<p>But writing good docs is a tough job! I absolutely agree with this. There are different styles through which developers read docs - some prefer examples, while others just want to see function definitions - and it's very difficult to cater to every style. I personally think starting off with the style one's most comfortable with, and then gradually accepting community contributions, is the right way to go.</p>
+<p>One package that I maintain, <a href="http://github.com/ericmjl/nxviz"><code>nxviz</code></a>, used to not have any docs written apart from that single file in the README. Thanks to my friend <a href="https://www.linkedin.com/in/rempic/">Remi Picone</a>, I was able to learn how to configure Sphinx to get my docs working through copying <a href="https://github.com/rempic/Image-Features-Extraction">his example repository</a>. Through that, I configured Sphinx to build docs on my nxviz project - and finally got it going! You can find it on <a href="http://nxviz.readthedocs.io/en/latest/">RTFD</a>.</p>
+<p>Learning this was really fun - looking forward to putting up more docs!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/8/24/reading-and-writing-docs-the-overlooked-programming-skill/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2017/8/10/next-steps/">Next Steps</a></h1>
   
   <p class="meta">
@@ -106,7 +132,7 @@
   </p>
   <p>Signed and done! I will be joining the Novartis Institutes for Biomedical Research (NIBR) in September, as part of the Scientific Data Analysis (SDA) team under Novartis Informatics (NX).</p>
 <p>NIBR is the research arm of Novartis, and the SDA team is essentially a "Data Special Ops" team inside NIBR. The nature of the position involves both internal consulting and the development of new initiatives across teams.</p>
-<p>The nature of the role I'm being hired into is in statistical learning, which is a general direction I've been moving towards during my time in grad school. I picked up and implemented a number of useful and interesting deep learning algorithms back then, and over the past half a year, have finally gotten in underneath the hood of graph & image convolutions, variational autoencoders and gaussian processes. It's really fun stuff, at its core, and to me, it's even more fun translating biological and chemical data problems into that language, and back.</p>
+<p>The nature of the role I'm being hired into is in statistical learning, which is a general direction I've been moving towards during my time in grad school. I picked up and implemented a number of useful and interesting deep learning algorithms back then, and over the past half a year, have finally gotten in underneath the hood of graph &amp; image convolutions, variational autoencoders and gaussian processes. It's really fun stuff, at its core, and to me, it's even more fun translating biological and chemical data problems into that language, and back.</p>
 <p>After a summer learning lots and networking with industry professionals and fellow Fellows at Insight, I'm ready for a bit more structure in my life. Looking forward to starting there!</p>
 
   </div>
@@ -134,7 +160,7 @@
 <p>This was the exact problem I was facing. I had some numbers crunching on the GPU in <code>float32</code> space. Then, I had to pass them back to <code>numpy</code>'s multinomial, which implicitly converts everything to <code>float64</code>. Because multinomial takes in a list of <code>p</code>s (probabilities) that must sum to one, I was getting issues with my list of <code>p</code>s summing to just infinitesimally (in computation land) greater than one. I dug around on-and-off for about a week to look for a solution, but none came. Instead, I had to rely on a small hack that I didn't like, adding a 1 millionth value to the sum and renormalizing probabilities... but that felt hacky and unprincipled.</p>
 <p>The fix was inspired by someone else's problems that was discussed on <code>numpy</code>'s repository. The trick was to convert the numbers from <code>float32</code> to <code>float64</code> first and re-compute the probabilities in <code>float64</code> precision. I implemented that locally, and everything worked! I quickly ran two of the most relevant tests in the test suite, and they both passed. So I pushed up to GitHub and submitted a PR on this (after checking in with the lead devs on their issue tracker) - and it was just merged tonight!</p>
 <p>If PyMC3's and <code>numpy</code>'s code bases were not open source, with issues discussed openly, I would not have been able to figure out a possible fix to the issues with the help of other people. Also, I wouldn't have been able to patch the codebase locally first to see if it solved my own problems. I also wouldn't have access to the test suite to check that nothing was broken. All-in-all, working with an open source codebase was instrumental to getting this fix implemented.</p>
-<p>Big shout-out to the PyMC devs I interacted with on this - Colin & Junpeng. Thank you for being so encouraging and helpful!</p>
+<p>Big shout-out to the PyMC devs I interacted with on this - Colin &amp; Junpeng. Thank you for being so encouraging and helpful!</p>
 
   </div>
 
@@ -203,37 +229,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/7/17/lessons-learned-during-insight/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2017/7/15/insight-week-7/">Insight Week 7</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-07-15
-  </p>
-  <p>Aaand with that, week 7 of Insight is done!</p>
-<p>I had a short week because of SciPy 2017, and I'm thankful that I got a chance to head out there - had the opportunity to reconnect with many friends from the SciPy community.</p>
-<p>The two days of Week 7 that I experienced were probably the weirdest week 7 any Fellow has experienced to date. Because I had missed a demo on account of SciPy, and because the company didn't want to just watch the pre-recorded demo video, I made a trek up to Cambridge to demo on-site. What initially was a 30 minute session turned out to be a 1.5 hr demo.</p>
-<p>I have two more demo obligations to fulfill next week. Other than that, it's going to be mostly interview preparation with other fellows, and more data and coding challenges, and more studying of topics that we're not familiar with. I am trying to brush up on SQL more, as I can see it being a useful tool to have to query data out of databases.</p>
-<p>Now that we're done with Week 7, we're going to be alumni soon. As such, I've began thinking about how I could give back as an alumni. Some ideas have come to mind, inspired by what others have done.</p>
-<p>Firstly, I think I can help standardize future Fellows' coding environments by providing a set of annotated instructions for installing the Anaconda distribution of Python. Perhaps even an evening workshop on the first Thursday might be useful.</p>
-<p>Secondly, I've come to recognize that the biggest bottleneck for Fellows' projects is the web deployment and design portion. Model training to obtain an MVP is fairly fast - one of <code>scikit-learn</code>'s models is often good enough. However, most of us didn't know HTML and Bootstrap CSS, and the deadline makes it stressful enough to pick this up on-the-fly. (The stress is probably compounded by the fact that the web app/blog post is not the most intellectually interesting portion of the project.) Perhaps a workshop at the end of Week 2 or beginning of Week 3 might be good.</p>
-<p>Thirdly, I see this trend where a lot more projects are going to start using deep learning. I think putting a workshop together with, say, Jigar, might be a useful thing to have.</p>
-<p>Finally, my interview simulator questions have become famous for being a 'hybrid' between stats, ML and CS. It's very much in the same vein as what I got when I interviewed with Verily.</p>
-<p>Until we get hired, we are allowed (and one might even say, expected) to continue coming into the office to help each other prepare for upcoming interviews. We're all looking forward to getting hired and solving data problems!</p>
-<p>With this post, I think I'll end the regular blog post series here. Hope this post series was an informative insight into Insight! Next one I'll post is going to be a summary of lessons learned from my time as an Insight Health Data Fellow.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/7/15/insight-week-7/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

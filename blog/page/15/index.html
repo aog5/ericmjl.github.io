@@ -95,6 +95,33 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2016/10/16/low-cost-robotic-liquid-handlers/">Low-Cost Robotic Liquid Handlers!</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-10-16
+  </p>
+  <p>Just found out about <a href="https://opentrons.com/robots">OpenTrons</a>, which is a company that produces open source robotic liquid handlers for less than $5000. In terms of research budgets, this is amazing!</p>
+<p>While some may contend that it may sometimes be faster for a bench scientist to conduct the experiments, I would respond by saying that freeing up the bench scientist from the nitty gritty work of moving small amounts of liquids from one container to another would allow them to focus on higher level thinking, which is what we're trained for. Definitely, conducting the experiments by hand is necessary while establishing a protocol, but once it's settled, having the protocol infinitely replicable by a robot can really free up a ton of time, and more importantly, free up <em>mental energy</em>.</p>
+<p>Other good stuff about the robot:</p>
+<ul>
+<li>It's open source. Hardware + software. This means everything about the hardware and software is introspectable.</li>
+<li>It's hackable. The hardware is based on a Raspberry Pi computer, which means I can, as needed, upgrade the Pi, the machine parts, or the software. </li>
+</ul>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/10/16/low-cost-robotic-liquid-handlers/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2016/10/12/github-lab-notebooks-update/">GitHub Lab Notebooks: Update</a></h1>
   
   <p class="meta">
@@ -131,12 +158,12 @@
     on 2016-10-11
   </p>
   <p>I just saw an awesome pair of blog posts by <a href="http://simplystatistics.org/2013/10/09/the-care-and-feeding-of-your-scientist-collaborator/">Roger Peng</a> and <a href="http://simplystatistics.org/2013/10/08/the-care-and-feeding-of-the-biostatistician/">Elizabeth Matsui</a>, detailing how scientists and statisticians can work together more effectively. Highly recommended read! In the duration of my PhD, I've been one of two resident statisticians for our research group (it's a relative expertise thing - I know enough to be dangerous), and so the article really resonated with me. Here's my summary.</p>
-<p>Firstly, both ought to take the time to learn each others' core concepts and methods. For the experimentalist, learn some basics about distributions of a random variable and what 'inference' really means beyond p=0.05 (FYI, p<0.05 ≠ inference). For the statistician, take the time to learn some of the basic (bio)chemistry, the experimental setup, and how difficult it is to collect data.</p>
+<p>Firstly, both ought to take the time to learn each others' core concepts and methods. For the experimentalist, learn some basics about distributions of a random variable and what 'inference' really means beyond p=0.05 (FYI, p&lt;0.05 ≠ inference). For the statistician, take the time to learn some of the basic (bio)chemistry, the experimental setup, and how difficult it is to collect data.</p>
 <p>Secondly, have some patience! Both sides will need some time to learn the ins-and-outs of the data collection, analysis, inference reasoning process and the likes.</p>
 <p>Thirdly, involve the statistician earlier on in a collaboration, not towards the end. The statistician can help make sense of the scientific question in terms of the data collected, and thus can help with the experimental design.</p>
 <p>Fourthly, and this point really matters for PIs, give the statistician sufficient support, particularly on the grants. 1% effort doesn't cut it. Even 5% is on the low side of reasonable. Something more like 10-20% effort makes more sense.</p>
 <p>Finally, a statistician's primary goal should be to advance the science through the proper deployment of statistics. A scientist's primary goal is to help identify the most important problems of a (sub-(sub-))field to solve. Together as collaborators, they can find the right experimental design towards this pair of goals.</p>
-<p>I'll add in a pointer of my own here - as a statistician, it really shouldn't be about helping your scientist collaborator find "what's significant", which (ahem) often means p<0.05. My view of inference has, over the past year, turned Bayesian, and I'm now increasingly confident in the notion that Bayesian-style reasoning is not only the most natural way to reason through the data, it's actually the right way to do inference on scientific data. Given priors, some perhaps uninformative, about the state of nature, our goal in science is to compute the probability distribution over some parameters of nature.</p>
+<p>I'll add in a pointer of my own here - as a statistician, it really shouldn't be about helping your scientist collaborator find "what's significant", which (ahem) often means p&lt;0.05. My view of inference has, over the past year, turned Bayesian, and I'm now increasingly confident in the notion that Bayesian-style reasoning is not only the most natural way to reason through the data, it's actually the right way to do inference on scientific data. Given priors, some perhaps uninformative, about the state of nature, our goal in science is to compute the probability distribution over some parameters of nature.</p>
 
   </div>
 
@@ -186,33 +213,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/10/8/conference-finaid-packages/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2016/9/27/boxplot-or-violin-plot/">Boxplot or Violin Plot?</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2016-09-27
-  </p>
-  <p>The same data, different visualizations.</p>
-<p>Here's the box plot version:</p>
-<p><img src="../../../blog/2016/9/27/boxplot-or-violin-plot/accuracy-boxplot.png" alt="Data plotted using Seaborn&#39;s box plot."></p>
-<p>And here's the violin plot version.</p>
-<p><img src="../../../blog/2016/9/27/boxplot-or-violin-plot/accuracy-violinplot.png" alt="Data plotted using Seaborn&#39;s violin plot."></p>
-<p>Which is more appropriate, and why?</p>
-<p>I think the Box Plot is more suited for clearly delineating ranges: (min, max), (IQR), and medians, whereas the Violin Plot is more suited for visualizing the distribution of data, including the possibility of bi-/multi-modality.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/9/27/boxplot-or-violin-plot/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

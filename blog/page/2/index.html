@@ -95,6 +95,36 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2017/12/13/visual-studio-code-a-new-microsoft/">Visual Studio Code: A New Microsoft?</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2017-12-13
+  </p>
+  <p>During my week attending PyData NYC 2017, which was effectively a mini-mini-sabbatical from work, I got a chance to try out Visual Studio Code. Part of it was curiosity, having seen so many PyData participants using it; part of it was because of Steve Dowell, a core CPython contributor who works at Microsoft, who mentioned about the Python-friendly tools they added into VSCode.</p>
+<p>I think VSCode is representative of a new Microsoft.</p>
+<p>But first, let me describe what using it is like.</p>
+<h2 id="user-interface">User Interface</h2><p>First off, the UI is beautiful. It's impossible to repeat enough how important the UI is. With minimal configuration, I made it basically match Atom's UI, which I had grown used to. It has an integrated terminal, and the colours are... wow. That shade of green, blue and red are amazing, ever just so slightly muted compared to the Terminal or iTerm. The background shade of black matches well with the rest of VSCode, and the colour scheme is changeable to match that of Atom's. The design feels... just right. Wow!</p>
+<h2 id="git-integration">Git Integration</h2><p>Secondly, the integration with Git rivals Atom; in fact, there's a one-click "sync" button! It also has nice <code>git commit -am</code> analog where I can add and commit all of the files simultaneously.</p>
+<h2 id="intellisense">Intellisense</h2><p>Thirdly, IntelliSense is just amazing! I like how I can use it to look up a function signature just by mousing over the function name.</p>
+<h2 id="open-source">Open Source</h2><p>Finally, it’s fully open source and back able, in the same vein as Atom, minus the bloat that comes from building on top of electron. Impressive stuff!</p>
+<h2 id="other-thoughts">Other Thoughts</h2><p>Now, on the new Microsoft.</p>
+<p>Only at the recent PyData NYC did I learn that Microsoft has hired almost half of the core CPython developers! Not only that, they are encouraged to continue their contributions into the CPython code base. In my view, that’s a pretty awesome development! It means the Python programming language will continue to have a strong corporate backing while also enjoying community support. Its a sign of a healthy ecosystem, IMO, and also a sign of Microsoft’s support for Open Source Software!</p>
+<p>I’m more and more impressed by what Microsoft is doing for the Open Source community. I’m hoping they’ll continue up with this!!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/12/13/visual-studio-code-a-new-microsoft/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2017/11/30/pydata-nyc-2017-recap/">PyData NYC 2017 Recap</a></h1>
   
   <p class="meta">
@@ -125,7 +155,7 @@
 <p>One thing I can't emphasize enough is that from a user experience standpoint, it's super important to follow idioms that people are used to. What Nicole did in this talk is to show how we can provide such idioms to end-users, rather than inventing a slightly modified wheel. Props to her for that!</p>
 <p>Her slides are online <a href="../../../blog/2017/11/30/pydata-nyc-2017-recap/">here</a>.</p>
 <h3 id="an-attempt-at-demystifying-bayesian-deep-learning">An Attempt at Demystifying Bayesian Deep Learning</h3><p>This talk was my own, put at the end of the 2nd day. The title definitely contributed to the hype. I popped into the room early, but then left for the restroom. When I got back, there was a lineup in the front door and in the back door. Totally unexpected. That said, big credit to the Boston Bayesians organizers Jordi and Colin, who let me do the talk as a rehearsal for PyData, so I felt very grounded.</p>
-<p>The talk went mostly smoothly. I think I was channeling my colleague, Brant Peterson, with his sense of humour during that time. There was one really hilarious hiccup - right after mentioning that I wouldn't overdo the "math" and "equations", I accidentally opened an adjacent tab with an alternate version of the slides... with, surprise surprise, a math equation on it! During the Q&A, when I shared the point of not needing to do train/test splits in Bayesian analysis, I could sense the jaws dropping and eyes widening in disbelief; more than just a handful of people came up and asked for the reference later on.</p>
+<p>The talk went mostly smoothly. I think I was channeling my colleague, Brant Peterson, with his sense of humour during that time. There was one really hilarious hiccup - right after mentioning that I wouldn't overdo the "math" and "equations", I accidentally opened an adjacent tab with an alternate version of the slides... with, surprise surprise, a math equation on it! During the Q&amp;A, when I shared the point of not needing to do train/test splits in Bayesian analysis, I could sense the jaws dropping and eyes widening in disbelief; more than just a handful of people came up and asked for the reference later on.</p>
 <p>Having done the talk, I now realize how much people will appreciate a lighthearted and lightweight introduction to a topic that's very dense and filled with jargon. Conference speakers, we need to do more of this!</p>
 <p>From an emotional standpoint, many people brought me joy with their positive comments on the visuals and structure of the talk. Others put out positive comments on Twitter, which I collected together in a <a href="https://twitter.com/i/moments/924970479869448193?ref_src=twsrc%5Etfw">Twitter Moment</a>. It was very encouraging, especially on this deep learning journey that I'm on right now.</p>
 <h2 id="tutorials">Tutorials</h2><h3 id="interactive-matplotlib-figures">Interactive <code>matplotlib</code> Figures</h3><p>This was something I totally didn't realize was possible before - we can create interactive <code>matplotlib</code> figures very easily! I have cloned the repository, and I think it'll be neat to hack on some projects at work to use this.</p>
@@ -157,11 +187,14 @@
   <p>Yesterday, after I did my Boston Bayesians dry run talk, there was a point raised that I had only heard of once before: Bayesian learning methods don't overfit. Which means we're allowed to use all the data on hand. The point holds for simple Bayesian networks, and for more complicated deep neural nets.</p>
 <p>Though I believe it, I wasn't 100% convinced of this myself, so I decided to check it up. I managed to get my hands on Radford Neal's book, Bayesian Learning for Neural Networks, and found the following quotable paragraphs:</p>
 <blockquote class="blockquote blockquote-success">
-<p>It is a common belief, however, that restricting the complexity of the models used for such tasks is a good thing, not just because of the obvious computational savings from using a simple model, but also because it is felt that too complex a model will overfit the training data, and perform poorly when applied to new cases. This belief is certainly justified if the model parameters are estimated by maximum likelihood. I will argue here that concern about overfitting is not a good reason to limit complexity in a Bayesian context.</p></blockquote><p>A few paragraphs later, after explaining the frequentist procedure:</p>
+<p>It is a common belief, however, that restricting the complexity of the models used for such tasks is a good thing, not just because of the obvious computational savings from using a simple model, but also because it is felt that too complex a model will overfit the training data, and perform poorly when applied to new cases. This belief is certainly justified if the model parameters are estimated by maximum likelihood. I will argue here that concern about overfitting is not a good reason to limit complexity in a Bayesian context.</p>
+</blockquote><p>A few paragraphs later, after explaining the frequentist procedure:</p>
 <blockquote class="blockquote">
-<p>From a Bayesian perspective, adjusting the complexity of the model based on the amount of training data makes no sense. A Bayesian defines a model, selects a prior, collects data, computes the posterior, and then makes predictions. There is no provision in the Bayesian framework for changing the model or the prior depending on how much data was collected. If the model and prior are correct for a thousand observations, they are correct for ten observations as well (though the impact of using an incorrect prior might be more serious with fewer observations). In practice, we might sometimes switch to a simpler model if it turns out that we have little data, and we feel that we will consequently derive little benefit from using a complex, computationally expensive model, but this would be a concession to practicality, rather than a theoretically desirable procedure.</p></blockquote><p>Finally, in the following section after describing how neural networks are built:</p>
+<p>From a Bayesian perspective, adjusting the complexity of the model based on the amount of training data makes no sense. A Bayesian defines a model, selects a prior, collects data, computes the posterior, and then makes predictions. There is no provision in the Bayesian framework for changing the model or the prior depending on how much data was collected. If the model and prior are correct for a thousand observations, they are correct for ten observations as well (though the impact of using an incorrect prior might be more serious with fewer observations). In practice, we might sometimes switch to a simpler model if it turns out that we have little data, and we feel that we will consequently derive little benefit from using a complex, computationally expensive model, but this would be a concession to practicality, rather than a theoretically desirable procedure.</p>
+</blockquote><p>Finally, in the following section after describing how neural networks are built:</p>
 <blockquote class="blockquote">
-<p>In a Bayesian model of this type, the role of the hyperparameters controlling the priors for weights is roughly analogous to the role of a weight decay constant in conventional training. With Bayesian training, values for these hyperparameters (more precisely, a distribution of values) can be found without the need for a validation set.</p></blockquote><p>This seems to dovetail well with the following convoluted intuition that I've had: <strong>if I fit a Bayesian model on the "training" set of the data, then update it with the "test" set, it's equivalent to just training with the whole dataset. With wide priors, if I fit with a smaller dataset, my posterior distribution will be wider than if I fit with the entire dataset. So... where possible, just train with the entire dataset.</strong> That said, I've not had sufficient grounding in Bayesian stats (after all, still a newcomer) to justify this.</p>
+<p>In a Bayesian model of this type, the role of the hyperparameters controlling the priors for weights is roughly analogous to the role of a weight decay constant in conventional training. With Bayesian training, values for these hyperparameters (more precisely, a distribution of values) can be found without the need for a validation set.</p>
+</blockquote><p>This seems to dovetail well with the following convoluted intuition that I've had: <strong>if I fit a Bayesian model on the "training" set of the data, then update it with the "test" set, it's equivalent to just training with the whole dataset. With wide priors, if I fit with a smaller dataset, my posterior distribution will be wider than if I fit with the entire dataset. So... where possible, just train with the entire dataset.</strong> That said, I've not had sufficient grounding in Bayesian stats (after all, still a newcomer) to justify this.</p>
 <p>I certainly have more reading/learning to do here. Looks like something neat to explore in the short-term.</p>
 
   </div>
@@ -186,16 +219,19 @@
   <p>Einstein has a famous quote that most people don't hear about.</p>
 <blockquote class="blockquote">
 <p class="mb-0">It can scarcely be denied that the supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.</p>
-<footer class="blockquote-footer">Albert Einstein</footer></blockquote><p>It instead, most people hear the misquote:</p>
+<footer class="blockquote-footer">Albert Einstein</footer>
+</blockquote><p>It instead, most people hear the misquote:</p>
 <blockquote class="blockquote text">
 <p>Everything should be made as simple as possible, but no simpler. </p>
-<footer class="blockquote-footer">Misquoted version</footer></blockquote><p>Though a misquote, it's still a fair (though lopsided -- missing a sufficient translation of the latter half) simplification of the original.</p>
+<footer class="blockquote-footer">Misquoted version</footer>
+</blockquote><p>Though a misquote, it's still a fair (though lopsided -- missing a sufficient translation of the latter half) simplification of the original.</p>
 <p>In my work, I'm reminded of this point. I can choose to go for the complex fancy thing, but if I don't start from first principles, or start with simplistic approximations, I will struggle to have a sufficiently firm grasp on a problem to start tackling it. And therein lies the key, I think, in making progress on creative, intellectual work.</p>
 <p>The past week, I've noticed myself not wasting time on mindless coding (which usually amounts to re-running code with tweaks), and instead devoting more time to strategic thinking. As an activity, strategic thinking isn't just sitting there and thinking. For me, it involves writing and re-writing what I'm thinking, drawing and re-drawing what I'm seeing, and arranging and composing the pieces that are floating in my mind. During that time of writing, drawing, arranging and composing, I'm questioning myself, "What if I didn't have this piece?". Soon enough, the "simplest complex version" (SCV) of whatever I'm working on begins to emerge -- but it never really is the final version! I go back and prototype it in code, and then get stuck on something, and realize I left something out in that SCV, and re-draw the entire SCV from scratch.</p>
 <p>Here's my misquote, then, offered up:</p>
 <blockquote class="blockquote">
 <p>Sufficiently simple, and only necessarily complex.</p>
-<footer class="blockquote-footer">A further mutated version.</footer></blockquote>
+<footer class="blockquote-footer">A further mutated version.</footer>
+</blockquote>
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/11/14/the-value-of-thinking-simply/#disqus">Let's discuss more</a>!</i></p>
@@ -226,30 +262,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2017/10/31/always-check-your-data/">Always Check Your Data</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-10-31
-  </p>
-  <p>True story, just happened today. I was trying to fit a Poisson likelihood to estimate event cycle times (in discreet weeks). For certain columns, everything went perfectly fine. Yet for other columns, I was getting negative infinity’s likelihoods, and was banging my head over this problem for over an hour and a half.</p>
-<p>As things turned out, those columns that gave me negative infinity likelihood initializations were doing so because of negative values in the data. Try fitting a Poisson likelihood, which only has positive support, on that!</p>
-<p><img src="https://i.imgflip.com/1yl6ki.jpg" alt=""></p>
-<p>This lost hour and a half was a good lesson in data checking/testing: <strong>always be sure to sanity check basic stats associated with the data - bounds (min/max), central tendency (mean/median/mode) and spread (variance, quartile range) - always check!</strong></p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/10/31/always-check-your-data/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 
