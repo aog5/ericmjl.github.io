@@ -95,6 +95,116 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2017/10/11/pypy-impressive/">PyPy: Impressive!</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2017-10-11
+  </p>
+  <p>A few years on after trying out PyPy for the first time and wrestling with it, I still find it to be pretty awesome.</p>
+<p>Now that PyPy officially supports <code>numpy</code>, I'm going to profile a few simple statistical simulation tasks:</p>
+<ul>
+<li>Computing the mean of a number of random number draws.</li>
+<li>Simulating many coin flips</li>
+</ul>
+<p>I'll profile each of the tasks four ways:</p>
+<ul>
+<li>Pure Python implementation running from the CPython and PyPy interpreters</li>
+<li><code>numpy</code> implementation running from the CPython and PyPy interpreters.</li>
+</ul>
+<p>So, how do PyPy and CPython fare? Let's show the results up front first.</p>
+<p><a href="../../../blog/2017/10/11/pypy-impressive/profile.png"><img src="../../../blog/2017/10/11/pypy-impressive/profile-sm.png" alt="Profiling results."></a></p>
+<p>Click on the image to view a higher resolution chart. The raw recorded measurements can be found <a href="https://docs.google.com/spreadsheets/d/1QB1hF7Z8SGYjvll8sYCjVYEYAgzL4pjqGt1dbO6B2Co/edit?usp=sharing">on Google Sheets</a>.</p>
+<p>Here's a description of what's happening:</p>
+<ul>
+<li>(top-left): PyPy is approx. 10X faster than CPython at computing the mean of 10 million random numbers.</li>
+<li>(top-right): When both are running <code>numpy</code>, the speed is identical.</li>
+<li>(bottom-left): When simulating coin flips, PyPy with a custom <code>binomial()</code> function is about 3X faster than CPython.</li>
+<li>(bottom-right): When using <code>numpy</code> instead, there is a bottleneck, and PyPy fails badly compared to CPython.</li>
+</ul>
+<p>It's pretty clear that when PyPy is dealing with "pure" data (i.e. not having to pass data between Python and C), PyPy runs very, very fast, and, at least in the scenarios tested here, it performs faster than the CPython interpreter. This is consistent with my previous observations, and probably explains why PyPy is very good for code that is very repetitive; the JIT tracer really speeds things up.</p>
+<p>That last plot (bottom-right) is a big curiosity. Using the code below, I measured the random number generation is actually just as fast as it should be using CPython, but that PyPy failed badly when I was passing in a <code>numpy</code> array to the <code>Counter()</code> object (from the standard library). I'm not sure what is happening behind-the-scenes, but I have reached out to the PyPy developers to ask what's going on, and will update this post at a later date.</p>
+<p><strong>UPDATE:</strong> I heard back from the PyPy devs <a href="https://bitbucket.org/pypy/pypy/issues/2680/slow-speed-going-from-numpy-data-structure">on BitBucket</a>, and this is indeed explainable by data transfer between the C-to-PyPy interface. It's probably parallel to the latency that arises from transferring data between the CPU and GPU, or between compute nodes.</p>
+<p>So, what does this mean? It means that for pure Python code, PyPy can be a very powerful way to accelerate your code. One example I can imagine is agent-based simulations using Python objects. Another example that comes to mind is running a web server that only ever deals with strings, floats and JSONs (in contrast to matrix-heavy scientific computing).</p>
+<p>Now, for those who are curious, here's the source code for the <strong>pure Python implementation of the mean of random numbers</strong>.</p>
+<div class="hll"><pre><span></span><span class="c1"># Mean of 10 million random number draws.</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1E7</span>
+<span class="n">rnds</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">rnds</span> <span class="o">+=</span> <span class="n">random</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">rnds</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} seconds&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+</pre></div>
+<p>And here's the source code for the <strong><code>numpy</code> implementation of the mean of random numbers</strong>.</p>
+<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1E7</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{} seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+</pre></div>
+<p>Next, here's the source code for <strong>coin flips in pure Python</strong>:</p>
+<div class="hll"><pre><span></span><span class="c1"># Simulate 10 million biased coin flips with p = 0.3</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">bernoulli</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">rnd</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">rnd</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1E7</span><span class="p">))]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{} seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+</pre></div>
+<p>And finally, source code for <strong>coin flips using <code>numpy</code></strong>:</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">binomial</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">coinflips</span> <span class="o">=</span> <span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1E7</span><span class="p">))</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Time for numpy coinflips: {} seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">coinflips</span><span class="p">))</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{} seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+</pre></div>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/10/11/pypy-impressive/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2017/10/10/pydata-nyc-2017/">PyData NYC 2017</a></h1>
   
   <p class="meta">
@@ -374,31 +484,6 @@ $ echo $PATH
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/10/3/new-habits/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2017/9/14/visualize-large-datasets-by-sampling/">Visualize Large Datasets by Sampling</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-09-14
-  </p>
-  <p>Just a little tip, putting it here for myself and others in case it helps.</p>
-<p>Sometimes, you need to visualize a large dataset, but it takes a ton of time to render it or compute the necessary transforms.</p>
-<p>If your samples are statistically sampled independently of one another (i.e. basically not timeseries), and the goals are to do some statistical visualizations, then it's basically valid to visualize a downsampled set of the dataset.</p>
-<p>I recently encountered this point at work. After running a clustering analysis, I wanted to see a pair plot of the distribution of features in each cluster. However, with cluster sizes ranging from 200-2 million, rendering times were unreasonably long (making things non-interactive) for the large sized clusters. I thus decided to downsample the large clusters to a maximum of 2,000 data points. Instantly, render times improved, and I could start interacting with my data again.</p>
-<p>Little things matter!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/9/14/visualize-large-datasets-by-sampling/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

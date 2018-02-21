@@ -95,6 +95,189 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2016/7/24/sparse-matrix-multiplication-in-python-3/">Sparse Matrix Multiplication in Python 3</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-07-24
+  </p>
+  <p>Sparse matrix multiplication shows up in many places, and in Python, it's often handy to use a sparse matrix representation for memory purposes.</p>
+<p>One thing nice about the newest version of Python 3 is the <code>@</code> operator, which takes two matrices and multiplies them. While <code>numpy</code> has had the <code>np.dot(mat1, mat2)</code> function for a while, I think <code>mat1 @ mat2</code> can be a more expressive way of expressing the matrix multiplication operation. One hidden benefit of the <code>@</code> operator: it handles <code>scipy.sparse</code> matrices pretty well!</p>
+<p>Consider the following binary matrix in a dense format:</p>
+<pre><code>In [7]: dense = np.random.binomial(n=1, p=0.1, size=(10, 10))
+
+In [8]: dense
+Out[8]:
+array([[0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+       [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+       [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [1, 0, 1, 0, 1, 1, 0, 0, 0, 0]])
+</code></pre>
+<p>We can convert that matrix to a sparse format:</p>
+<pre><code>In [9]: sparse = csr_matrix(dense)
+
+In [10]: sparse
+Out[10]:
+&lt;10x10 sparse matrix of type '&lt;class 'numpy.int64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;
+</code></pre>
+<p>Let's say now that we want to multiply it against a random matrix. Let's first instantiate the random matrix:</p>
+<pre><code>In [11]: rand = np.random.random(size=(10, 1))
+
+In [12]: rand
+Out[12]:
+array([[ 0.07692164],
+       [ 0.96495678],
+       [ 0.03917639],
+       [ 0.00568423],
+       [ 0.62973733],
+       [ 0.09481768],
+       [ 0.97617109],
+       [ 0.58497563],
+       [ 0.85287145],
+       [ 0.76737415]])
+</code></pre>
+<p>Cool! So, starting with the <code>np.dot()</code> operation...</p>
+<pre><code>In [13]: np.dot(dense, rand)
+Out[13]:
+array([[ 1.54993241],
+       [ 0.        ],
+       [ 0.80655054],
+       [ 0.96495678],
+       [ 0.07692164],
+       [ 0.04486062],
+       [ 0.58497563],
+       [ 0.        ],
+       [ 0.07692164],
+       [ 0.84065304]])
+</code></pre>
+<p>Because <code>np.dot</code> doesn't natively recognize <code>scipy.sparse</code> matrices, when we try to do the matrix multiplication, we get...</p>
+<pre><code>In [14]: np.dot(sparse, rand)
+Out[14]: /Users/ericmjl/anaconda/lib/python3.5/site-packages/scipy/sparse/compressed.py:296: SparseEfficiencyWarning: Comparing sparse matrices using &gt;= and &lt;= is inefficient, using &lt;, &gt;, or !=, instead.
+  "using &lt;, &gt;, or !=, instead.", SparseEfficiencyWarning)
+
+array([[ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;]], dtype=object)
+</code></pre>
+<p>Totally not what we wanted! On the other hand, if we used the <code>@</code> operator...</p>
+<pre><code>In [15]: sparse @ rand
+Out[15]:
+array([[ 1.54993241],
+       [ 0.        ],
+       [ 0.80655054],
+       [ 0.96495678],
+       [ 0.07692164],
+       [ 0.04486062],
+       [ 0.58497563],
+       [ 0.        ],
+       [ 0.07692164],
+       [ 0.84065304]])
+</code></pre>
+<p>Exactly what we wanted!</p>
+<p>The reverse multiplication, in which we take a <code>(10x1)</code> matrix and try to multiply it with a <code>(10x10)</code> matrix, should fail:</p>
+<pre><code>In [16]: np.dot(rand, dense)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+&lt;ipython-input-17-5abc172f5ef1&gt; in &lt;module&gt;()
+----&gt; 1 np.dot(rand, dense)
+
+ValueError: shapes (10,1) and (10,10) not aligned: 1 (dim 1) != 10 (dim 0)
+</code></pre>
+<p>With the <code>scipy.sparse</code> matrix being multiplied in <code>np.dot</code>, however, it doesn't work out to the correct answer...</p>
+<pre><code>In [17]: np.dot(rand, sparse)
+Out[17]: /Users/ericmjl/anaconda/lib/python3.5/site-packages/scipy/sparse/compressed.py:296: SparseEfficiencyWarning: Comparing sparse matrices using &gt;= and &lt;= is inefficient, using &lt;, &gt;, or !=, instead.
+  "using &lt;, &gt;, or !=, instead.", SparseEfficiencyWarning)
+
+array([[ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;],
+       [ &lt;10x10 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 14 stored elements in Compressed Sparse Row format&gt;]], dtype=object)
+</code></pre>
+<p>On the other hand, the <code>@</code> matrix multiplier catches the error perfectly!</p>
+<pre><code>In [18]: rand @ sparse
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+&lt;ipython-input-18-4aa22b6b8f2e&gt; in &lt;module&gt;()
+----&gt; 1 rand @ sparse
+
+/Users/ericmjl/anaconda/lib/python3.5/site-packages/scipy/sparse/base.py in __rmatmul__(self, other)
+    402             raise ValueError("Scalar operands are not allowed, "
+    403                              "use '*' instead")
+--&gt; 404         return self.__rmul__(other)
+    405
+    406     ####################
+
+/Users/ericmjl/anaconda/lib/python3.5/site-packages/scipy/sparse/base.py in __rmul__(self, other)
+    386             except AttributeError:
+    387                 tr = np.asarray(other).transpose()
+--&gt; 388             return (self.transpose() * tr).transpose()
+    389
+    390     #####################################
+
+/Users/ericmjl/anaconda/lib/python3.5/site-packages/scipy/sparse/base.py in __mul__(self, other)
+    353
+    354             if other.shape[0] != self.shape[1]:
+--&gt; 355                 raise ValueError('dimension mismatch')
+    356
+    357             result = self._mul_multivector(np.asarray(other))
+
+ValueError: dimension mismatch
+</code></pre>
+<p>I hope I've provided one more piece of evidence in favour of switching to Python 3!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/7/24/sparse-matrix-multiplication-in-python-3/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2016/7/19/jupyter-lab/">Jupyter Lab</a></h1>
   
   <p class="meta">
@@ -222,30 +405,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/7/16/scipy-2016-hallway-track/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2016/7/14/scipy-2016-tutorials/">SciPy 2016 Tutorials</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2016-07-14
-  </p>
-  <p>And we’re done! Two days of fun, intense, and hopefully mind-expanding tutorials at SciPy 2016.</p>
-<p>I led two sessions of my network analysis workshop. Originally, I was only going to lead one session, and I thought I’d get a niche crowd and a small class. However, it turned out that there was much more interest than expected, and it turned out there was a waitlist, so the tutorial committee chairs (<a href="https://www.linkedin.com/in/vincentjustin">Justin Vincent</a> and <a href="https://github.com/WeatherGod">Ben Root</a>) opened up another slot for the tutorial. This was mostly unexpected because I tended to consider network analysis and network science to be a niche topic in the scientific world.</p>
-<p>On day 1, the crowd was approximately 60+ people, and on day 2, the class was only 20 people. On both days, it was a fun time sharing the content that I’d prepared with everybody there. I think the nature of a small class made it logistically much easier to get through all 6 notebooks. The statistical inference notebook, however, went over the heads of many people today; I think statistical thinking is something that needs to be inculcated over time. I am thinking of leaving statistical thinking out for next year (which might be the final year that I do this tutorial, but I’ll see).</p>
-<p>The feedback from the tutorial crowd was very encouraging, very thoughtful as well! I personally scanned them all and read each one. I spent a bit of time then uploading the positive ones to my personal site, and fiddling around to get a carousel working. They can be found <a href="../../../testimonials/network-analysis-made-simple/">here</a>.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/7/14/scipy-2016-tutorials/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

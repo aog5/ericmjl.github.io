@@ -2,13 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-02-13T00:00:00Z</updated>
+  <updated>2018-02-20T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/">
+    <title type="text">Deep Learning and the Importance of a Good Teacher</title>
+    <id>urn:uuid:4688e245-0c9f-34a6-9768-ac175abdb43a</id>
+    <updated>2018-02-20T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I can’t emphasize this enough - someone who teaches well can really open their student’s minds.&lt;/p&gt;
+&lt;p&gt;On my journey in to deep learning and now graph convolutions, &lt;a href=&quot;../../../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/www.cs.toronto.edu/~duvenaud/&quot;&gt;David Duvenaud&lt;/a&gt; (currently a professor at the University of Toronto) simultaneously taught me, a newcomer to deep learning, the basics of deep learning and the mechanics behind the graph convolutional neural network he and his colleagues had just published. The key insight he passed on to me was that deep learning was nothing more than chaining differentiable functions together. Many times I’d ask him, “so does this mean I can do that operation?”, and the answer would usually be “yeah, why not?”.&lt;/p&gt;
+&lt;p&gt;Knowing this point has made me realize how flexible deep learning really is. Once I got under the hood of what deep learning really was, then I realized that actually, DL is all about chaining together math functions one after another. Best part is, we get to define what those math functions are!&lt;/p&gt;
+&lt;p&gt;Knowing this has also helped me when I read new DL papers. It’s now a lot easier to for me to tell when a research group has come up with something very different from the rest of the pack as opposed to advancing existing methods.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/13/data-scientists-need-to-write-good-apis/">
     <title type="text">Data scientists need to write good APIs</title>
     <id>urn:uuid:f0b881e1-0e2c-322f-8491-acc1e432af0c</id>
@@ -1345,20 +1359,6 @@ conda env update -f environment.yml
 &lt;p&gt;I think one thing preventing adoption of Bayesian inference methods is their flexibility (read: complexity). How does one compose an model with little grounding in statistics?&lt;/p&gt;
 &lt;p&gt;To address this problem, I've started putting together &lt;a href=&quot;https://github.com/ericmjl/bayesian-analysis-recipes&quot;&gt;Jupyter notebooks&lt;/a&gt; showing common problems in the experimental sciences and a sensible default model that one can use for that kind of problem.&lt;/p&gt;
 &lt;p&gt;For me, a recurrent (and very interesting) theme came up. The nature of probabilistic graphical models is such that if we are able to forward-simulate how the data may be generated, then given the data and a loss function, fitting the data is merely a matter of optimization. The core idea behind these notebooks, then, is that there are a small number of &quot;generic&quot; models of how data may be generated that can cover a large proportion of scenarios, particularly in scenarios where we don't have sufficiently good theory to forward-simulate the complex data-generating distribution underlying the data.&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/2/13/bostons-geospatial-data/">
-    <title type="text">Boston's Geospatial Data</title>
-    <id>urn:uuid:01107519-7bae-33f4-8b3c-b0cd4b2532c4</id>
-    <updated>2017-02-13T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/2/13/bostons-geospatial-data/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;I finally did it!&lt;/p&gt;
-&lt;p&gt;The city of Boston recently released their &lt;a href=&quot;http://data.boston.gov/&quot;&gt;data&lt;/a&gt; in the open. I wanted to have an excuse to play with geospatial data, so as a distraction from thesis &amp;amp; proposal writing, I hunkered down for about a workday's worth of time and put together a &lt;a href=&quot;http://github.com/ericmjl/boston-gov-data/&quot;&gt;bokeh app&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In this web app, the end user can select from one of a number of geospatial datasets released, and visualize the distribution of those data points. There's no added metadata right now, but if I get fed up with thesis &amp;amp; proposal writing I might go back and add in metadata hover/tooltips.&lt;/p&gt;
-&lt;p&gt;I hope you have fun cloning the repo and running it!&lt;/p&gt;
 </content>
   </entry>
 </feed>
