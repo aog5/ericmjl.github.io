@@ -17,7 +17,7 @@
     <author>
       <name>Eric J. Ma</name>
     </author>
-    <content type="html">&lt;p&gt;With thanks to &lt;a href=&quot;https://twitter.com/KassnerNora&quot;&gt;@KassnerNora&lt;/a&gt;, &lt;code&gt;nxviz&lt;/code&gt; has a new feature! Now, it is possible to specify edge colours. Previously, this was available in the API but was not working as I had not the time to implement it.&lt;/p&gt;
+    <content type="html">&lt;p&gt;With thanks to &lt;a href=&quot;https://twitter.com/KassnerNora&quot;&gt;@KassnerNora&lt;/a&gt;, &lt;a href=&quot;https://github.com/ericmjl/nxviz&quot;&gt;&lt;code&gt;nxviz&lt;/code&gt;&lt;/a&gt; has a new feature! Now, it is possible to specify the data to use to colour edges. Previously, this was available in the API but was not working as I had not the time to implement it.&lt;/p&gt;
 &lt;p&gt;Now, with &lt;a href=&quot;https://github.com/ericmjl/nxviz/pull/260&quot;&gt;Nora's PR&lt;/a&gt; merged in, users can declare their edges to be coloured by some edge metadata key! In addition to that, Nora included a &lt;code&gt;seaborn&lt;/code&gt; colour palette that may be useful for drawing other edge colours. The API remains a declarative API, giving users an easy way to specify how they want rational graph plots to be made.&lt;/p&gt;
 &lt;p&gt;Thank you for the contribution, Nora!&lt;/p&gt;
 </content>
