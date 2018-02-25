@@ -2,13 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-02-21T00:00:00Z</updated>
+  <updated>2018-02-25T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">
+    <title type="text">Annotating code tests and selectively running tests</title>
+    <id>urn:uuid:dc1a012a-ed8f-3aa5-93ce-33f76f864df4</id>
+    <updated>2018-02-25T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I just learned about a neat trick when using &lt;code&gt;pytest&lt;/code&gt; - the ability to &quot;mark&quot; tests with metadata, and the ability to selectively run groups of marked tests.&lt;/p&gt;
+&lt;p&gt;Here's an example:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pytest&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@pytest.mark.slow&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# annotate it as a &amp;quot;slow&amp;quot; test&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_that_runs_slowly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@pytest.mark.slow&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# annotate test as a &amp;quot;slow&amp;quot; test.&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@pytest.mark.integration&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# annotate test as being an &amp;quot;integration&amp;quot; test&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_that_does_integration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What's really cool here is that I can selectively run slow tests or selectively run integration tests:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;slow&amp;quot;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# only runs &amp;quot;slow&amp;quot; tests&lt;/span&gt;
+$ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;integration&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# only runs &amp;quot;integration&amp;quot; tests&lt;/span&gt;
+$ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# only runs tests that are not &amp;quot;integration&amp;quot; tests.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/21/nxviz-first-pr-merged/">
     <title type="text">nxviz first PR merged!</title>
     <id>urn:uuid:e104d592-b09c-3625-9698-4ec1b009575b</id>
@@ -1342,21 +1370,6 @@ conda env update -f environment.yml
 &lt;p&gt;I find myself having flashes of fear crop up as I observe those who are older than me. They are stuck in between a hard place and a rock. Their skills may be on the wane (in terms of demand). They want to learn new things, but have to continue doing the old things to keep the ship afloat. I can imagine, it feels tough to be in that kind of position! Without the safety net to take a risk and learn something new, they may be stuck in a dying trade. Will I have to face the same fate? Is it avoidable, or even perhaps, surmountable?&lt;/p&gt;
 &lt;p&gt;The even harder part is staying intellectually nimble, and not being stuck in particular ways of thought. Is that an intrinsic property of aging, or not?&lt;/p&gt;
 &lt;p&gt;Just some questions I've been pondering...&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/3/28/thesis/">
-    <title type="text">Thesis</title>
-    <id>urn:uuid:4d271fbc-91f1-3867-9da4-5134e9cfc245</id>
-    <updated>2017-03-28T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/3/28/thesis/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;I've finally turned in a polished draft of my thesis (&lt;a href=&quot;http://ericmjl.github.io/thesis&quot;&gt;HTML&lt;/a&gt; or &lt;a href=&quot;http://www.ericmjl.com/cv/thesis.pdf&quot;&gt;PDF&lt;/a&gt;) to my committee! My thesis topic is on the development of an algorithm to identify reassortant influenza viruses from large sequence databases, and its application to the study of influenza's evolution and ecology.&lt;/p&gt;
-&lt;p&gt;Well, actually, it was last week when I finished it, but I've been doing the job hunt the past week that I've delayed on writing this blog post.&lt;/p&gt;
-&lt;p&gt;Apart from the written summary of the work that I've been doing, I wanted to simultaneously write for PDFs and for the web, so I started assembling a software toolchain that compiles my raw markdown files, converts figures from PDF to JPG, and simultaneously builds the PDF and the HTML versions. A lot of Python packages, including &lt;a href=&quot;https://github.com/mplewis/csvtomd&quot;&gt;&lt;code&gt;csv2md&lt;/code&gt;&lt;/a&gt;, the &lt;a href=&quot;https://github.com/tomduck/pandoc-xnos&quot;&gt;pandoc-xnos&lt;/a&gt; series, and non-Python tools, including ImageMagick (&lt;a href=&quot;https://www.imagemagick.org/script/index.php&quot;&gt;https://www.imagemagick.org/script/index.php&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Yes, I know I could have done most of this with Authorea, but being me, building things and doing reverse engineering is also kind of fun! (Especially for learning purposes.)&lt;/p&gt;
-&lt;p&gt;I hope you enjoy my thesis!&lt;/p&gt;
 </content>
   </entry>
 </feed>
