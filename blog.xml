@@ -2,13 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-02-25T00:00:00Z</updated>
+  <updated>2018-02-26T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/2/26/joy-from-teaching/">
+    <title type="text">Joy from teaching</title>
+    <id>urn:uuid:248af1c4-691d-3231-b3e6-430c849db7c0</id>
+    <updated>2018-02-26T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/2/26/joy-from-teaching/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;It always brings me joy to see others benefit from what I can offer.&lt;/p&gt;
+&lt;p&gt;Thanks for &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:6373939725656563713&quot;&gt;sharing the fruits of your journey&lt;/a&gt; on LinkedIn, Umar!&lt;/p&gt;
+&lt;p&gt;Also a big thanks to the others who have finished the course! I hope you have enjoyed the learning journey, and were able to find problems to apply your newly-gained knowledge!&lt;/p&gt;
+&lt;p&gt;With big thanks to &lt;a href=&quot;https://www.datacamp.com/&quot;&gt;DataCamp&lt;/a&gt; as well, for the development of their platform, enabling us to do teaching even outside of the academy! (Special shout-out to Hugo Bowne-Anderson and Yashas Roy, with whom I've personally partnered with to make the content go live.)&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">
     <title type="text">Annotating code tests and selectively running tests</title>
     <id>urn:uuid:dc1a012a-ed8f-3aa5-93ce-33f76f864df4</id>
@@ -1356,20 +1370,6 @@ conda env update -f environment.yml
 &lt;blockquote&gt;&lt;p&gt;... forgetting what lies behind and straining forward to what lies ahead... (&lt;a href=&quot;https://www.bible.com/111/PHP.3.13-14&quot;&gt;Philippians 3:13-14&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Laurels, yes, I have acquired indeed. MIT is no slouchy place to graduate from, and it's a privilege to have this degree. I've had the privilege and opportunity to remake my skillset while having fun along the way. But it's no time to rest on my laurels. It's time to start serving the world through the skillset I have been given. Onward!&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/4/7/staying-nimble/">
-    <title type="text">Staying Nimble</title>
-    <id>urn:uuid:0effa933-9e9b-351f-9588-6fdb19783766</id>
-    <updated>2017-04-07T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/4/7/staying-nimble/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;As I wrap up grad school, one thought recurrently comes to mind: as we grow older, do we intrinsically lose mental agility, nimbleness and ability to learn? Or is it because of external factors that cause one to become less adventurous, less curious, and hence, less able to learn new things?&lt;/p&gt;
-&lt;p&gt;I find myself having flashes of fear crop up as I observe those who are older than me. They are stuck in between a hard place and a rock. Their skills may be on the wane (in terms of demand). They want to learn new things, but have to continue doing the old things to keep the ship afloat. I can imagine, it feels tough to be in that kind of position! Without the safety net to take a risk and learn something new, they may be stuck in a dying trade. Will I have to face the same fate? Is it avoidable, or even perhaps, surmountable?&lt;/p&gt;
-&lt;p&gt;The even harder part is staying intellectually nimble, and not being stuck in particular ways of thought. Is that an intrinsic property of aging, or not?&lt;/p&gt;
-&lt;p&gt;Just some questions I've been pondering...&lt;/p&gt;
 </content>
   </entry>
 </feed>
