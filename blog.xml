@@ -2,13 +2,79 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-02-28T00:00:00Z</updated>
+  <updated>2018-03-30T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/">
+    <title type="text">Consolidate your scripts using click</title>
+    <id>urn:uuid:0841ba18-0b2f-3822-91b4-006173780d62</id>
+    <updated>2018-03-30T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;&lt;p&gt;&lt;code&gt;click&lt;/code&gt; is amazing! It's a Python package that allows us to add a command-line interface (CLI) to our Python scripts easily. This blog post is a data scientist-oriented post on how we can use &lt;code&gt;click&lt;/code&gt; to build useful tools for ourselves. In this blog post, I want to focus on how we can better organize our scripts.&lt;/p&gt;
+&lt;p&gt;I have found myself sometimes writing custom scripts to deal with custom data transforms. Having them refactored out into a library of modular functions can really help with maintenance. However, I still end up with multiple scripts that might not have a naturally logical organization... except for the fact that they are scripts that I run from time to time! Rather than have them scattered in multiple places, why not have them put together into a single &lt;code&gt;.py&lt;/code&gt; file, with options that are callable from the command line instead?&lt;/p&gt;
+&lt;h2 id=&quot;template&quot;&gt;Template&lt;/h2&gt;&lt;p&gt;Here's a template for organizing all those messy scripts using  &lt;code&gt;click&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;click&lt;/span&gt;
+
+
+&lt;span class=&quot;nd&quot;&gt;@click.group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+
+&lt;span class=&quot;nd&quot;&gt;@main.command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;script1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    Makes stuff happen.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# do stuff that was originally in script 1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script 1 was run!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# click.echo is recommended by the click authors.&lt;/span&gt;
+
+
+&lt;span class=&quot;nd&quot;&gt;@main.command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;script2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Makes more stuff happen.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# do stuff that was originally in script 2.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script 2 was run!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# we can run print instead of click.echo as well!&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;vm&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cli&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;how-to-use&quot;&gt;How to use&lt;/h2&gt;&lt;p&gt;Let's call this new meta-script &lt;code&gt;jobs.py&lt;/code&gt;, and make it executable.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ chmod +x jobs.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To execute it at the command line, we now a help command for free:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./jobs.py --help
+Usage: jobs.py &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; COMMAND &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ARGS&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  script1  Makes stuff happen.
+  script2  Makes more stuff happen.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can also use just one script with varying commands to control the execution of what was originally two different &lt;code&gt;.py&lt;/code&gt; files.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./jobs.py script1
+script &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; was run!
+$ ./jobs.py script2
+script &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; was run!
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of versioning multiple &lt;code&gt;.py&lt;/code&gt; files, we now only have to keep track of one file where all non-standard custom stuff goes!&lt;/p&gt;
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;&lt;p&gt;Here's what's going on under the hood.&lt;/p&gt;
+&lt;p&gt;With the decorator &lt;code&gt;@click.group()&lt;/code&gt;, we have exposed the &lt;code&gt;main()&lt;/code&gt; function from the command line as a &quot;group&quot; of commands that are callable from the command line. What this does is then &quot;wrap&quot; the &lt;code&gt;main()&lt;/code&gt; function (somehow), such that now it can be used to decorate another function (in our case, &lt;code&gt;script1&lt;/code&gt; and &lt;code&gt;script2&lt;/code&gt;) using the decorator syntax &lt;code&gt;@main.command()&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Consolidate disparate Python scripts into a single &lt;code&gt;.py&lt;/code&gt;  file, wrapping them inside a callable function.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;click&lt;/code&gt; to expose them to the end-user (yourself, or others) at the command line.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/">
     <title type="text">Lessons learned and reinforced from writing my own deep learning package</title>
     <id>urn:uuid:103e4375-1250-3218-9c0f-5ca1c721fc1e</id>
@@ -1332,30 +1398,6 @@ conda env update -f environment.yml
     </author>
     <content type="html">&lt;p&gt;It is done! I have defended my doctoral thesis, supervised by Prof. Jonathan A. Runstadler, advised by Prof. Mark Bathe and Prof. Jukka-Pekka Onnela, conducted as a student in the Department of Biological Engineering at MIT.&lt;/p&gt;
 &lt;p&gt;Looking back, it's been an amazingly fun journey, and I'll be updating this space with a more detailed account of the thesis defence process. Stay tuned!&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/4/24/thesis-defence/">
-    <title type="text">Thesis Defence!</title>
-    <id>urn:uuid:a6f99998-8ca5-3fe4-bbc4-ec2413e0b713</id>
-    <updated>2017-04-24T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/4/24/thesis-defence/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;My thesis defence announcement has been made to the department!&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Date:&lt;/strong&gt;  Thursday, April 27th, 2017&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Time:&lt;/strong&gt;  2:00 PM&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Location:&lt;/strong&gt;  56-614&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;b&gt;Identification of Reassortant Influenza Viruses at Scale - Algorithm and Applications&lt;/b&gt;&lt;/center&gt;&lt;center&gt;by&lt;/center&gt;&lt;center&gt;Eric Ma&lt;/center&gt;&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Reassortment is a reticulate evolutionary process that results in genome shuffling; the most prominent virus known to reassort is the influenza A virus. Methods to identify reassortant influenza viruses do not scale well beyond hundreds of isolates at a time, because they rely on phylogenetic reconstruction, a computationally expensive method. This thus hampers our ability to test systematically whether reassortment is associated with host switching events. In this thesis, I use phylogenetic heuristics to develop a new reassortment detection algorithm capable of finding reassortant viruses in tens of thousands viral isolates. Together with colleagues, we then use the algorithm to test whether reassortment events are over-represented in host switching events and whether reassortment is an alternative 'transmission strategy' for viral persistence.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Committee&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Jonathan Runstadler, Assistant Professor of Biological Engineering and Comparative Medicine, MIT (Advisor)&lt;/li&gt;
-&lt;li&gt;Mark Bathe, Associate Professor of Biological Engineering, MIT (Committee Chair)&lt;/li&gt;
-&lt;li&gt;Jukka-Pekka Onnela, Assistant Professor of Biostatistics, Harvard School of Public Health&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>

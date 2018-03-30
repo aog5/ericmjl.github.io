@@ -95,6 +95,39 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2016/3/22/webinar/">Webinar</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-03-22
+  </p>
+  <p>Today, I gave a webinar to the IRD and ViPR technical and advisory board meeting. There were a number of challenges to giving a webinar that I want to reflect on here, as a note to my future self and others who may read this entry. In contrast to my previous entry, I'm choosing to write this down fairly soon after doing the presentation, so that I can remember the details clearly.</p>
+<p>In the lead-up to the webinar, I felt pretty well-prepared. I had done at least 3-4 rounds of narration on my own, so I was very familiar with the content, transitions, and flow. I also had a set of slides prepared for the Q&amp;A session at the end. What I did not expect, but now have come to learn about, was the challenge of interacting with an audience that I can only hear but not see.</p>
+<p>Visual communication is important. During the webinar, because I could not see my audience, I made the mistake of perceiving audience questions as being communicated in an aggressive fashion, rather than in a neutral or friendly fashion. I went into a defensive posture, and tended to respond to questions with a lot of rambling detail rather than answering the question directly. I think this was a weakness in my presentation this time round. Jon's feedback at the end also also corroborated this.</p>
+<p>I also made the mistake of not being thoroughly prepared for the Q&amp;A. The questions that were asked were questions that I had dealt with about 1.5 years ago, when I was in an earlier stage of the work I was presenting. However, because my focus now has shifted to other work, I was not prepared to tackle those questions again. I think at a bigger level, I didn't do the necessary "mental model" preparation for the talk, in which I should have rehearsed multiple "what-if" scenarios. (I've been reading Charles Duhigg's <a href="http://www.amazon.com/Smarter-Faster-Better-Productive-Business-ebook/dp/B00Z3FRYB0">Smarter Faster Better: The Secrets of Being Productive in Life and Business</a>, and the 'construction of mental models' is a core concept illustrated in there.)</p>
+<p>To get around this, I think the next time I do a webinar, I should make the following preparations:</p>
+<ul>
+<li>Construct a mental model of the presentation as being a "dialogue", rather than a "defence". (I think it applies to all research presentations, really.)</li>
+<li>A pen &amp; paper to jot down the question as it's being asked. It's a tool to slow my mind down, to prevent myself from making snap-judgment assumptions about what is being asked.</li>
+<li>Be prepared to paraphrase the question back to the questioner prior to responding.</li>
+<li>Prepare for a broad spectrum of questions to be answered, not just those that were recently asked in my context.</li>
+<li>Recognize that it's totally okay to have problems picked out during a presentation, even one that is more of a “sales-pitch” type.</li>
+</ul>
+<p>There's always a first, and this first webinar was definitely a big educational experience for me. Though I think I didn't perform top-notch in the Q&amp;A portion, I hope I still left a positive impression on the IRD/ViPR team.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/3/22/webinar/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2016/3/21/paper-revisions/">Paper revisions</a></h1>
   
   <p class="meta">
@@ -206,48 +239,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/3/15/tests-enabled-science/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2016/3/13/r-for-statistics-python-for-data-processing/">R for Statistics, Python for Data Processing?</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2016-03-13
-  </p>
-  <p>I’ve heard this refrain many times. However, the distinction never really made sense to me.</p>
-<p>R and Python are merely programming languages. You don’t have to do stats in R and data processing in Python. You can do data processing in R, and statistics in Python.</p>
-<p><em>What is R?</em> It’s a programming language designed by statisticians, and so there’s tons of one-liner functions to do stats easily.</p>
-<p><em>What is Python?</em> It’s a programming language that’s really well-designed for general purpose computing, so it’s really expressive, and others can build tools on top of it.</p>
-<p><em>What is data processing?</em> I don’t think I can do justice to its definition here, but I’ll offer my own simple take: making data usable for other programming functions.</p>
-<p><em>What is statistics?</em> I think statistics, at its core, is really about describing/summarizing data, and figuring out how probable our data came from some model of randomness. That’s all it is, and it’s all about playing with numbers, really. There’s nothing more than that. <em>Technically, you can do statistics in any programming language, because technically, all programming languages deal with numbers...</em></p>
-<p>Which brings me to the point I want to make - as long as you have data, and you’re doing data science, you <em>technically</em> can use any language for it; the differences are not in the language itself, but in the ecosystem, ease-of-use, and other aspects.</p>
-<p>Other bloggers have written about <a href="http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">the benefits</a> of using a single language, which include:</p>
-<p><ol>
-    <li>No cognitive costs associated with syntax switching (the biggest reason for me).</li>
-    <li>No need to worry about interfacing between languages.</li>
-    <li>No need to pepper file I/O calls throughout the code for each portion of the project that uses its own language.</li>
-</ol>
-So how do you choose? Here’s my criteria (beyond simply Python and R):</p>
-<p><ol>
-    <li>What is the larger context of your project? Do you have colleagues you are interfacing with? What languages are they using?</li>
-    <li>Are there packages that allow you to do stuff related to your project in a quick-and-dirty fashion?</li>
-    <li>Is the language able to use other language’s packages?</li>
-    <li>How mature is the package ecosystem for your language? Do you foresee using other packages as your project expands?</li>
-</ol>
-So I hope the point is clear: it isn’t so much that “R is for statistics and Python is for data processing”. I think commoner programmers have to get that dogma out of their heads. It’s simply that R was designed by statisticians for doing statistics, while an ecosystem of Python tools sprung up to do data processing. Nowadays, as the R-blogger <a href="http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">mentioned</a>, Python can also do a ton of stuff that R can do, because packages are being written that replicate R package functionality and more, such as how <a href="http://www.continuum.io">Continuum Analytics</a> (awesome company!) wrote the <a href="http://bokeh.pydata.org">bokeh</a> package that allows us Pythonistas to deploy web-based data visualizations. Likewise, R can do a ton of stuff that used to be the domain of Python, and it's getting a lot of corporate support from Microsoft. So choose according to your needs.</p>
-<p>After all, as Wes McKinney <a href="http://wesmckinney.com/blog/the-problem-with-the-data-science-language-wars/">wrote</a>, the real problem isn't R vs. Python. It's the ability to move data seamlessly.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/3/13/r-for-statistics-python-for-data-processing/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

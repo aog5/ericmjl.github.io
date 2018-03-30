@@ -95,6 +95,34 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2018/1/18/pymc3-docs-weibull-patches-merged/">PyMC3 docs + Weibull patches merged!</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-01-18
+  </p>
+  <p>I recently had a few PRs merged into the PyMC3 codebase. Really happy about it, and just like my previous bug fix, I thought I'd share a bit about how those PRs came about.</p>
+<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2789">first PR</a> was an update to the docs on when to specify precision and when to specify standard deviation. They're related, so only one has to be specified, but I sometimes am sloppy when reading the docs and didn't pick up on that. Thus, I added a few lines to make sure this was crystal clear to sloppy readers like me.</p>
+<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2799">next PR</a> was an update to the Mixture model docs, in which I added an example of the new API for specifying components of mixture models. It previously wasn't clear how to do this, as there were no examples provided, so I put in a documentation PR specifying examples.</p>
+<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2804">final PR</a> was a patch to the Weibull distribution. I wanted to play around with trying mixture Weibulls at work, but mixture Weibulls wouldn't work because it didn't have a mode specified. I checked on Wikipedia, and found that Weibull's mode is conditional on the value of its parameters, and thus put in a PR to make this happen. <a href="https://github.com/ericmjl/bayesian-analysis-recipes/blob/master/notebooks/mixture-model.ipynb">Trying it out on some simulated/toy data</a>, it worked! Thus, the devs allowed it to be merged.</p>
+<p>A few lessons I've learned along the way:</p>
+<p><strong>(1) Docs are an awesome place to start.</strong> In fact, I made a few formatting mistakes in my first and second PRs that gave an opportunity for another guy to fix! Nothing is too small to be made as a contribution. FWIW, my first contribution to open source software were documentation fixes for <code>matplotlib</code>, and that was a superb learning journey!</p>
+<p><strong>(2) Friendly maintainers are crucial.</strong> The PyMC dev team can basically be described as, "generally super nice!" From the online and in-person interactions I've had with them, there's little in the way of egos, they're always learning, always being generally helpful. If they weren't that way, I very likely would have second thoughts trying putting in a PR there.</p>
+<p><strong>(3) Open source lets me fix bugs I find.</strong> This lets me work at the pace that I need to, without having to wait for commercial vendors to provide update patches. If the patch that I find turns out to be useful for others, then the work I did can possibly save a ton of people's time as well. Win-win scenario!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/1/18/pymc3-docs-weibull-patches-merged/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2018/1/10/offline-time/">Offline Time</a></h1>
   
   <p class="meta">
@@ -213,38 +241,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/11/30/pydata-nyc-2017-recap/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2017/11/16/bayesian-learning-and-overfitting/">Bayesian Learning and Overfitting</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-11-16
-  </p>
-  <p>Yesterday, after I did my Boston Bayesians dry run talk, there was a point raised that I had only heard of once before: Bayesian learning methods don't overfit. Which means we're allowed to use all the data on hand. The point holds for simple Bayesian networks, and for more complicated deep neural nets.</p>
-<p>Though I believe it, I wasn't 100% convinced of this myself, so I decided to check it up. I managed to get my hands on Radford Neal's book, Bayesian Learning for Neural Networks, and found the following quotable paragraphs:</p>
-<blockquote class="blockquote blockquote-success">
-<p>It is a common belief, however, that restricting the complexity of the models used for such tasks is a good thing, not just because of the obvious computational savings from using a simple model, but also because it is felt that too complex a model will overfit the training data, and perform poorly when applied to new cases. This belief is certainly justified if the model parameters are estimated by maximum likelihood. I will argue here that concern about overfitting is not a good reason to limit complexity in a Bayesian context.</p>
-</blockquote><p>A few paragraphs later, after explaining the frequentist procedure:</p>
-<blockquote class="blockquote">
-<p>From a Bayesian perspective, adjusting the complexity of the model based on the amount of training data makes no sense. A Bayesian defines a model, selects a prior, collects data, computes the posterior, and then makes predictions. There is no provision in the Bayesian framework for changing the model or the prior depending on how much data was collected. If the model and prior are correct for a thousand observations, they are correct for ten observations as well (though the impact of using an incorrect prior might be more serious with fewer observations). In practice, we might sometimes switch to a simpler model if it turns out that we have little data, and we feel that we will consequently derive little benefit from using a complex, computationally expensive model, but this would be a concession to practicality, rather than a theoretically desirable procedure.</p>
-</blockquote><p>Finally, in the following section after describing how neural networks are built:</p>
-<blockquote class="blockquote">
-<p>In a Bayesian model of this type, the role of the hyperparameters controlling the priors for weights is roughly analogous to the role of a weight decay constant in conventional training. With Bayesian training, values for these hyperparameters (more precisely, a distribution of values) can be found without the need for a validation set.</p>
-</blockquote><p>This seems to dovetail well with the following convoluted intuition that I've had: <strong>if I fit a Bayesian model on the "training" set of the data, then update it with the "test" set, it's equivalent to just training with the whole dataset. With wide priors, if I fit with a smaller dataset, my posterior distribution will be wider than if I fit with the entire dataset. So... where possible, just train with the entire dataset.</strong> That said, I've not had sufficient grounding in Bayesian stats (after all, still a newcomer) to justify this.</p>
-<p>I certainly have more reading/learning to do here. Looks like something neat to explore in the short-term.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/11/16/bayesian-learning-and-overfitting/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

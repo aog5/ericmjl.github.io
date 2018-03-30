@@ -14,7 +14,7 @@
     </style>
 
     <!-- Syntax Highlighter. Use both pygments and hl.js. -->
-    <link rel="stylesheet" href="../static/pygments.css">
+    <link rel="stylesheet" href="../../../../../static/pygments.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="/static/css/custom.css">
 </head>
 
-<title>Blog - Eric J. Ma's Personal Site</title>
+<title>Consolidate your scripts using click - Eric J. Ma's Personal Site</title>
 <body class="body">
     <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#local-links" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,12 +90,11 @@
     <div class="container">
         
   
-    
   <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
   
-    <h1><a href="../blog/2018/3/30/consolidate-your-scripts-using-click/">Consolidate your scripts using click</a></h1>
+    <h1>Consolidate your scripts using click</h1>
   
   <p class="meta">
     written by
@@ -163,136 +162,23 @@ script <span class="m">2</span> was run!
 
   </div>
 
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/3/30/consolidate-your-scripts-using-click/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/">Lessons learned and reinforced from writing my own deep learning package</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-28
-  </p>
-  <p>At work, I’ve been rolling my own deep learning package to experiment with graph convolutional neural networks. I did this because in graph-centric deep learning, an idea I picked up from this paper, the inputs, convolution kernels, and much more, are being actively developed, and the standard APIs don’t fit with this kind of data.</p>
-<p>Here’s lessons I learned (and reinforced) while doing this.</p>
-<h2 id="autograd-is-an-amazing-package"><code>autograd</code> is an amazing package</h2><p>I am using <code>autograd</code> to write my neural networks. <code>autograd</code> provides a way to automatically differentiate <code>numpy</code> code. As long as I write the forward computation up to the loss function, <code>autograd</code> will be able to differentiate the loss function w.r.t. all of the parameters used, thus providing the direction to move parameters to minimize the loss function.</p>
-<h2 id="deep-learning-is-nothing-more-than-chaining-elementary-differentiable-functions">Deep learning is nothing more than chaining elementary differentiable functions</h2><p>Linear regression is nothing more than a dot product of features with weights and adding bias terms. Logistic regression just chains the logistic function on top of that. Anything deeper than that is what we might call a neural network.</p>
-<p>One interesting thing that I've begun to ponder is the shape of the loss function, and how it changes when I change model architecture, activation functions, and more. I can't speak intelligently about it right now, but from observing the training performance live (I update a plot of predictions vs. actual values at the end of <code>x</code> training epochs), different combinations of activation functions seem to cause different behaviours of the outputs, and there's no first-principles reason why that I can think of. All-told, pretty interesting :).</p>
-<h2 id="defining-a-good-api-is-hard-work">Defining a good API is hard work</h2><p>There are design choices that go into the API design. I first off wanted to build something familiar, so I chose to emulate the functional API of Keras and PyTorch and Chainer. I also wanted composability, in which I can define modules of layers and chain them together, so I opted to use Python objects and to take advantage of their <code>__call__</code> method to achieve both goals. At the same time, <code>autograd</code> imposes a constraint in that I need to have functions differentiable with respect to their first argument, an array of parameters. Thus, I had to make sure the weights and biases are made transparently available for <code>autograd</code> to differentiate. As a positive side effect, it means I can actually inspect the parameters dictionary quite transparently.</p>
-<h2 id="optimizing-for-speed-is-a-very-hard-thing">Optimizing for speed is a very hard thing</h2><p>Even though I'm doing my best already with matrix math (and hopefully getting better at mastering 3-dimensional and higher matrix algebra), in order to keep my API clean and compatible with <code>autograd</code> (meaning no sparse arrays), I have opted to use lists of <code>numpy</code> arrays.</p>
-<h2 id="graph-convolutions-have-a-connection-to-network-propagation">Graph convolutions have a connection to network propagation</h2><p>I will probably explore this a bit more deeply in another blog post, but yes, as I explore the math involved in doing graph convolutions, I'm noticing that there's a deep connection there. The short story is basically "convolutions propagate information across nodes" in almost exactly the same way as "network propagation methods share information across nodes", through the use of a kernel defined by the adjacency matrix of a graph.</p>
-<p>Ok, that's a lot of jargon, but I promise I will explore this topic at a later time.</p>
-<h2 id="open-sourcing">Open Sourcing</h2><p>I'm an avid open source fan. Lots of my work builds on it. However, because this "neural networks on graphs" work is developed on company time and for company use, this will very likely be the first software project that I send to Legal to evaluate whether I can open source/publish it or not -- I'll naturally have to make my strongest case for open sourcing the code base (e.g. ensuring no competitive intelligence is leaked), but eventually will still have to defer to them for a final decision.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/2/26/joy-from-teaching/">Joy from teaching</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-26
-  </p>
-  <p>It always brings me joy to see others benefit from what I can offer.</p>
-<p>Thanks for <a href="https://www.linkedin.com/feed/update/urn:li:activity:6373939725656563713">sharing the fruits of your journey</a> on LinkedIn, Umar!</p>
-<p>Also a big thanks to the others who have finished the course! I hope you have enjoyed the learning journey, and were able to find problems to apply your newly-gained knowledge!</p>
-<p>With big thanks to <a href="https://www.datacamp.com/">DataCamp</a> as well, for the development of their platform, enabling us to do teaching even outside of the academy! (Special shout-out to Hugo Bowne-Anderson and Yashas Roy, with whom I've personally partnered with to make the content go live.)</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/26/joy-from-teaching/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">Annotating code tests and selectively running tests</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-25
-  </p>
-  <p>I just learned about a neat trick when using <code>pytest</code> - the ability to "mark" tests with metadata, and the ability to selectively run groups of marked tests.</p>
-<p>Here's an example:</p>
-<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="nd">@pytest.mark.slow</span>  <span class="c1"># annotate it as a &quot;slow&quot; test</span>
-<span class="k">def</span> <span class="nf">test_that_runs_slowly</span><span class="p">():</span>
-    <span class="o">....</span>
-
-<span class="nd">@pytest.mark.slow</span>  <span class="c1"># annotate test as a &quot;slow&quot; test.</span>
-<span class="nd">@pytest.mark.integration</span>  <span class="c1"># annotate test as being an &quot;integration&quot; test</span>
-<span class="k">def</span> <span class="nf">test_that_does_integration</span><span class="p">():</span>
-    <span class="o">....</span>
-</pre></div>
-<p>What's really cool here is that I can selectively run slow tests or selectively run integration tests:</p>
-<div class="hll"><pre><span></span>$ py.test -m <span class="s2">&quot;slow&quot;</span>   <span class="c1"># only runs &quot;slow&quot; tests</span>
-$ py.test -m <span class="s2">&quot;integration&quot;</span>  <span class="c1"># only runs &quot;integration&quot; tests</span>
-$ py.test -m <span class="s2">&quot;not integration&quot;</span>  <span class="c1"># only runs tests that are not &quot;integration&quot; tests.</span>
-</pre></div>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/2/21/nxviz-first-pr-merged/">nxviz first PR merged!</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-21
-  </p>
-  <p>With thanks to <a href="https://twitter.com/KassnerNora">@KassnerNora</a>, <a href="https://github.com/ericmjl/nxviz"><code>nxviz</code></a> has a new feature! Now, it is possible to specify the data to use to colour edges. Previously, this was available in the API but was not working as I had not the time to implement it.</p>
-<p>Now, with <a href="https://github.com/ericmjl/nxviz/pull/260">Nora's PR</a> merged in, users can declare their edges to be coloured by some edge metadata key! In addition to that, Nora included a <code>seaborn</code> colour palette that may be useful for drawing other edge colours. The API remains a declarative API, giving users an easy way to specify how they want rational graph plots to be made.</p>
-<p>Thank you for the contribution, Nora!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/21/nxviz-first-pr-merged/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-
-  
-  <div class="pagination">
-    
-      <span class="disabled">&laquo; Previous</span>
-    
-    | 1 |
-    
-      <a href="../blog/page/2/">Next &raquo;</a>
-    
-  </div>
-
+  <a name="disqus"></a>
+  <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/consolidate-your-scripts-using-click"; this.page.url = "http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//ericmjl.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
 
     </div>
 
