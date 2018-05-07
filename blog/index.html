@@ -95,6 +95,31 @@
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
   
+    <h1><a href="../blog/2018/5/6/model-baselines-are-important/">Model Baselines Are Important</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-05-06
+  </p>
+  <p>For any problem that we think is machine learnable, having a sane baseline is really important. It is even more important to establish them early.</p>
+<p>Today at ODSC, I had a chance to meet both Andreas Mueller and Randy Olson. Andreas leads <a href="http://scikit-learn.org/stable/"><code>scikit-learn</code></a> development, while Randy was the lead developer of <a href="https://github.com/EpistasisLab/tpot">TPOT</a>, an AutoML tool. To both of them, I told a variation of the following story:</p>
+<p>I had spent about 1.5 months building and testing a graph convolutions neural network model to predict RNA cleavage by an enzyme. I was suffering from a generalization problem - this model class would never generalize beyond the training samples for my problem on hand, even though I saw the same model class perform admirably well for small molecules and proteins.</p>
+<p>Together with an engineer at NIBR, we brainstormed a baseline with some simple features, and threw a random forest model at it. Three minutes later, after implementing everything, we had a model that generalized and outperformed my implementation of graph CNNs. Three days later, we had an AutoML (TPOT) model that beat the random forest. After further discussion, we realize then that the work that we did is sufficiently publishable even without the fancy graph CNNs.</p>
+<p>I think there’s a lesson in establishing baselines and MVPs early on!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../blog/2018/5/6/model-baselines-are-important/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../static/pygments.css">
+  <div>
+  
     <h1><a href="../blog/2018/3/30/consolidate-your-scripts-using-click/">Consolidate your scripts using click</a></h1>
   
   <p class="meta">
@@ -256,29 +281,6 @@ $ py.test -m <span class="s2">&quot;not integration&quot;</span>  <span class="c
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/2/21/nxviz-first-pr-merged/">nxviz first PR merged!</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-21
-  </p>
-  <p>With thanks to <a href="https://twitter.com/KassnerNora">@KassnerNora</a>, <a href="https://github.com/ericmjl/nxviz"><code>nxviz</code></a> has a new feature! Now, it is possible to specify the data to use to colour edges. Previously, this was available in the API but was not working as I had not the time to implement it.</p>
-<p>Now, with <a href="https://github.com/ericmjl/nxviz/pull/260">Nora's PR</a> merged in, users can declare their edges to be coloured by some edge metadata key! In addition to that, Nora included a <code>seaborn</code> colour palette that may be useful for drawing other edge colours. The API remains a declarative API, giving users an easy way to specify how they want rational graph plots to be made.</p>
-<p>Thank you for the contribution, Nora!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/2/21/nxviz-first-pr-merged/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

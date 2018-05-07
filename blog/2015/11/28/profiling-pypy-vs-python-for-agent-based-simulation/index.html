@@ -181,7 +181,8 @@ My CPython environment is managed by <code>conda</code>. (Highly recommended! Do
 <td style="text-align: left;">1.48</td>
 <td style="text-align: left;">1.45</td>
 </tr>
-</tbody></table><p>As we can see, PyPy wins when the number of iterations is large.</p>
+</tbody>
+</table><p>As we can see, PyPy wins when the number of iterations is large.</p>
 <h3 id="statistical-draws">Statistical Draws</h3><p>I use statistical Bernoulli trials (biased coin flips) extensively in the simulation. Yet, one thing that is conspicuously unavialable to PyPy users (in an easily installable format) is the scientific Python stack. Most of that boils down to <code>numpy</code>. Rather than fiddle with trying to get <code>numpy</code>, <code>scipy</code> and other packages installed, I re-implemented my own <code>bernoulli</code> function.
     ```python
     from random import random</p>
@@ -262,7 +263,8 @@ print(end - start)
 <td style="text-align: center;">0.00410</td>
 <td style="text-align: center;">0.00387</td>
 </tr>
-</tbody></table><p>As we can see, <code>scipy</code> is quite optimized, and outperforms at lower number of statistical draws. Things only become better for PyPy as the number of draws increases.</p>
+</tbody>
+</table><p>As we can see, <code>scipy</code> is quite optimized, and outperforms at lower number of statistical draws. Things only become better for PyPy as the number of draws increases.</p>
 <h3 id="summary">Summary</h3><p>Some things that I've learned from this exercise:</p>
 <ol>
 <li>For pure-Python code, PyPy can serve as a drop-in replacement for CPython.</li>

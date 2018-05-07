@@ -2,13 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-03-30T00:00:00Z</updated>
+  <updated>2018-05-06T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/5/6/model-baselines-are-important/">
+    <title type="text">Model Baselines Are Important</title>
+    <id>urn:uuid:533ba946-2490-3a75-8193-8042caa32e4c</id>
+    <updated>2018-05-06T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/5/6/model-baselines-are-important/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;For any problem that we think is machine learnable, having a sane baseline is really important. It is even more important to establish them early.&lt;/p&gt;
+&lt;p&gt;Today at ODSC, I had a chance to meet both Andreas Mueller and Randy Olson. Andreas leads &lt;a href=&quot;http://scikit-learn.org/stable/&quot;&gt;&lt;code&gt;scikit-learn&lt;/code&gt;&lt;/a&gt; development, while Randy was the lead developer of &lt;a href=&quot;https://github.com/EpistasisLab/tpot&quot;&gt;TPOT&lt;/a&gt;, an AutoML tool. To both of them, I told a variation of the following story:&lt;/p&gt;
+&lt;p&gt;I had spent about 1.5 months building and testing a graph convolutions neural network model to predict RNA cleavage by an enzyme. I was suffering from a generalization problem - this model class would never generalize beyond the training samples for my problem on hand, even though I saw the same model class perform admirably well for small molecules and proteins.&lt;/p&gt;
+&lt;p&gt;Together with an engineer at NIBR, we brainstormed a baseline with some simple features, and threw a random forest model at it. Three minutes later, after implementing everything, we had a model that generalized and outperformed my implementation of graph CNNs. Three days later, we had an AutoML (TPOT) model that beat the random forest. After further discussion, we realize then that the work that we did is sufficiently publishable even without the fancy graph CNNs.&lt;/p&gt;
+&lt;p&gt;I think there’s a lesson in establishing baselines and MVPs early on!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/">
     <title type="text">Consolidate your scripts using click</title>
     <id>urn:uuid:0841ba18-0b2f-3822-91b4-006173780d62</id>
@@ -1386,18 +1401,6 @@ conda env update -f environment.yml
 &lt;p&gt;The key idea here is that I download only the relevant YAML file, export it as a generic &lt;code&gt;environment.yml&lt;/code&gt; file, and then run the &lt;code&gt;conda env update&lt;/code&gt; command on it to keep the environment up-to-date.&lt;/p&gt;
 &lt;p&gt;Now, here's the magic. I hacked Christine Doig's &lt;code&gt;conda-auto-env&lt;/code&gt; script  to execute &lt;code&gt;update_env.sh&lt;/code&gt;, and then auto-activate the environment.&lt;/p&gt;
 &lt;p&gt;If my environment needs change, I can always update the environment YAML spec file (e.g. &lt;code&gt;lektor.yml&lt;/code&gt;, or &lt;code&gt;bayesian.yml&lt;/code&gt;) in the central repository, and use that to automatically update individual project environments.&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/4/28/defended/">
-    <title type="text">Defended!</title>
-    <id>urn:uuid:3e537c85-bdf2-3a78-94ee-7b0a49170d55</id>
-    <updated>2017-04-28T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/4/28/defended/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;It is done! I have defended my doctoral thesis, supervised by Prof. Jonathan A. Runstadler, advised by Prof. Mark Bathe and Prof. Jukka-Pekka Onnela, conducted as a student in the Department of Biological Engineering at MIT.&lt;/p&gt;
-&lt;p&gt;Looking back, it's been an amazingly fun journey, and I'll be updating this space with a more detailed account of the thesis defence process. Stay tuned!&lt;/p&gt;
 </content>
   </entry>
 </feed>
