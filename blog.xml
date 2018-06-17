@@ -2,13 +2,117 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-06-05T00:00:00Z</updated>
+  <updated>2018-06-17T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.2">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/6/17/git-tip-apply-a-patch/">
+    <title type="text">Git Tip: Apply a Patch</title>
+    <id>urn:uuid:c875fc51-5988-31cb-b62b-d966aa620c31</id>
+    <updated>2018-06-17T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/6/17/git-tip-apply-a-patch/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I learned a new thing this weekend: we apparently can apply a patch onto a branch/fork using &lt;code&gt;git apply [patchfile]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There's a few things to unpack here. First off, what's a &lt;code&gt;patchfile&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;The long story cut short is that a &lt;code&gt;patchfile&lt;/code&gt; is nothing more than a plain text file that contains all information about &lt;code&gt;diffs&lt;/code&gt; between one commit and another. If you've ever used the &lt;code&gt;git diff&lt;/code&gt; command, you'll know that it will output a &lt;code&gt;diff&lt;/code&gt; between the current state of a repository, and the last committed state. Let's take a look at an example.&lt;/p&gt;
+&lt;p&gt;Say we have a file, called &lt;code&gt;my_file.txt&lt;/code&gt;. In a real world example, this would be parallel to, say, a &lt;code&gt;.py&lt;/code&gt; module that you've written. After a bunch of commits, I have a directory structure that looks like this:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ls
+total &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;
+drwxr-xr-x   &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; ericmjl  staff   128B Jun &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;:26 ./
+drwx------@ &lt;span class=&quot;m&quot;&gt;19&lt;/span&gt; ericmjl  staff   608B Jun &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;:26 ../
+drwxr-xr-x  &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; ericmjl  staff   384B Jun &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;:27 .git/
+-rw-r--r--   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; ericmjl  staff    68B Jun &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;:26 my_file.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The contents of &lt;code&gt;my_file.txt&lt;/code&gt; are as follows:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ cat my_file.txt
+Hello! This is a text file.
+
+I have some text written inside here.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, let's say I edit the text file by adding a new line and removing one line.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ cat my_file.txt
+Hello! This is a text file.
+
+I have some text written inside here.
+
+This is a new line!
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If I looked at the &quot;diff&quot; between the current state of the file and the previous committed state of the file:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git diff my_file.txt
+&lt;span class=&quot;gh&quot;&gt;diff --git a/my_file.txt b/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gh&quot;&gt;index a594a37..d8602e1 100644&lt;/span&gt;
+&lt;span class=&quot;gd&quot;&gt;--- a/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gi&quot;&gt;+++ b/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gu&quot;&gt;@@ -1,4 +1,4 @@&lt;/span&gt;
+ Hello! This is a text file.
+
+&lt;span class=&quot;gd&quot;&gt;-I have some text written inside here.&lt;/span&gt;
+&lt;span class=&quot;gi&quot;&gt;+This is a new line!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;While this may look intimidating at first, the key thing that one needs to look at is the &lt;code&gt;+&lt;/code&gt; and &lt;code&gt;-&lt;/code&gt;. The &lt;code&gt;+&lt;/code&gt; signals that there is an addition of one line, and the &lt;code&gt;-&lt;/code&gt; signals the removal of one line.&lt;/p&gt;
+&lt;p&gt;Turns out, I can export this as a file.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git diff my_file.txt &amp;gt; /tmp/patch1.txt
+$ cat /tmp/patch1.txt
+diff --git a/my_file.txt b/my_file.txt
+index a594a37..d8602e1 &lt;span class=&quot;m&quot;&gt;100644&lt;/span&gt;
+--- a/my_file.txt
++++ b/my_file.txt
+@@ -1,4 +1,4 @@
+ Hello! This is a text file.
+
+-I have some text written inside here.
++This is a new line!
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, let's simulate the scenario where I accidentally discarded those changes in the repository. A real-world analogue happened to me while contributing to CuPy: I had a really weird commit history, and couldn't remember how to rebase, so I exported the patch from my GitHub pull request (more on this later) and applied it following the same conceptual steps below.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout -- my_file.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, the repository is in a &quot;cleaned&quot; state -- there are no changes made:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git status
+On branch master
+nothing to commit, working tree clean
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since I have saved the diff as a file, I can apply it onto my project:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git apply /tmp/patch1.txt
+$ git status
+On branch master
+Changes not staged &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; commit:
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot;&lt;/span&gt; to update what will be committed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot;&lt;/span&gt; to discard changes in working directory&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+        modified:   my_file.txt
+
+no changes added to commit &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&amp;quot;git add&amp;quot;&lt;/span&gt; and/or &lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -a&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Looking at the diff again, I've recovered the changes that were lost!&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git diff
+&lt;span class=&quot;gh&quot;&gt;diff --git a/my_file.txt b/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gh&quot;&gt;index a594a37..d8602e1 100644&lt;/span&gt;
+&lt;span class=&quot;gd&quot;&gt;--- a/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gi&quot;&gt;+++ b/my_file.txt&lt;/span&gt;
+&lt;span class=&quot;gu&quot;&gt;@@ -1,4 +1,4 @@&lt;/span&gt;
+ Hello! This is a text file.
+
+&lt;span class=&quot;gd&quot;&gt;-I have some text written inside here.&lt;/span&gt;
+&lt;span class=&quot;gi&quot;&gt;+This is a new line!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Don't forget to commit and push!&lt;/p&gt;
+&lt;h2 id=&quot;how-to-export-a-patch-from-github?&quot;&gt;How to export a patch from GitHub?&lt;/h2&gt;&lt;p&gt;I mentioned earlier that I had exported the patch file from GitHub and then applied it on a re-forked repository. How does one do that? It's not as hard as you think.&lt;/p&gt;
+&lt;p&gt;Here's the commands below with comments.&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Download the patch from the pull request URL.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Replace curly-braced elements with the appropriate names.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Export it to /tmp/patch.txt.&lt;/span&gt;
+$ wget https://github.com/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;repo_owner&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;repo&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/pull/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;pr_number&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;.patch -O /tmp/patch.txt
+
+&lt;span class=&quot;c1&quot;&gt;# Now, apply the patch to your project&lt;/span&gt;
+$ git apply /tmp/patch.txt
+&lt;/pre&gt;&lt;/div&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/">
     <title type="text">My Latent Dissatisfaction with Modern ML</title>
     <id>urn:uuid:22e1ac3f-a85f-3172-9d87-5fa50242ec31</id>
@@ -1372,22 +1476,6 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
     </author>
     <content type="html">&lt;p&gt;About two weeks after being done, my thesis defence video is up on YouTube! It can be found here: &lt;a href=&quot;https://youtu.be/ePqhQusK-3Q?t=1m23s&quot;&gt;https://youtu.be/ePqhQusK-3Q?t=1m23s&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My favourite parts are recollecting the thought of being scooped by someone else 4 years ago, saying that some people like doing sampling, and stating how the lessons from my first committee meeting have been passed on. Ahh, so many good memories!&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/5/13/why-i-teach-coding-tutorials/">
-    <title type="text">Why I Teach Coding Tutorials</title>
-    <id>urn:uuid:01cd6084-2784-3ca8-9d1b-544c11804846</id>
-    <updated>2017-05-13T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/5/13/why-i-teach-coding-tutorials/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;I'm very excited to be at PyCon! It's a bit of a personal challenge this year, as I'll be leading two tutorials, one on Network Analysis and one on Data Testing.&lt;/p&gt;
-&lt;p&gt;With a bit of time on hand, I've done a bit of introspection as to why I love doing these tutorials. I think I can boil it down to a few broad themes.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reason 1: Learning.&lt;/strong&gt; When it comes to learning material, nothing beats having to teach it to someone else. This means I have to master the material in order to teach it responsibly to someone else.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reason 2: Reputation.&lt;/strong&gt; Grounded on the foundation of having mastered the material I'm going to teach, getting out there helps me build a reputation for having both technical mastery and the ability to communicate the material out.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reason 3: Networking.&lt;/strong&gt; By going to conferences where my tutorials are accepted, it's a great way to meet people and learn about the latest and greatest out there.&lt;/p&gt;
-&lt;p&gt;My hope is wherever I end up working, I can continue this craftsmanship!&lt;/p&gt;
 </content>
   </entry>
 </feed>
