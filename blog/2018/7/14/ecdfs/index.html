@@ -14,7 +14,12 @@
     </style>
 
     
-    
+    <!-- Syntax Highlighter. Use both pygments and hl.js. -->
+    <link rel="stylesheet" href="../../../../../static/pygments.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
 
     <!-- Google Analytics -->
     <script>
@@ -44,7 +49,7 @@
     <link rel="stylesheet" href="/static/css/custom.css">
 </head>
 
-<title>Blog - Eric J. Ma's Personal Site</title>
+<title>ECDFs - Eric J. Ma's Personal Site</title>
 <body class="body">
     <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#local-links" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,45 +92,11 @@
     <div class="container">
         
   
-    
   <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
   
-    <h1><a href="../blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/">Bayesian Estimation, Group Comparison, and Workflow</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-07-16
-  </p>
-  <p>Over the past year, having learned about Bayesian inference methods, I finally see how estimation, group comparison, and model checking build upon each other into this really elegant framework for data analysis.</p>
-<h2 id="parameter-estimation">Parameter Estimation</h2><p>The foundation of this is "estimating a parameter". In a typical situation, we are most concerned with the parameter of interest. It could be a population mean, or a population variance. If there's a mathematical function that links the input variables to the output (a.k.a. "link function"), then the parameters of the model are that function's parameters. The key point here is that the atomic activity of Bayesian analysis is the estimation of a parameter, and its associated uncertainty.</p>
-<h2 id="comparison-of-groups">Comparison of Groups</h2><p>Building on that, we can then estimate parameters for more than one group of things. As a first pass, we could assume that each of the groups are unrelated, and thus "independently" (I'm trying to avoid overloading this term) estimate parameters per group under this assumption. Alternatively, we could assume that the groups are related to one another, and thus use a "hierarchical" model to estimate parameters for each group.</p>
-<p>Once we've done that, what's left is the comparison of parameters between the groups. The simplest activity is to compare the posterior distributions' 95% highest posterior densities, and check to see if they overlap. Usually this is done for the mean, or for regression parameters, but the variance might also be important to check as well.</p>
-<h2 id="model-check">Model Check</h2><p>Rounding off this framework is model checking: how do we test that the model is a good one? The bare minimum that we should do is simulate data from the model - it should generate samples whose distribution looks like the actual data itself. If it doesn't, then we have a problem, and need to go back and rework the model structure until it does.</p>
-<p>Could it be that we have a model that only fits the data on hand (overfitting)? Potentially so - and if this is the case, then our best check is to have an "out-of-sample" group. While a train/test/validation split might be useful, the truest test of a model is new data that has been collected.</p>
-<h2 id="thoughts">Thoughts</h2><p>These three major steps in Bayesian data analysis workflows did not come together until recently; they each seemed disconnected from the others. Perhaps this was just an artefact of how I was learning them. However, I think I've finally come to a unified realization: Estimation is necessary before we can do comparison, and model checking helps us build confidence in the estimation and comparison procedures that we use.</p>
-<h2 id="summary">Summary</h2><p>When doing Bayesian data analysis, the key steps that we're performing are:</p>
-<ol>
-<li>Estimation</li>
-<li>Comparison</li>
-<li>Model Checking</li>
-</ol>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/7/14/ecdfs/">ECDFs</a></h1>
+    <h1>ECDFs</h1>
   
   <p class="meta">
     written by
@@ -183,195 +154,23 @@
 
   </div>
 
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/7/14/ecdfs/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/6/17/git-tip-apply-a-patch/">Git Tip: Apply a Patch</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-06-17
-  </p>
-  <p>I learned a new thing this weekend: we apparently can apply a patch onto a branch/fork using <code>git apply [patchfile]</code>.</p>
-<p>There's a few things to unpack here. First off, what's a <code>patchfile</code>?</p>
-<p>The long story cut short is that a <code>patchfile</code> is nothing more than a plain text file that contains all information about <code>diffs</code> between one commit and another. If you've ever used the <code>git diff</code> command, you'll know that it will output a <code>diff</code> between the current state of a repository, and the last committed state. Let's take a look at an example.</p>
-<p>Say we have a file, called <code>my_file.txt</code>. In a real world example, this would be parallel to, say, a <code>.py</code> module that you've written. After a bunch of commits, I have a directory structure that looks like this:</p>
-<div class="hll"><pre><span></span>$ ls
-total <span class="m">8</span>
-drwxr-xr-x   <span class="m">4</span> ericmjl  staff   128B Jun <span class="m">17</span> <span class="m">10</span>:26 ./
-drwx------@ <span class="m">19</span> ericmjl  staff   608B Jun <span class="m">17</span> <span class="m">10</span>:26 ../
-drwxr-xr-x  <span class="m">12</span> ericmjl  staff   384B Jun <span class="m">17</span> <span class="m">10</span>:27 .git/
--rw-r--r--   <span class="m">1</span> ericmjl  staff    68B Jun <span class="m">17</span> <span class="m">10</span>:26 my_file.txt
-</pre></div>
-<p>The contents of <code>my_file.txt</code> are as follows:</p>
-<div class="hll"><pre><span></span>$ cat my_file.txt
-Hello! This is a text file.
-
-I have some text written inside here.
-</pre></div>
-<p>Now, let's say I edit the text file by adding a new line and removing one line.</p>
-<div class="hll"><pre><span></span>$ cat my_file.txt
-Hello! This is a text file.
-
-I have some text written inside here.
-
-This is a new line!
-</pre></div>
-<p>If I looked at the "diff" between the current state of the file and the previous committed state of the file:</p>
-<div class="hll"><pre><span></span>$ git diff my_file.txt
-<span class="gh">diff --git a/my_file.txt b/my_file.txt</span>
-<span class="gh">index a594a37..d8602e1 100644</span>
-<span class="gd">--- a/my_file.txt</span>
-<span class="gi">+++ b/my_file.txt</span>
-<span class="gu">@@ -1,4 +1,4 @@</span>
- Hello! This is a text file.
-
-<span class="gd">-I have some text written inside here.</span>
-<span class="gi">+This is a new line!</span>
-</pre></div>
-<p>While this may look intimidating at first, the key thing that one needs to look at is the <code>+</code> and <code>-</code>. The <code>+</code> signals that there is an addition of one line, and the <code>-</code> signals the removal of one line.</p>
-<p>Turns out, I can export this as a file.</p>
-<div class="hll"><pre><span></span>$ git diff my_file.txt &gt; /tmp/patch1.txt
-$ cat /tmp/patch1.txt
-diff --git a/my_file.txt b/my_file.txt
-index a594a37..d8602e1 <span class="m">100644</span>
---- a/my_file.txt
-+++ b/my_file.txt
-@@ -1,4 +1,4 @@
- Hello! This is a text file.
-
--I have some text written inside here.
-+This is a new line!
-</pre></div>
-<p>Now, let's simulate the scenario where I accidentally discarded those changes in the repository. A real-world analogue happened to me while contributing to CuPy: I had a really weird commit history, and couldn't remember how to rebase, so I exported the patch from my GitHub pull request (more on this later) and applied it following the same conceptual steps below.</p>
-<div class="hll"><pre><span></span>$ git checkout -- my_file.txt
-</pre></div>
-<p>Now, the repository is in a "cleaned" state -- there are no changes made:</p>
-<div class="hll"><pre><span></span>$ git status
-On branch master
-nothing to commit, working tree clean
-</pre></div>
-<p>Since I have saved the diff as a file, I can apply it onto my project:</p>
-<div class="hll"><pre><span></span>$ git apply /tmp/patch1.txt
-$ git status
-On branch master
-Changes not staged <span class="k">for</span> commit:
-  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
-  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
-
-        modified:   my_file.txt
-
-no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
-</pre></div>
-<p>Looking at the diff again, I've recovered the changes that were lost!</p>
-<div class="hll"><pre><span></span>$ git diff
-<span class="gh">diff --git a/my_file.txt b/my_file.txt</span>
-<span class="gh">index a594a37..d8602e1 100644</span>
-<span class="gd">--- a/my_file.txt</span>
-<span class="gi">+++ b/my_file.txt</span>
-<span class="gu">@@ -1,4 +1,4 @@</span>
- Hello! This is a text file.
-
-<span class="gd">-I have some text written inside here.</span>
-<span class="gi">+This is a new line!</span>
-</pre></div>
-<p>Don't forget to commit and push!</p>
-<h2 id="how-to-export-a-patch-from-github?">How to export a patch from GitHub?</h2><p>I mentioned earlier that I had exported the patch file from GitHub and then applied it on a re-forked repository. How does one do that? It's not as hard as you think.</p>
-<p>Here's the commands below with comments.</p>
-<div class="hll"><pre><span></span><span class="c1"># Download the patch from the pull request URL.</span>
-<span class="c1"># Replace curly-braced elements with the appropriate names.</span>
-<span class="c1"># Export it to /tmp/patch.txt.</span>
-$ wget https://github.com/<span class="o">{</span>repo_owner<span class="o">}</span>/<span class="o">{</span>repo<span class="o">}</span>/pull/<span class="o">{</span>pr_number<span class="o">}</span>.patch -O /tmp/patch.txt
-
-<span class="c1"># Now, apply the patch to your project</span>
-$ git apply /tmp/patch.txt
-</pre></div>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/6/17/git-tip-apply-a-patch/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/">My Latent Dissatisfaction with Modern ML</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-06-05
-  </p>
-  <p>It took reading Judea Pearl's "The Book of Why", and Jonas Peters' mini-course on causality, for me to finally figure out why I had this lingering dissatisfaction with modern machine learning. It's because modern machine learning (deep learning included) is most commonly used as a tool in the service of finding correlations, and is not concerned with understanding systems.</p>
-<p>Perhaps this is why Pearl writes of modern ML as basically being "curve fitting". I tend to believe he didn't write those words in a dismissive way, though I might be wrong about it. Regardless, I think there is an element of truth to that statement.</p>
-<p>Linear models seek a linear combination of correlations between input variables and their targets. Tree-based models essentially seek combinations of splits in the data, while deep learning models are just stacked compositions of linear models with nonlinear functions applied to their outputs. As Keras author Francois Chollet wrote, <a href="https://blog.keras.io/the-limitations-of-deep-learning.html">deep learning can be thought of as basically geometric transforms of data from one data manifold to another</a>.</p>
-<p>(For convenience, I've divided the ML world into linear models, tree-based models, and deep learning models. Ensembles, like Random Forest, are just that: ensembles composed of these basic models.)</p>
-<p>Granted, curve fitting is actually very useful: much of image deep learning has found pragmatic use: image search, digital pathology, self-driving cars, and more. Yet, in none of these models is the notion of causality important. This is where these models are dissatisfying: they do not provide the tools to help us interrogate these questions in a structured fashion. I think it's reasonable to say that these models are essentially concerned with conditional probabilities. As written by Ferenc Huszár, <a href="http://www.inference.vc/untitled/">conditional probabilities are different from interventional probabilities</a> (ok, I mutilated that term).</p>
-<p>Humans are innately wired to recognize and ask questions about causality; consider it part of our innate makeup. That is, of course, unless that has been drilled out of our minds by our life experiences. (I know of a person who insists that causes do not exist. An extreme Hume-ist, I guess? As I'm not a student of philosophy much, I'm happy to be corrected on this point.) As such, I believe that part of being human involves asking the question, "Why?" (and its natural extension, "How?"). Yet, modern ML is still stuck at the question of, "What?"</p>
-<p>To get at why and how, we test our understanding of a system by perturbing it (i.e. intervening in it), or asking about "what if" scenarios (i.e. thinking about counterfactuals). In the real  world of biological research (which I'm embedded in), we call this "experimentation". Inherent in a causal view of the world is a causal model. In causal inference, these things are structured and expressed mathematically, and we are given formal procedures for describing an intervention and thinking about counterfactual scenarios. From what I've just learned (baby steps at the moment), these are the basic ingredients, and their mathematical mappings:</p>
-<ul>
-<li>Causal model: a directed, acyclic graph<ul>
-<li>Variables: nodes in a graph</li>
-<li>Relationships: structured causal model's equations (math transforms of incoming variables with a noise distribution added on top, embedded in each node)</li>
-</ul>
-</li>
-<li>Interventions: removal of edges in a graph ("do-calculus")</li>
-<li>Counterfactuals: set causal model based on observation, then perform do-calculus.</li>
-</ul>
-<p>Having just learned this, I think there's a way out of this latent dissatisfaction that I have with modern ML. A neat thing about ML methods is that we can use them as tools to help us better identify the important latent factors buried inside our (observational) data, which we can use to construct a better model of our data generating process. Better yet, we can express the model in a structured and formal sense, which would expose our assumptions more explicitly for critique and reasoning. Conditioned on that, perhaps we may be able to write better causal models of the world!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../static/pygments.css">
-  <div>
-  
-    <h1><a href="../blog/2018/5/26/causal-modelling/">Causal Modelling</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-05-26
-  </p>
-  <p>Finally, I have finished Judea Pearl's latest work <a href="https://www.amazon.com/Book-Why-Science-Cause-Effect-ebook/dp/B075CR9QBJ/ref=mt_kindle?_encoding=UTF8&amp;me=">"The Book of Why"</a>! Having read it, I have come to appreciate how much work had to go on in order to formalize the very intuitions that we have for causal reasoning into essentially a modelling language.</p>
-<p>"The Book of Why" is geared towards the layman reader. Thus, unlike a textbook, it does not contain "simplest complex examples" that a reader can walk through and do calculations by hand (or through simulation). Thankfully, there is a <a href="https://www.youtube.com/playlist?list=PLW01hpWnEtbTcuY0a0jhZyanHX3GPImAy">lecture series by Jonas Peters</a>, organized by the Broad Institute and held at MIT, that are available freely online.</p>
-<p>From just viewing the first of the four lectures, I am thoroughly enjoying Jonas' explanations of the core ideas in causal modelling. Indeed, Jonas is a very talented lecturer! He builds up the ideas from simple examples, finally culminating in a "simple complex example" that we can simulate on a computer. Having just freshly read "The Book of Why" also helps immensely; it's also clear to me that people in the world of causal modelling are very much familiar with the same talking points. For those interested in learning more about causal modelling, I highly recommend both the book and the lecture series!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../blog/2018/5/26/causal-modelling/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-
-  
-  <div class="pagination">
-    
-      <span class="disabled">&laquo; Previous</span>
-    
-    | 1 |
-    
-      <a href="../blog/page/2/">Next &raquo;</a>
-    
-  </div>
-
+  <a name="disqus"></a>
+  <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/ecdfs"; this.page.url = "http://www.ericmjl.com/blog/2018/7/14/ecdfs/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//ericmjl.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
 
     </div>
 

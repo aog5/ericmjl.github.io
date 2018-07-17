@@ -92,6 +92,92 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2016/3/15/tests-enabled-science/">Tests-Enabled Science</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-03-15
+  </p>
+  <p>In the software development world, I learned about the importance of writing tests for one’s software. Since then, I have incorporated this habit in my own work, where as part of my more recent work, I write tests for the software I write to conduct scientific research.</p>
+<p>This has got me thinking about why tests are such an effective tool. I think there’s got to be at least a few reasons.</p>
+<ol>
+<li>Tests effectively are a contract between current and future selves. My current self is writing a contract that has to be enforced by changes made by my future self. If future self makes changes that break the contract, tests will catch them. Of course, this all assumes that the conditions under which the contract was written still hold true. If they change, then the contract can be broken.</li>
+<li>Tests force my current self to be explicit about what exactly I am writing. This is much better than slapping together a script in a quick-and-dirty fashion. (Granted, there is a time and place for quick-and-dirty scripts.)</li>
+<li>When done with (semi-)automatic testing frameworks, such as <code>py.test</code>, the test suite is automatically run from start to finish. This reduces the cognitive load of running the tests one-by-one, and reinforces the cohesiveness of the code logic.</li>
+</ol>
+<p>Okay, so what exactly do I mean by tests? Here’s a few thoughts.</p>
+<ol>
+<li><strong>Data integrity tests.</strong> By this, I mean tests that are situated in the directory where the data reside, that encode known properties of the data. For example:<ol>
+<li>Number of rows.</li>
+<li>Number of columns.</li>
+<li>The column names.</li>
+<li>The hash of each row of data.</li>
+<li>The hash of each column of data.</li>
+</ol>
+</li>
+<li><strong>Unit tests.</strong> By this, I mean tests that are written that ensure that a function does exactly what it’s expected to do. This is the most common concept of a test. This is applicable to:<ol>
+<li>Code that are written to manipulate data.</li>
+<li>Code written that are part of a software package or software utility developed.</li>
+</ol>
+</li>
+</ol>
+<p>While it takes time, I think computational scientists should write tests for their code as a matter of routine practice. Not sure if good test writing is enforceable, but it should definitely be done more.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/3/15/tests-enabled-science/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
+    <h1><a href="../../../blog/2016/3/13/r-for-statistics-python-for-data-processing/">R for Statistics, Python for Data Processing?</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2016-03-13
+  </p>
+  <p>I’ve heard this refrain many times. However, the distinction never really made sense to me.</p>
+<p>R and Python are merely programming languages. You don’t have to do stats in R and data processing in Python. You can do data processing in R, and statistics in Python.</p>
+<p><em>What is R?</em> It’s a programming language designed by statisticians, and so there’s tons of one-liner functions to do stats easily.</p>
+<p><em>What is Python?</em> It’s a programming language that’s really well-designed for general purpose computing, so it’s really expressive, and others can build tools on top of it.</p>
+<p><em>What is data processing?</em> I don’t think I can do justice to its definition here, but I’ll offer my own simple take: making data usable for other programming functions.</p>
+<p><em>What is statistics?</em> I think statistics, at its core, is really about describing/summarizing data, and figuring out how probable our data came from some model of randomness. That’s all it is, and it’s all about playing with numbers, really. There’s nothing more than that. <em>Technically, you can do statistics in any programming language, because technically, all programming languages deal with numbers...</em></p>
+<p>Which brings me to the point I want to make - as long as you have data, and you’re doing data science, you <em>technically</em> can use any language for it; the differences are not in the language itself, but in the ecosystem, ease-of-use, and other aspects.</p>
+<p>Other bloggers have written about <a href="http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">the benefits</a> of using a single language, which include:</p>
+<p><ol>
+    <li>No cognitive costs associated with syntax switching (the biggest reason for me).</li>
+    <li>No need to worry about interfacing between languages.</li>
+    <li>No need to pepper file I/O calls throughout the code for each portion of the project that uses its own language.</li>
+</ol>
+So how do you choose? Here’s my criteria (beyond simply Python and R):</p>
+<p><ol>
+    <li>What is the larger context of your project? Do you have colleagues you are interfacing with? What languages are they using?</li>
+    <li>Are there packages that allow you to do stuff related to your project in a quick-and-dirty fashion?</li>
+    <li>Is the language able to use other language’s packages?</li>
+    <li>How mature is the package ecosystem for your language? Do you foresee using other packages as your project expands?</li>
+</ol>
+So I hope the point is clear: it isn’t so much that “R is for statistics and Python is for data processing”. I think commoner programmers have to get that dogma out of their heads. It’s simply that R was designed by statisticians for doing statistics, while an ecosystem of Python tools sprung up to do data processing. Nowadays, as the R-blogger <a href="http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">mentioned</a>, Python can also do a ton of stuff that R can do, because packages are being written that replicate R package functionality and more, such as how <a href="http://www.continuum.io">Continuum Analytics</a> (awesome company!) wrote the <a href="http://bokeh.pydata.org">bokeh</a> package that allows us Pythonistas to deploy web-based data visualizations. Likewise, R can do a ton of stuff that used to be the domain of Python, and it's getting a lot of corporate support from Microsoft. So choose according to your needs.</p>
+<p>After all, as Wes McKinney <a href="http://wesmckinney.com/blog/the-problem-with-the-data-science-language-wars/">wrote</a>, the real problem isn't R vs. Python. It's the ability to move data seamlessly.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2016/3/13/r-for-statistics-python-for-data-processing/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2016/2/13/chalk-talk/">Chalk Talk</a></h1>
   
   <p class="meta">
@@ -195,251 +281,6 @@ I think some definitions are required before I proceed.</p>
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2015/12/3/reticulate-evolution-and-microbial-ecology/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2015/11/28/profiling-pypy-vs-python-for-agent-based-simulation/">Profiling PyPy vs. Python for Agent-Based Simulation</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2015-11-28
-  </p>
-  <h2 id="outline">Outline</h2><ol>
-<li>Introduction:<ol>
-<li>Motivation</li>
-<li>Model description</li>
-<li>Link to code</li>
-</ol>
-</li>
-<li>Environment Setup</li>
-<li>Performance<ol>
-<li>Python vs. PyPy on one parameter set.</li>
-<li>Vary number of hosts, record time.</li>
-</ol>
-</li>
-</ol>
-<h2 id="introduction">Introduction</h2><p>As part of my PhD dissertation, I wanted to investigate the role of host ecology on the generation of reassortant viruses. Knowing myself to be a fairly algebra-blind person, I decided that an agent-based model (ABM) was going to be much more manageable than writing ODEs. (Actually, the real reason is that I"m modelling discrete states, rather than continuous states, but yes, I will admit that I do take longer than your average programmer with algebra.)</p>
-<h3 id="model-description">Model Description</h3><p>Starting with our intuition of host-pathogen interactions, I implemented a custom ABM using Python classes - "Hosts" and "Viruses".</p>
-<h4 id="viruses">Viruses</h4><p>"Viruses" had two segments, representing a segmented virus (like the Influenza or Lassa virus), each with a color (red or blue), and can infect Hosts (which are likewise red or blue). Viruses that are of a particular color prefer to infect hosts of the same color, but can still infect hosts of of a different colour, just at a lower probability. If two viruses are present in the same host, then there can be, at some small probability, the opportunity for gene sharing to occur.</p>
-<p>One of the virus' segments determines host immunity; if the virus encounters a host which has immunity against its color, then the probability of infection drastically decreases, and it is likely that the virus will eventually be cleared.</p>
-<h4 id="hosts">Hosts</h4><p>"Hosts" are where viruses replicate. Hosts gain immunity to one of the segment's colors, after a set number of days of infection. When a host gains immunity to a particular virus color, it can much more successfully fend off a new infection with that same color. Hosts also interact with one another. They may have a strong preference for a host of the same color, a.k.a. homophily.</p>
-<h3 id="code">Code</h3><p>My code for the simulations can be found on <a href="http://github.com/ericmjl/reassortment-simulator">this Github repository</a>. The details of the simulation are still a work in progress, as these ideas are still early stage. My point on this blog post here will be to try to compare PyPy against CPython on performance. However, I do welcome further comments on the modelling, if you've taken the time to read through my code.</p>
-<p>Code for the statistical draws can be found on <a href="http://github.com/ericmjl/pypy_stats">this other Github repository</a>.</p>
-<p><h2 id="environment-setup">Environment Setup</h2>
-My CPython environment is managed by <code>conda</code>. (Highly recommended! Download <a href="https://www.continuum.io/downloads">here</a>. Make sure to get Python 3!)</p>
-<p>I installed <code>pypy</code> and <code>pypy3</code> under my home directory on Ubuntu Linux, and ensured that my bash shell <code>$PATH</code> variable also pointed to <code>~/pypy[3]/bin</code>.</p>
-<h2 id="performance">Performance</h2><p>Let's take a look at the performance of the CPython vs. PyPy using pure-Python code.</p>
-<h3 id="default-parameters">Default parameters</h3><p>I first started with 1000 agents in the simulation, with the simulation running for 150 time steps.</p>
-<p>Under these circumstances, on an old Asus U30J with 8GB RAM and an SSD hard disk, Core i3 2.27GHz, executing the simulation with PyPy required only 13.4 seconds, while executing with CPython required 110.5 seconds. 10x speedup.</p>
-<h3 id="varying-number-of-hosts-in-the-model">Varying number of hosts in the model</h3><p>I wanted to measure the time complexity of the simulation as a function of the number of hosts. Therefore, I varied the number of hosts from 100 to 1600, in steps of 300.</p>
-<p>Partial (mostly because of laziness) results are tabulated below. (Yes, this degree of laziness would never fly in grad school.)</p>
-<table><colgroup> <col /> <col /> <col /> <col /> <col /> <col /> <col /> </colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Agents</th>
-<th style="text-align: left;">PyPy Trial 1</th>
-<th style="text-align: left;">PyPy Trial 2</th>
-<th style="text-align: left;">PyPy Trial 3</th>
-<th style="text-align: left;">CPython Trial 1</th>
-<th style="text-align: left;">CPython Trial 2</th>
-<th style="text-align: left;">CPython Trial 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">13.4</td>
-<td style="text-align: left;">12.8</td>
-<td style="text-align: left;">12.9</td>
-<td style="text-align: left;">110.5</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">700</td>
-<td style="text-align: left;">8.63</td>
-<td style="text-align: left;">9.02</td>
-<td style="text-align: left;">8.65</td>
-<td style="text-align: left;">53.7</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">400</td>
-<td style="text-align: left;">4.35</td>
-<td style="text-align: left;">4.33</td>
-<td style="text-align: left;">4.66</td>
-<td style="text-align: left;">18.2</td>
-<td style="text-align: left;">18.2</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">100</td>
-<td style="text-align: left;">1.03</td>
-<td style="text-align: left;">1.00</td>
-<td style="text-align: left;">1.17</td>
-<td style="text-align: left;">1.47</td>
-<td style="text-align: left;">1.48</td>
-<td style="text-align: left;">1.45</td>
-</tr>
-</tbody>
-</table><p>As we can see, PyPy wins when the number of iterations is large.</p>
-<h3 id="statistical-draws">Statistical Draws</h3><p>I use statistical Bernoulli trials (biased coin flips) extensively in the simulation. Yet, one thing that is conspicuously unavialable to PyPy users (in an easily installable format) is the scientific Python stack. Most of that boils down to <code>numpy</code>. Rather than fiddle with trying to get <code>numpy</code>, <code>scipy</code> and other packages installed, I re-implemented my own <code>bernoulli</code> function.
-    ```python
-    from random import random</p>
-<pre><code>class bernoulli(object):
-    """
-    docstring for bernoulli
-    """
-    def __init__(self, p):
-        super(bernoulli, self).__init__()
-        self.p = p
-
-    def rvs(self, num_draws):
-        draws = []
-        for i in range(num_draws):
-            draws.append(int(random() &amp;gt; self.p))
-
-        return draws
-</code></pre>
-<p>This is <em>almost</em> a drop-in replacement for <code>scipy.stats.bernoulli</code>. (The API isn't exactly the same.) I wanted to know whether the calling <code>bernoulli</code> function I wrote performed better than calling on the <code>scipy.stats</code> function. I therefore setup a series of small tests to determine at what scale of function calls it makes more sense to use PyPy vs. CPython.</p>
-<p>I then wrote a simple block of code that times the Bernoulli draws. For the PyPy version:
-    ```python
-    from stats.bernoulli import bernoulli
-    from time import time</p>
-<pre><code>start = time()
-bern_draws = bernoulli(0.5).rvs(10000)
-mean = sum(bern_draws) / len(bern_draws)
-end = time()
-
-print(end - start)&lt;/code&gt;&lt;/pre&gt;
-And for the CPython/scipy version:
-&lt;pre&gt;&lt;code&gt;from scipy.stats import bernoulli
-from time import time
-
-start = time()
-bern_draws = bernoulli(0/5).rvs(10000)
-mean = sum(bern_draws) / len(bern_draws)   
-end = time()
-
-print(end - start)
-</code></pre>
-<table><colgroup> <col /> <col /> <col /> <col /> <col /> <col /> <col /> </colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Bernoulli Draws</th>
-<th style="text-align: center;">PyPy + Custom (1)</th>
-<th style="text-align: center;">PyPy + Custom (2)</th>
-<th style="text-align: center;">PyPy + Custom (3)</th>
-<th style="text-align: center;">CPython + SciPy (1)</th>
-<th style="text-align: center;">CPython + SciPy (2)</th>
-<th style="text-align: center;">CPython + SciPy (3)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1000000</td>
-<td style="text-align: center;">0.271</td>
-<td style="text-align: center;">0.241</td>
-<td style="text-align: center;">0.206</td>
-<td style="text-align: center;">0.486</td>
-<td style="text-align: center;">0.513</td>
-<td style="text-align: center;">0.481</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">100000</td>
-<td style="text-align: center;">0.0437</td>
-<td style="text-align: center;">0.0421</td>
-<td style="text-align: center;">0.0473</td>
-<td style="text-align: center;">0.0534</td>
-<td style="text-align: center;">0.0794</td>
-<td style="text-align: center;">0.0493</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">10000</td>
-<td style="text-align: center;">0.0311</td>
-<td style="text-align: center;">0.0331</td>
-<td style="text-align: center;">0.0345</td>
-<td style="text-align: center;">0.00393</td>
-<td style="text-align: center;">0.00410</td>
-<td style="text-align: center;">0.00387</td>
-</tr>
-</tbody>
-</table><p>As we can see, <code>scipy</code> is quite optimized, and outperforms at lower number of statistical draws. Things only become better for PyPy as the number of draws increases.</p>
-<h3 id="summary">Summary</h3><p>Some things that I've learned from this exercise:</p>
-<ol>
-<li>For pure-Python code, PyPy can serve as a drop-in replacement for CPython.</li>
-<li>Because of the JIT compiler, PyPy is blazing fast when doing iterations!</li>
-<li><code>numpy</code> is not, right now, easily <code>pip</code>-installable. Because of this, the rest of the Scientific Python stack is also not <code>pip</code>-installable in a PyPy environment. (I will admit to still being a learner here - I wouldn't be able to articulate why <code>numpy</code> doesn't work with PyPy out-of-the-box. Experts chime in please?)</li>
-</ol>
-<p>Some things I hope will happen:</p>
-<ol>
-<li>Let's port the scientific Python stack code to make it PyPy compatible! (Yeah, wishful thinking...)</li>
-<li>Alternatively, let's hope the <code>numba</code> project allows JIT compilation when using Python objects instead.</li>
-</ol>
-<p>As is the usual case for me, starting a new project idea gave me the impetus to try out a new thing, as I wouldn't have to risk breaking workflows that have worked for existing projects. If you find yourself in the same spot, I would encourage you to try out PyPy, especially for pure-Python code (i.e. no external libraries are used).</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2015/11/28/profiling-pypy-vs-python-for-agent-based-simulation/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2015/9/28/predicting-hiv-drug-resistance-phenotype-from-genotype/">Predicting HIV Drug Resistance Phenotype from Genotype</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2015-09-28
-  </p>
-  <p><strong>Note to Reader:</strong> I’d highly suggest reading this blog post on the left half of your screen, and have the <a href="https://github.com/ericmjl/hiv-resistance-prediction/blob/master/Predict%20HIV%20Genotype%20from%20Phenotype%20-%20Custom%20Funcs.ipynb">Jupyter notebook</a> on the right half of your screen. Makes things a bit easier to follow.</p>
-<p>I recently have been writing a proposal to conduct some experiments to predict viral RNA polymerase activity, in some standardized unit, from protein genotype. The main application of this would be to be able to conduct quantitative surveillance in a precise fashion. For example, with HIV, as treatment progresses, the virus accumulates mutations that confer resistance. For a physician treating a patient infected with HIV, would it be possible to determine, from sequence data alone, what would be the degree of predicted viral resistance for that patient’s virus?</p>
-<p>Knowing fully that this problem has been tackled many times in the past from multiple angles, I wanted to know how easily I could set up an ML workflow to go from sequence to predicted drug resistance. The goal of this blog post is to document how easy it was for me to get up and running, using Python packages really well-written Python packages.</p>
-<h2 id="raw-code">Raw Code</h2><p>All of my code can be found on my Github <a href="https://github.com/ericmjl/hiv-resistance-prediction">repository</a>. You can also jump directly to the <a href="https://github.com/ericmjl/hiv-resistance-prediction/blob/master/Predict%20HIV%20Genotype%20from%20Phenotype%20-%20Custom%20Funcs.ipynb">Jupyter notebook</a> that I reference code from in this article.</p>
-<h2 id="data-source-and-preprocessing">Data Source and Preprocessing</h2><p>I sourced the data from the <a href="http://hivdb.stanford.edu">Stanford HIV Drug Resistance Database</a>. Specifically, I downloaded the <a href="http://hivdb.stanford.edu/pages/genopheno.dataset.html">high quality, filtered set</a> of Genotype-to-Phenotype mappings, for protease inhibitors, nucleoside reverse transcriptase inhibitors, and non-nucleoside reverse transcriptase inhibitors. I wrote a few custom functions to preprocess the data, including the following steps:</p>
-<ol>
-<li>Replacing all "<code>-</code>" characters with the consensus sequences. I am guessing that they use the "<code>-</code>" character in place to help highlight where the mutations are; much more human readable.</li>
-<li>Removing sequences that had more than one mutation present. Mostly a function of being lazy than anything else.</li>
-<li>Removing sequences with ambiguous amino acids. These are a bit harder to deal with down the road. From biological background knowledge, it’s unlikely that excluding them would be detrmimental.</li>
-<li>Dropping all conserved amino acid positions. They add nothing to the analysis.</li>
-<li>Binarizing the columns. This transforms the letters of the amino acid into a first-pass feature set, in which the binarized columns indicate whether or not an amino acid is present at a given position or not.</li>
-</ol>
-<p>These are found in my <a href="https://github.com/ericmjl/hiv-resistance-prediction/blob/master/custom_funcs.py">custom_funcs.py</a> module, which I imported into the Jupyter notebooks. Having futzed around for about a day copying/pasting blocks of code, I refactored the code into separate functions for readability, so that only the “business logic” is shown in the notebook.</p>
-<h2 id="train/test-split">Train/Test Split</h2><p>It is a standard practice to split the dataset into a training and test set. K-fold cross-validation is quite easy to do using <code>scikit-learn</code>. Given an <code>X</code> and a <code>Y</code> matrix, to split it into <code>X_train</code>, <code>X_test</code>, <code>Y_train</code>, and <code>Y_test</code>, simply do the function call:</p>
-<p><code>X_train, X_test, Y_train, Y_test = train_test_split(X_binarized, Y)</code></p>
-<h2 id="model-training">Model Training</h2><p>To train models, I used the <a href="http://scikit-learn.org/stable/">scikit-learn</a> package to help. It’s useful to note that <code>scikit-learn</code> has a consistent API - every regressor model has a <code>MODEL.fit()</code> and a <code>MODEL.predict()</code> function. This ‘modular’ style allowed me to wrap the series of function calls into single-line functions, and thus quickly try out a variety of models to see what out-of-box predictive power would be. Using the Random Forest Regressor as an example, I wrapped up the training and plotting phases:</p>
-<p><code># Model Training</code>
-<code>kwargs = {'n_jobs':-1, 'n_estimators':1000}</code>
-<code>rfr, rfr_preds, rfr_mse, rfr_r2 = cf.train_model(*tts_data, model=RandomForestRegressor, modelargs=kwargs)</code></p>
-<p><code># Plotting</code>
-<code>cf.scatterplot_results(rfr_preds, Y_test, rfr_mse, rfr_r2, DRUG, 'Rand. Forest', figsize=std)</code></p>
-<p>Here, <code>cf</code> simply refers to the <code>custom_funcs.py</code> module I wrote to refactor out the repetitive boilerplate code needed.</p>
-<p>The ensemble learners also include feature importances, i.e. an identification of the columns in the data that best predict the outcome of interest. I wrapped the feature importances code to make it easy to plot:</p>
-<p><code>cf.barplot_feature_importances(rfr, DRUG, 'Rand. Forest', figsize=std)</code></p>
-<p>In particular, I used the ensemble learners, which are known to be pretty powerful for learning tasks. And for comparison, I pitted them against a number of linear models as well. As you can see in the notebooks, the ensemble learners outperformed the linear models, at least for a binarized amino acid feature set. This makes intuitive sense - protein sequence to function is non-linear, and highly contextual.</p>
-<h2 id="neural-networks">Neural Networks!</h2><p>One of the things I wanted to highlight here was how <a href="http://danielnouri.org">Daniel Nouri’s</a> <a href="https://github.com/dnouri/nolearn">nolearn</a> package made it easy for me to start experimenting with neural networks. By no means am I a deep learning expert - I consider myself too algebra-blind (but by no means code-blind!) to learn the math behind it all. However, I know that my learning style of diving into the deep end and doing a lot of hands-on trials would help me get a fairly good intuitive grasp of how to do it. So after futzing around on a GPU cluster for a few days trying to get it configured right, I got <code>theano</code>, <code>lasagne</code> and <code>nolearn</code> up and running. (Note: A GPU makes light(er) work of training artificial neural nets. CPUs take around 5-10x more time. Highly recommended to use a GPU with neural nets. Shout-out to my PhD thesis committee member, Mark Bathe, for giving me access to his lab's GPU machine!)</p>
-<p><code>nolearn</code>’s API is, by design, really close to the <code>scikit-learn</code> API. I find this to be a great thing - since neural networks are basically ML models, we get the familiar <code>neural_net.fit()</code> and <code>neural_net.predict()</code> function calls. (The importance of great APIs! Thank you, @dnouri!) The API also makes specifying a neural network architecture quite easy. For example, in the simple feed-forward network architecture that I show in the Jupyter notebook, network layers are specified as a list of parameters, and each layer’s properties can be specified by using named parameters that sync up with the specified names. The comments in my Jupyter notebook in some of the layers show my (rather simple) efforts in experimenting with different architectures. To note, the original structure of the feed-forward network is directly lifted from <a href="http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/">Daniel Nouri's tutorial</a>, so big thanks to him for publishing it!</p>
-<p>FWIW, I also learned from other experienced Pythonistas (shout out to Rick Landau!) for teaching me <em>not</em> to use binary features on neural networks, something I happily disregarded for this first pass. But I’ve nonetheless still remembered that lesson! And in future iterations, probably I will try to change to non-binary features.</p>
-<h2 id="summary-amp;-future-work">Summary &amp; Future Work</h2><p>So to summarize, the <code>scikit-learn</code> API makes it pretty easy to get my hands dirty doing machine learning. By keeping a <code>scikit-learn</code>-like API, <code>nolearn</code> also does a great job of keeping neural nets accessible.</p>
-<p>What else do I think can be done? Well, there’s one idea I’ve been thinking about, to improve the regression score beyond what experimental error in the dataset may limit us to. Think convolutional networks (convnets) and their data input requirements. Basically, most image recognition convnets need a 2D image. But what if I used a convnet that can take in a 3D image instead? Calculating a numerical value, such as the electrostatic charge at every grid point in a static, modelled 3D protein structure, may be much more informative than simply using binarized amino acid columns. A recent paper that I read in <a href="http://www.biomedcentral.com/1471-2164/15/S5/S1">BMC genomics</a> (say "yay" for open access!) uses a computationally efficient shortcut representation to get structural features encoded as well, with great success; I would definitely be game for implementing their version as a first pass as well.</p>
-<p>Apart from that, it's insufficient to run only on a single train/test split. There will always be unavoidable biases in the trained model. Training <code>k</code>-fold splits <code>k</code> times is a common practice I've heard. In papers I've read, usually k-fold splits are trained k times, and the standard deviation reported. I can imagine also doing it n times, to get a better feel for the generalization error (assuming the data are representative of the population).</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2015/9/28/predicting-hiv-drug-resistance-phenotype-from-genotype/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

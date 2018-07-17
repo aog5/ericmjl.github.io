@@ -92,6 +92,53 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2018/2/21/nxviz-first-pr-merged/">nxviz first PR merged!</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-02-21
+  </p>
+  <p>With thanks to <a href="https://twitter.com/KassnerNora">@KassnerNora</a>, <a href="https://github.com/ericmjl/nxviz"><code>nxviz</code></a> has a new feature! Now, it is possible to specify the data to use to colour edges. Previously, this was available in the API but was not working as I had not the time to implement it.</p>
+<p>Now, with <a href="https://github.com/ericmjl/nxviz/pull/260">Nora's PR</a> merged in, users can declare their edges to be coloured by some edge metadata key! In addition to that, Nora included a <code>seaborn</code> colour palette that may be useful for drawing other edge colours. The API remains a declarative API, giving users an easy way to specify how they want rational graph plots to be made.</p>
+<p>Thank you for the contribution, Nora!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/21/nxviz-first-pr-merged/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
+    <h1><a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/">Deep Learning and the Importance of a Good Teacher</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-02-20
+  </p>
+  <p>I can’t emphasize this enough - someone who teaches well can really open their student’s minds.</p>
+<p>On my journey in to deep learning and now graph convolutions, <a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/www.cs.toronto.edu/~duvenaud/">David Duvenaud</a> (currently a professor at the University of Toronto) simultaneously taught me, a newcomer to deep learning, the basics of deep learning and the mechanics behind the graph convolutional neural network he and his colleagues had just published. The key insight he passed on to me was that deep learning was nothing more than chaining differentiable functions together. Many times I’d ask him, “so does this mean I can do that operation?”, and the answer would usually be “yeah, why not?”.</p>
+<p>Knowing this point has made me realize how flexible deep learning really is. Once I got under the hood of what deep learning really was, then I realized that actually, DL is all about chaining together math functions one after another. Best part is, we get to define what those math functions are!</p>
+<p>Knowing this has also helped me when I read new DL papers. It’s now a lot easier to for me to tell when a research group has come up with something very different from the rest of the pack as opposed to advancing existing methods.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2018/2/13/data-scientists-need-to-write-good-apis/">Data scientists need to write good APIs</a></h1>
   
   <p class="meta">
@@ -198,58 +245,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/6/pycon-program-committee-review/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2018/1/29/refactor-notebook-code/">Refactor Notebook Code</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-01-29
-  </p>
-  <p>Jupyter notebooks that are filled with complex analyses can get unwieldy. Refactoring repeated code out into functions placed in modules should be standard practice, but from the sampling of Jupyter notebooks I've seen, I don't think this is standard practice.</p>
-<p>When should code be refactored? As soon as we start copying/pasting it! Making sure I have self-contained functions ensures that lingering state in my notebook doesn't cause unexpected behaviour. (Side note: learning the "functional" programming mindset can be very useful here!)</p>
-<p>But won't this slow down my pace? Isn't it faster to just copy and paste the code, and tweak what I need? Yes, but a small speed hit is going to be traded for a massive bump in rigour. Just today, I saw the effects of "lingering state" in my notebooks causing my plots to display different things before and after refactoring. It's not a good sign for any analysis if this happens.</p>
-<p>In short, refactor your code.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/1/29/refactor-notebook-code/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2018/1/18/pymc3-docs-weibull-patches-merged/">PyMC3 docs + Weibull patches merged!</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-01-18
-  </p>
-  <p>I recently had a few PRs merged into the PyMC3 codebase. Really happy about it, and just like my previous bug fix, I thought I'd share a bit about how those PRs came about.</p>
-<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2789">first PR</a> was an update to the docs on when to specify precision and when to specify standard deviation. They're related, so only one has to be specified, but I sometimes am sloppy when reading the docs and didn't pick up on that. Thus, I added a few lines to make sure this was crystal clear to sloppy readers like me.</p>
-<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2799">next PR</a> was an update to the Mixture model docs, in which I added an example of the new API for specifying components of mixture models. It previously wasn't clear how to do this, as there were no examples provided, so I put in a documentation PR specifying examples.</p>
-<p>The <a href="https://github.com/pymc-devs/pymc3/pull/2804">final PR</a> was a patch to the Weibull distribution. I wanted to play around with trying mixture Weibulls at work, but mixture Weibulls wouldn't work because it didn't have a mode specified. I checked on Wikipedia, and found that Weibull's mode is conditional on the value of its parameters, and thus put in a PR to make this happen. <a href="https://github.com/ericmjl/bayesian-analysis-recipes/blob/master/notebooks/mixture-model.ipynb">Trying it out on some simulated/toy data</a>, it worked! Thus, the devs allowed it to be merged.</p>
-<p>A few lessons I've learned along the way:</p>
-<p><strong>(1) Docs are an awesome place to start.</strong> In fact, I made a few formatting mistakes in my first and second PRs that gave an opportunity for another guy to fix! Nothing is too small to be made as a contribution. FWIW, my first contribution to open source software were documentation fixes for <code>matplotlib</code>, and that was a superb learning journey!</p>
-<p><strong>(2) Friendly maintainers are crucial.</strong> The PyMC dev team can basically be described as, "generally super nice!" From the online and in-person interactions I've had with them, there's little in the way of egos, they're always learning, always being generally helpful. If they weren't that way, I very likely would have second thoughts trying putting in a PR there.</p>
-<p><strong>(3) Open source lets me fix bugs I find.</strong> This lets me work at the pace that I need to, without having to wait for commercial vendors to provide update patches. If the patch that I find turns out to be useful for others, then the work I did can possibly save a ton of people's time as well. Win-win scenario!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/1/18/pymc3-docs-weibull-patches-merged/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

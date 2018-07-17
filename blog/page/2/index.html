@@ -92,6 +92,107 @@
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
   
+    <h1><a href="../../../blog/2018/5/6/model-baselines-are-important/">Model Baselines Are Important</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-05-06
+  </p>
+  <p>For any problem that we think is machine learnable, having a sane baseline is really important. It is even more important to establish them early.</p>
+<p>Today at ODSC, I had a chance to meet both Andreas Mueller and Randy Olson. Andreas leads <a href="http://scikit-learn.org/stable/"><code>scikit-learn</code></a> development, while Randy was the lead developer of <a href="https://github.com/EpistasisLab/tpot">TPOT</a>, an AutoML tool. To both of them, I told a variation of the following story:</p>
+<p>I had spent about 1.5 months building and testing a graph convolutions neural network model to predict RNA cleavage by an enzyme. I was suffering from a generalization problem - this model class would never generalize beyond the training samples for my problem on hand, even though I saw the same model class perform admirably well for small molecules and proteins.</p>
+<p>Together with an engineer at NIBR, we brainstormed a baseline with some simple features, and threw a random forest model at it. Three minutes later, after implementing everything, we had a model that generalized and outperformed my implementation of graph CNNs. Three days later, we had an AutoML (TPOT) model that beat the random forest. After further discussion, we realize then that the work that we did is sufficiently publishable even without the fancy graph CNNs.</p>
+<p>I think there’s a lesson in establishing baselines and MVPs early on!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/5/6/model-baselines-are-important/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
+    <h1><a href="../../../blog/2018/3/30/consolidate-your-scripts-using-click/">Consolidate your scripts using click</a></h1>
+  
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-03-30
+  </p>
+  <h2 id="overview">Overview</h2><p><code>click</code> is amazing! It's a Python package that allows us to add a command-line interface (CLI) to our Python scripts easily. This blog post is a data scientist-oriented post on how we can use <code>click</code> to build useful tools for ourselves. In this blog post, I want to focus on how we can better organize our scripts.</p>
+<p>I have found myself sometimes writing custom scripts to deal with custom data transforms. Having them refactored out into a library of modular functions can really help with maintenance. However, I still end up with multiple scripts that might not have a naturally logical organization... except for the fact that they are scripts that I run from time to time! Rather than have them scattered in multiple places, why not have them put together into a single <code>.py</code> file, with options that are callable from the command line instead?</p>
+<h2 id="template">Template</h2><p>Here's a template for organizing all those messy scripts using  <code>click</code>.</p>
+<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+
+
+<span class="nd">@click.group</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@main.command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">script1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Makes stuff happen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># do stuff that was originally in script 1</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;script 1 was run!&#39;</span><span class="p">)</span>  <span class="c1"># click.echo is recommended by the click authors.</span>
+
+
+<span class="nd">@main.command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">script2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Makes more stuff happen.&quot;&quot;&quot;</span>
+    <span class="c1"># do stuff that was originally in script 2.</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;script 2 was run!&#39;</span><span class="p">)</span>  <span class="c1"># we can run print instead of click.echo as well!</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cli</span><span class="p">()</span>
+</pre></div>
+<h2 id="how-to-use">How to use</h2><p>Let's call this new meta-script <code>jobs.py</code>, and make it executable.</p>
+<div class="hll"><pre><span></span>$ chmod +x jobs.py
+</pre></div>
+<p>To execute it at the command line, we now a help command for free:</p>
+<div class="hll"><pre><span></span>$ ./jobs.py --help
+Usage: jobs.py <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  script1  Makes stuff happen.
+  script2  Makes more stuff happen.
+</pre></div>
+<p>We can also use just one script with varying commands to control the execution of what was originally two different <code>.py</code> files.</p>
+<div class="hll"><pre><span></span>$ ./jobs.py script1
+script <span class="m">1</span> was run!
+$ ./jobs.py script2
+script <span class="m">2</span> was run!
+</pre></div>
+<p>Instead of versioning multiple <code>.py</code> files, we now only have to keep track of one file where all non-standard custom stuff goes!</p>
+<h2 id="details">Details</h2><p>Here's what's going on under the hood.</p>
+<p>With the decorator <code>@click.group()</code>, we have exposed the <code>main()</code> function from the command line as a "group" of commands that are callable from the command line. What this does is then "wrap" the <code>main()</code> function (somehow), such that now it can be used to decorate another function (in our case, <code>script1</code> and <code>script2</code>) using the decorator syntax <code>@main.command()</code>.</p>
+<h2 id="recap">Recap</h2><ul>
+<li>Consolidate disparate Python scripts into a single <code>.py</code>  file, wrapping them inside a callable function.</li>
+<li>Use <code>click</code> to expose them to the end-user (yourself, or others) at the command line.</li>
+</ul>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/3/30/consolidate-your-scripts-using-click/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- <div class="blog-post"> -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+  
     <h1><a href="../../../blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/">Lessons learned and reinforced from writing my own deep learning package</a></h1>
   
   <p class="meta">
@@ -177,53 +278,6 @@ $ py.test -m <span class="s2">&quot;not integration&quot;</span>  <span class="c
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2018/2/21/nxviz-first-pr-merged/">nxviz first PR merged!</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-21
-  </p>
-  <p>With thanks to <a href="https://twitter.com/KassnerNora">@KassnerNora</a>, <a href="https://github.com/ericmjl/nxviz"><code>nxviz</code></a> has a new feature! Now, it is possible to specify the data to use to colour edges. Previously, this was available in the API but was not working as I had not the time to implement it.</p>
-<p>Now, with <a href="https://github.com/ericmjl/nxviz/pull/260">Nora's PR</a> merged in, users can declare their edges to be coloured by some edge metadata key! In addition to that, Nora included a <code>seaborn</code> colour palette that may be useful for drawing other edge colours. The API remains a declarative API, giving users an easy way to specify how they want rational graph plots to be made.</p>
-<p>Thank you for the contribution, Nora!</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/21/nxviz-first-pr-merged/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- <div class="blog-post"> -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-  
-    <h1><a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/">Deep Learning and the Importance of a Good Teacher</a></h1>
-  
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-20
-  </p>
-  <p>I can’t emphasize this enough - someone who teaches well can really open their student’s minds.</p>
-<p>On my journey in to deep learning and now graph convolutions, <a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/www.cs.toronto.edu/~duvenaud/">David Duvenaud</a> (currently a professor at the University of Toronto) simultaneously taught me, a newcomer to deep learning, the basics of deep learning and the mechanics behind the graph convolutional neural network he and his colleagues had just published. The key insight he passed on to me was that deep learning was nothing more than chaining differentiable functions together. Many times I’d ask him, “so does this mean I can do that operation?”, and the answer would usually be “yeah, why not?”.</p>
-<p>Knowing this point has made me realize how flexible deep learning really is. Once I got under the hood of what deep learning really was, then I realized that actually, DL is all about chaining together math functions one after another. Best part is, we get to define what those math functions are!</p>
-<p>Knowing this has also helped me when I read new DL papers. It’s now a lot easier to for me to tell when a research group has come up with something very different from the rest of the pack as opposed to advancing existing methods.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 
