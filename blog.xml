@@ -1079,8 +1079,7 @@ $ echo $PATH
     </author>
     <content type="html">&lt;p&gt;Much as I've embraced the &lt;a href=&quot;https://atom.io/&quot;&gt;Atom text editor&lt;/a&gt;, there are times when the GUI isn't accessible to us, and we are forced to use a Terminal-based text editor.&lt;/p&gt;
 &lt;p&gt;Now, I'm not one of those crazy types who use emacs or vim - those are the real seasoned pros. (I still don't know how to exit vim, btw.) As such, my terminal editor of choice remains the venerable &lt;code&gt;nano&lt;/code&gt;. Here's some hacks that I recently figured out, to make text editing much easier in &lt;code&gt;nano&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(1) Syntax highlighting&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This is such a big one! Syntax highlighting seriously helps a ton. If you're on a Mac, make sure you install &lt;code&gt;homebrew&lt;/code&gt;'s version of &lt;code&gt;nano&lt;/code&gt; - you can look at my &lt;a href=&quot;https://github.com/ericmjl/dotfiles/blob/master/install.sh#L41&quot;&gt;dotfiles&lt;/a&gt; or run the command:&lt;/p&gt;
+&lt;h2 id=&quot;1-syntax-highlighting&quot;&gt;(1) Syntax highlighting&lt;/h2&gt;&lt;p&gt;This is such a big one! Syntax highlighting seriously helps a ton. If you're on a Mac, make sure you install &lt;code&gt;homebrew&lt;/code&gt;'s version of &lt;code&gt;nano&lt;/code&gt; - you can look at my &lt;a href=&quot;https://github.com/ericmjl/dotfiles/blob/master/install.sh#L41&quot;&gt;dotfiles&lt;/a&gt; or run the command:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ brew install nano
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then, edit your &lt;code&gt;~/.nanorc&lt;/code&gt; file to look something like this:&lt;/p&gt;
@@ -1089,8 +1088,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next time you use &lt;code&gt;nano&lt;/code&gt; (from your user account), syntax highlighting should be enabled!&lt;/p&gt;
 &lt;p&gt;You can find a sample &lt;a href=&quot;https://github.com/ericmjl/dotfiles/blob/master/.nanorc-mac&quot;&gt;.nanorc&lt;/a&gt; file on my GitHub &lt;a href=&quot;https://github.com/ericmjl/dotfiles/&quot;&gt;dotfiles&lt;/a&gt; repository&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(2) Keyboard Shortcuts&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Here's a laundry list of keyboard shortcuts I've muscle-memorized:&lt;/p&gt;
+&lt;h2 id=&quot;2-keyboard-shortcuts&quot;&gt;(2) Keyboard Shortcuts&lt;/h2&gt;&lt;p&gt;Here's a laundry list of keyboard shortcuts I've muscle-memorized:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Ctrl-x&lt;/code&gt;: quits. There will be a prompt to save the file if it's been modified.&lt;ul&gt;
 &lt;li&gt;I usually end up doing &lt;code&gt;Ctrl-x-y-Enter&lt;/code&gt;.&lt;/li&gt;
