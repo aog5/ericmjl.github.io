@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,25 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/5/6/model-baselines-are-important/">Model Baselines Are Important</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-05-06
-  </p>
+  
+
+  <!-- Put post body -->
   <p>For any problem that we think is machine learnable, having a sane baseline is really important. It is even more important to establish them early.</p>
 <p>Today at ODSC, I had a chance to meet both Andreas Mueller and Randy Olson. Andreas leads <a href="http://scikit-learn.org/stable/"><code>scikit-learn</code></a> development, while Randy was the lead developer of <a href="https://github.com/EpistasisLab/tpot">TPOT</a>, an AutoML tool. To both of them, I told a variation of the following story:</p>
 <p>I had spent about 1.5 months building and testing a graph convolutions neural network model to predict RNA cleavage by an enzyme. I was suffering from a generalization problem - this model class would never generalize beyond the training samples for my problem on hand, even though I saw the same model class perform admirably well for small molecules and proteins.</p>
@@ -113,19 +120,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/3/30/consolidate-your-scripts-using-click/">Consolidate your scripts using click</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-03-30
-  </p>
+  
+
+  <!-- Put post body -->
   <h2 id="overview">Overview</h2><p><code>click</code> is amazing! It's a Python package that allows us to add a command-line interface (CLI) to our Python scripts easily. This blog post is a data scientist-oriented post on how we can use <code>click</code> to build useful tools for ourselves. In this blog post, I want to focus on how we can better organize our scripts.</p>
 <p>I have found myself sometimes writing custom scripts to deal with custom data transforms. Having them refactored out into a library of modular functions can really help with maintenance. However, I still end up with multiple scripts that might not have a naturally logical organization... except for the fact that they are scripts that I run from time to time! Rather than have them scattered in multiple places, why not have them put together into a single <code>.py</code> file, with options that are callable from the command line instead?</p>
 <h2 id="template">Template</h2><p>Here's a template for organizing all those messy scripts using  <code>click</code>.</p>
@@ -189,19 +202,25 @@ script <span class="m">2</span> was run!
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/">Lessons learned and reinforced from writing my own deep learning package</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-02-28
-  </p>
+  
+
+  <!-- Put post body -->
   <p>At work, I’ve been rolling my own deep learning package to experiment with graph convolutional neural networks. I did this because in graph-centric deep learning, an idea I picked up from this paper, the inputs, convolution kernels, and much more, are being actively developed, and the standard APIs don’t fit with this kind of data.</p>
 <p>Here’s lessons I learned (and reinforced) while doing this.</p>
 <h2 id="autograd-is-an-amazing-package"><code>autograd</code> is an amazing package</h2><p>I am using <code>autograd</code> to write my neural networks. <code>autograd</code> provides a way to automatically differentiate <code>numpy</code> code. As long as I write the forward computation up to the loss function, <code>autograd</code> will be able to differentiate the loss function w.r.t. all of the parameters used, thus providing the direction to move parameters to minimize the loss function.</p>
@@ -219,19 +238,25 @@ script <span class="m">2</span> was run!
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/2/26/joy-from-teaching/">Joy from teaching</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-02-26
-  </p>
+  
+
+  <!-- Put post body -->
   <p>It always brings me joy to see others benefit from what I can offer.</p>
 <p>Thanks for <a href="https://www.linkedin.com/feed/update/urn:li:activity:6373939725656563713">sharing the fruits of your journey</a> on LinkedIn, Umar!</p>
 <p>Also a big thanks to the others who have finished the course! I hope you have enjoyed the learning journey, and were able to find problems to apply your newly-gained knowledge!</p>
@@ -243,19 +268,25 @@ script <span class="m">2</span> was run!
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">Annotating code tests and selectively running tests</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-02-25
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I just learned about a neat trick when using <code>pytest</code> - the ability to "mark" tests with metadata, and the ability to selectively run groups of marked tests.</p>
 <p>Here's an example:</p>
 <div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>

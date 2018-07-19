@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,43 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/">Bayesian Estimation, Group Comparison, and Workflow</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-07-16
+  
   </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/bayesian/">
+          bayesian
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/statistics/">
+          statistics
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/data science/">
+          data science
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
   <p>Over the past year, having learned about Bayesian inference methods, I finally see how estimation, group comparison, and model checking build upon each other into this really elegant framework for data analysis.</p>
 <h2 id="parameter-estimation">Parameter Estimation</h2><p>The foundation of this is "estimating a parameter". In a typical situation, we are most concerned with the parameter of interest. It could be a population mean, or a population variance. If there's a mathematical function that links the input variables to the output (a.k.a. "link function"), then the parameters of the model are that function's parameters. The key point here is that the atomic activity of Bayesian analysis is the estimation of a parameter, and its associated uncertainty.</p>
 <h2 id="comparison-of-groups">Comparison of Groups</h2><p>Building on that, we can then estimate parameters for more than one group of things. As a first pass, we could assume that each of the groups are unrelated, and thus "independently" (I'm trying to avoid overloading this term) estimate parameters per group under this assumption. Alternatively, we could assume that the groups are related to one another, and thus use a "hierarchical" model to estimate parameters for each group.</p>
@@ -121,19 +146,43 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../blog/2018/7/14/ecdfs/">ECDFs</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-07-14
+  
   </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/statistics/">
+          statistics
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/visualization/">
+          visualization
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/data science/">
+          data science
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
   <p>In my two SciPy 2018 co-taught tutorials, I made the case that ECDFs provide richer information compared to histograms. My main points were:</p>
 <ol>
 <li>We can more easily identify central tendency measures, in particular, the median, compared to a histogram.</li>
@@ -142,6 +191,7 @@
 <li>It is more difficult to hide multiple modes.</li>
 <li>We can easily identify repeat values.</li>
 </ol>
+<p>What are ECDFs? ECDFs stand for the "empirical cumulative distribution function", and they map every data point in the dataset to a quantile, which is a number between 0 and 1 that indicates the cumulative fraction of data points smaller than that data point itself.</p>
 <p>To illustrate, let's take a look at the following plots.</p>
 <div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -187,19 +237,43 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../blog/2018/6/17/git-tip-apply-a-patch/">Git Tip: Apply a Patch</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-06-17
+  
   </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/git/">
+          git
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/version control/">
+          version control
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../blog/tag/code snippets/">
+          code snippets
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
   <p>I learned a new thing this weekend: we apparently can apply a patch onto a branch/fork using <code>git apply [patchfile]</code>.</p>
 <p>There's a few things to unpack here. First off, what's a <code>patchfile</code>?</p>
 <p>The long story cut short is that a <code>patchfile</code> is nothing more than a plain text file that contains all information about <code>diffs</code> between one commit and another. If you've ever used the <code>git diff</code> command, you'll know that it will output a <code>diff</code> between the current state of a repository, and the last committed state. Let's take a look at an example.</p>
@@ -301,19 +375,25 @@ $ git apply /tmp/patch.txt
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/">My Latent Dissatisfaction with Modern ML</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-06-05
-  </p>
+  
+
+  <!-- Put post body -->
   <p>It took reading Judea Pearl's "The Book of Why", and Jonas Peters' mini-course on causality, for me to finally figure out why I had this lingering dissatisfaction with modern machine learning. It's because modern machine learning (deep learning included) is most commonly used as a tool in the service of finding correlations, and is not concerned with understanding systems.</p>
 <p>Perhaps this is why Pearl writes of modern ML as basically being "curve fitting". I tend to believe he didn't write those words in a dismissive way, though I might be wrong about it. Regardless, I think there is an element of truth to that statement.</p>
 <p>Linear models seek a linear combination of correlations between input variables and their targets. Tree-based models essentially seek combinations of splits in the data, while deep learning models are just stacked compositions of linear models with nonlinear functions applied to their outputs. As Keras author Francois Chollet wrote, <a href="https://blog.keras.io/the-limitations-of-deep-learning.html">deep learning can be thought of as basically geometric transforms of data from one data manifold to another</a>.</p>
@@ -338,19 +418,25 @@ $ git apply /tmp/patch.txt
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../blog/2018/5/26/causal-modelling/">Causal Modelling</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-05-26
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Finally, I have finished Judea Pearl's latest work <a href="https://www.amazon.com/Book-Why-Science-Cause-Effect-ebook/dp/B075CR9QBJ/ref=mt_kindle?_encoding=UTF8&amp;me=">"The Book of Why"</a>! Having read it, I have come to appreciate how much work had to go on in order to formalize the very intuitions that we have for causal reasoning into essentially a modelling language.</p>
 <p>"The Book of Why" is geared towards the layman reader. Thus, unlike a textbook, it does not contain "simplest complex examples" that a reader can walk through and do calculations by hand (or through simulation). Thankfully, there is a <a href="https://www.youtube.com/playlist?list=PLW01hpWnEtbTcuY0a0jhZyanHX3GPImAy">lecture series by Jonas Peters</a>, organized by the Broad Institute and held at MIT, that are available freely online.</p>
 <p>From just viewing the first of the four lectures, I am thoroughly enjoying Jonas' explanations of the core ideas in causal modelling. Indeed, Jonas is a very talented lecturer! He builds up the ideas from simple examples, finally culminating in a "simple complex example" that we can simulate on a computer. Having just freshly read "The Book of Why" also helps immensely; it's also clear to me that people in the world of causal modelling are very much familiar with the same talking points. For those interested in learning more about causal modelling, I highly recommend both the book and the lecture series!</p>

@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Predicting HIV Drug Resistance Phenotype from Genotype</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2015-09-28
-  </p>
+  
+
+  <!-- Put post body -->
   <p><strong>Note to Reader:</strong> I’d highly suggest reading this blog post on the left half of your screen, and have the <a href="https://github.com/ericmjl/hiv-resistance-prediction/blob/master/Predict%20HIV%20Genotype%20from%20Phenotype%20-%20Custom%20Funcs.ipynb">Jupyter notebook</a> on the right half of your screen. Makes things a bit easier to follow.</p>
 <p>I recently have been writing a proposal to conduct some experiments to predict viral RNA polymerase activity, in some standardized unit, from protein genotype. The main application of this would be to be able to conduct quantitative surveillance in a precise fashion. For example, with HIV, as treatment progresses, the virus accumulates mutations that confer resistance. For a physician treating a patient infected with HIV, would it be possible to determine, from sequence data alone, what would be the degree of predicted viral resistance for that patient’s virus?</p>
 <p>Knowing fully that this problem has been tackled many times in the past from multiple angles, I wanted to know how easily I could set up an ML workflow to go from sequence to predicted drug resistance. The goal of this blog post is to document how easy it was for me to get up and running, using Python packages really well-written Python packages.</p>

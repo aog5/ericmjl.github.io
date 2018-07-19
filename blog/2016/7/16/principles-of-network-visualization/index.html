@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Principles of Network Visualization</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-07-16
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I use networks as part of my research, and visualization is a very important part of it. The problem with network visualizations is that most people default to node-link diagrams that end up looking like <a href="https://duckduckgo.com/?q=network+visualization+hairball&amp;t=osx&amp;ia=web">hairballs</a>.</p>
 <p>Thankfully, if we put some thought into visualizing networks rationally, we can get aesthetic, beautiful and simultaneously informative network visualizations that are much more appealing than hairballs. My time at <a href="http://scipy2016.scipy.org">SciPy 2016</a>, hearing the keynote by <a href="http://www.physics.calpoly.edu/faculty/bgranger">Brian Granger</a> about <a href="https://github.com/ellisonbg/altair">Altair</a>, and talking with <a href="http://aric.hagberg.org">Aric Hagberg</a>, has given me a ton of inspiration on how rational network visualizations can be done right.</p>
 <p>What does it mean to be drawn “rationally”? I think it means following the principles of good data visualization - in which size, shape, location, colour and transparency are all used to convey meaning. As applied to network visualizations, the key is in placing and styling the nodes in some “rational” or “logical” fashion:</p>

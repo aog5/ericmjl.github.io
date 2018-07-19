@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>A Data Scientist&#39;s Guide to Environment Variables</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-10-07
-  </p>
+  
+
+  <!-- Put post body -->
   <p>You might have encountered a piece of software asking you for permission to modify your <code>PATH</code> variable, or another program's installation instructions cryptically telling you that you have to "set your <code>LD_LIBRARY_PATH</code> variable correctly".</p>
 <p>As a data scientist, you might encounter other environment variable issues when interacting with your compute stack (particularly if you don't have full control over it, like I do). This post is meant to demystify what an environment variable is, and how it gets used in a data science context.</p>
 <h2 id="what-is-an-environment-variable?">What Is An Environment Variable?</h2><p>First off, let me explain what an environment variable is, by going in-depth into the <code>PATH</code> environment variable. I'd encourage you to execute the commands here inside your bash terminal (with appropriate modifications -- read the text to figure out what I'm doing!).</p>

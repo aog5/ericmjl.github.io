@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>GitHub Lab Notebooks: Update</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-10-12
-  </p>
+  
+
+  <!-- Put post body -->
   <p>It's been about 2 months since starting up with the <a href="https://github.com/ericmjl/protein-systematic-characterization">GitHub lab notebooks</a> for a project that I'm coordinating. Here's some thoughts on it.</p>
 <p>Firstly, version control systems are really powerful as a backup system! Already more than once I've been able to <a href="https://github.com/ericmjl/protein-systematic-characterization/pull/33">salvage work</a> that was accidentally over-written.</p>
 <p>Secondly, GitHub offers some pretty neat settings that ensure the integrity of a lab notebook and provide for peer review of lab experimental reports. I have my GitHub repo's master branch on lockdown, meaning all new changes to it have to be pulled in from other forks, and the submitter cannot be the reviewer that approves it. With my UROP student now added as a collaborator on the repository, basically we have to approve each other's work before being allowed to merge into master, and can add requests for minor additions that will make the lab experimental report easier to follow. It's akin to signing off on a lab notebook, basically, meaning that the person responsible for the experiment and the person responsible for checking the experiment are both provisioned and tracked.</p>

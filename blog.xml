@@ -48,6 +48,7 @@
 &lt;li&gt;It is more difficult to hide multiple modes.&lt;/li&gt;
 &lt;li&gt;We can easily identify repeat values.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;What are ECDFs? ECDFs stand for the &quot;empirical cumulative distribution function&quot;, and they map every data point in the dataset to a quantile, which is a number between 0 and 1 that indicates the cumulative fraction of data points smaller than that data point itself.&lt;/p&gt;
 &lt;p&gt;To illustrate, let's take a look at the following plots.&lt;/p&gt;
 &lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;plt&lt;/span&gt;

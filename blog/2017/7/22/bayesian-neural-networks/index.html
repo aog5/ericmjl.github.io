@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Bayesian Neural Networks</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-07-22
-  </p>
+  
+
+  <!-- Put post body -->
   <p>During this week, while us Insight Fellows begin going out to interview with other companies, my "side hustle" has been working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian Analysis Recipes</a> repository.</p>
 <p>Two particularly interesting problems I've wanted to write my own implementation for are multinomial classification and Bayesian deep learning. I finally got both of them done today, after about 2-3 days of hacking on them.</p>
 <p>Multinomial classification (<a href="https://github.com/ericmjl/bayesian-analysis-recipes/blob/master/multiclass-logistic-regression-cover-type.ipynb">notebook here</a>) is the problem where we try to classify an item as being one of multiple classes. This is the natural extension to binary classification (done by logistic regression). To do this, I took the <a href="https://archive.ics.uci.edu/ml/datasets/covertype">forest cover dataset</a> and used PyMC3 to implement multinomial logistic regression. Seeing how to do it with PyMC3 was the most important aspect of this; actual accuracy wasn't much of a concern for me.</p>

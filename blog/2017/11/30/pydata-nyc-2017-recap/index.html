@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>PyData NYC 2017 Recap</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-11-30
-  </p>
+  
+
+  <!-- Put post body -->
   <p>With that, we’ve finished PyData NYC! Here's some of my highlights of the conference.</p>
 <h2 id="keynotes">Keynotes</h2><p>There were three keynotes, one each by Kerstin Kleese van Dam, Thomas Sargent, and Andrew Gelman. Interestingly enough, they didn't do what I would expect most academics to do -- give talks highlighting the accomplishments of their research groups. Rather, Kerstin gave a talk that highlighted the use of PyData tools at Brookhaven National Labs. Thomas Sargent gave a philosophical talk on what economic models really are (they're "games", in a mathematical sense), and I took back the importance of being able to implement models, otherwise, "you're just bull*****ing".</p>
 <p>Andrew Gelman surprised me the most - he gave a wide-ranging talk about the problems we have in statistical analysis workflows. He emphasized that "robustness checks" are basically scams, because they're basically methods whose purpose is reassurance. He had a really cool example that highlighted that we need to understand our models by modifying our models, perhaps even using a graph of models to identify perturbations to our model that will help us understand our model. He also peppered his talk with anecdotes about how he made mistakes in his analysis workflows. I took home a different philosophy of data analysis: when we evaluate how "good" a model is, the operative question is, "compared against what?"</p>

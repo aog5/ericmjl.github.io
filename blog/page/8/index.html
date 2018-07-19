@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,25 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/8/10/next-steps/">Next Steps</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-08-10
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Signed and done! I will be joining the Novartis Institutes for Biomedical Research (NIBR) in September, as part of the Scientific Data Analysis (SDA) team under Novartis Informatics (NX).</p>
 <p>NIBR is the research arm of Novartis, and the SDA team is essentially a "Data Special Ops" team inside NIBR. The nature of the position involves both internal consulting and the development of new initiatives across teams.</p>
 <p>The nature of the role I'm being hired into is in statistical learning, which is a general direction I've been moving towards during my time in grad school. I picked up and implemented a number of useful and interesting deep learning algorithms back then, and over the past half a year, have finally gotten in underneath the hood of graph &amp; image convolutions, variational autoencoders and gaussian processes. It's really fun stuff, at its core, and to me, it's even more fun translating biological and chemical data problems into that language, and back.</p>
@@ -112,19 +119,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/8/2/open-source-software/">Open Source Software</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-08-02
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Open source software is awesome, and I've just been thoroughly convinced of why.</p>
 <p>Today, I put in a <a href="https://github.com/pymc-devs/pymc3/pull/2470">PR</a> to PyMC3. This was a bug fix related to the PyMC3 multinomial distribution's random variates generator, which uses <code>numpy</code>'s multinomial under the hood, which arose from floating point precision errors.</p>
 <p>I first encountered this bug last week, when I started trying out the use of PyMC3 on my GPU tower. GPU stuff is tricky. One of the issues relates to floating point precision. I'm not well-versed enough on this to write intelligently about the underlying causes, but one thing I learned is that GPUs prefer 32-bit floating point precision (<code>float32</code>), while modern CPUs can handle 64-bit (<code>float64</code>). (I'm sure this will change in the future.) In the vast majority of "large number" computations, it's no big deal, but when we deal with small numbers (decimals in the thousandths range and smaller), addition errors can crop up.</p>
@@ -139,19 +152,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/7/22/bayesian-neural-networks/">Bayesian Neural Networks</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-07-22
-  </p>
+  
+
+  <!-- Put post body -->
   <p>During this week, while us Insight Fellows begin going out to interview with other companies, my "side hustle" has been working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian Analysis Recipes</a> repository.</p>
 <p>Two particularly interesting problems I've wanted to write my own implementation for are multinomial classification and Bayesian deep learning. I finally got both of them done today, after about 2-3 days of hacking on them.</p>
 <p>Multinomial classification (<a href="https://github.com/ericmjl/bayesian-analysis-recipes/blob/master/multiclass-logistic-regression-cover-type.ipynb">notebook here</a>) is the problem where we try to classify an item as being one of multiple classes. This is the natural extension to binary classification (done by logistic regression). To do this, I took the <a href="https://archive.ics.uci.edu/ml/datasets/covertype">forest cover dataset</a> and used PyMC3 to implement multinomial logistic regression. Seeing how to do it with PyMC3 was the most important aspect of this; actual accuracy wasn't much of a concern for me.</p>
@@ -169,19 +188,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/7/17/lessons-learned-during-insight/">Lessons Learned During Insight</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-07-17
-  </p>
+  
+
+  <!-- Put post body -->
   <p><strong>(a) Solving healthcare goes beyond solving the science underlying it.</strong></p>
 <p>At its core, healthcare delivery is essentially a human problem.  Even what we choose to optimize for is a hard problem. Do we optimize for changing human behaviour, or do we optimize for more precise treatments?</p>
 <p><strong>(b) Healthcare is complex</strong></p>
@@ -203,19 +228,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/7/15/insight-week-7/">Insight Week 7</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-07-15
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Aaand with that, week 7 of Insight is done!</p>
 <p>I had a short week because of SciPy 2017, and I'm thankful that I got a chance to head out there - had the opportunity to reconnect with many friends from the SciPy community.</p>
 <p>The two days of Week 7 that I experienced were probably the weirdest week 7 any Fellow has experienced to date. Because I had missed a demo on account of SciPy, and because the company didn't want to just watch the pre-recorded demo video, I made a trek up to Cambridge to demo on-site. What initially was a 30 minute session turned out to be a 1.5 hr demo.</p>

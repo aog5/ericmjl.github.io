@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Thesis</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-03-28
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I've finally turned in a polished draft of my thesis (<a href="http://ericmjl.github.io/thesis">HTML</a> or <a href="http://www.ericmjl.com/cv/thesis.pdf">PDF</a>) to my committee! My thesis topic is on the development of an algorithm to identify reassortant influenza viruses from large sequence databases, and its application to the study of influenza's evolution and ecology.</p>
 <p>Well, actually, it was last week when I finished it, but I've been doing the job hunt the past week that I've delayed on writing this blog post.</p>
 <p>Apart from the written summary of the work that I've been doing, I wanted to simultaneously write for PDFs and for the web, so I started assembling a software toolchain that compiles my raw markdown files, converts figures from PDF to JPG, and simultaneously builds the PDF and the HTML versions. A lot of Python packages, including <a href="https://github.com/mplewis/csvtomd"><code>csv2md</code></a>, the <a href="https://github.com/tomduck/pandoc-xnos">pandoc-xnos</a> series, and non-Python tools, including ImageMagick (<a href="https://www.imagemagick.org/script/index.php">https://www.imagemagick.org/script/index.php</a>).</p>

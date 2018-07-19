@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>SciPy 2015: Geospatial Data Tutorial</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2015-07-07
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This morning, I attended the Geospatial Data tutorial. It wasn’t a filled lecture hall, but that was likely because the topic is a bit more specialized. That said, I think it was a tutorial with great content. Part of my own research work may eventually incorporate working with geospatial data - to predict influenza viral reassortment, in particular. Therefore, I was looking forward to learning more about the packages that are used to read and manipulate geospatial data. This tutorial provided the overview I was looking for.</p>
 <h2 id="tutorial-content">Tutorial Content</h2><p>In this tutorial, we were taught how to inspect and manipulate geospatial data in a <em>Pythonic</em> fashion.</p>
 <p>The first thing we learned was how to inspect geospatial data using the <code>fiona</code> package. Most important point I learned was that geospatial data is usually stored as a GeoJSON format.</p>

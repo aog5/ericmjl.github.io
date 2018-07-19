@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Experimenting with GitHub Pages</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-12-15
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I've been playing a ton with GitHub pages recently, and so far, I've been impressed! My main use case has been in creating places where I can host Reveal.js slides online, and showcasing some writing that I've put together that doesn't fit in my "blog" format. My <a href="https://ericmjl.github.io/">GitHub page</a> showcases some of the best.</p>
 <p>Along the way, I've learned a ton. Here's some of the highlights.</p>
 <p>Firstly, I learned about standardizing project templates using <a href="https://github.com/audreyr/cookiecutter"><code>cookiecutter</code></a>, a Python package available on conda-forge and the cheese shop (PyPI). Initially, I tried hacking my own cookiecutter-ish hodge-podge of scripts, particularly for downloading the necessary components for <a href="https://github.com/hakimel/reveal.js/">Reveal.js</a>, but that didn't really work out, and I was eventually confused by my own logic. <code>cookiecutter</code> eliminated all of the confusion, and was really easy to operate.</p>

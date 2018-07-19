@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>On &#34;Openness = Source Code Inspectability&#34;</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-01-03
-  </p>
+  
+
+  <!-- Put post body -->
   <p>One tenet of open science is the notion of "being able to inspect the source code". It's a good, lofty goal, but it comes with a big assumption that I think needs to be made clear.</p>
 <p>This assumption is that scientists who are reviewing papers that incorporate code are capable of accurately interpreting the source code in a reasonable amount of time, have a sufficient working knowledge of the language that the work is implemented in, while also possessing sufficient domain knowledge to review the paper.</p>
 <p>That middle point is the current sore point. In certain fields, such as artificial intelligence/machine learning and computational biology (both my pet fields), this is not an issue, as the substrate of scientific work is code. On the other hand, there's the scenario of experimental work that is analyzed with custom code. Here, the substrate of the scientific work is not primarily the code, it is the experiment. Reviewers who evaluate this type of work may not necessarily have the expertise to inspect the source code of the pipeline. I am not aware of journals whose editors make the extra effort to solicit a team of reviewers capable of covering both experimental design and code inspection.</p>

@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,25 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/6/17/insight-week-3/">Insight Week 3</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-17
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This week was a week of polishing our final products and getting them in shape for our demos. Pushing a product to final production really involves a lot of nitty-gritty tweaking. In this blog post, I'll detail some of what I had to work on.</p>
 <p>My <a href="https://fluforecaster.herokuapp.com">final product</a> a hybrid web dashboard + blog post. Behind the dashboard is a fairly complex set of computations, which currently are run through a Jupyter notebook. The front-end, therefore, only renders the predicted flu sequences returned from the Jupyter notebooks. As part of my forecasts, I want to show the uncertainty surrounding the predictions, and how they're associated with individual forecasted sequences. This requires computing a convex hull surrounding a point cloud, and plotting it. I spent about 3-4 hours on Tuesday figuring out the code to make this part of the visualization, which I consider integral to communicating the project.</p>
 <p>Another important thing is the user experience (UX) when interacting with my hybrid blog post + dashboard. Unlike this blog or one written in Medium (the blog of choice for Insight), I have interactive elements in the post, which meant I had to hand-craft the HTML for the page. In plotting the figures on the page, there are a set of functions in the backend that are run before the page is rendered. These compute the necessary JS for interactive web plots. They have to run fast enough, otherwise Heroku will timeout. Introducing code to plot the bounding boxes above slowed the loading time of the page beyond the 30 second limit Heroku imposed. As such, I had to carefully profile my code (mostly manually, with timing statements printed to console) to isolate the slow part, rewrite the implementation for speed, and re-deploy to Heroku. This took another good 3-4 hours, all to shave off dozens of seconds. The things we do with our lives!</p>
@@ -113,19 +120,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/6/10/walk-the-stage-2017-edition/">&#34;Walk the Stage&#34; 2017 Edition</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-10
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Finally put on a funny hat and an oversized robe, and topped it off with a yellow hood that only six of us received last Friday. Just six in the entire Institute this year - only six of us weirdos chose the SciDoc (ScD) degree! (I chose it because I like yellow over blue, and get to have a bit of fun confusing recruiters out there.) The day was too hot, and so I couldn't be bothered to dress up - who's going to see what I'm wearing underneath the robes anyways?!</p>
 <p>Anyways, overall a good feeling to be done. A little bittersweet because I'm leaving a time where I had a ton of fun learning new things, especially in my final two years of grad school, though I also think it's nice to have a change of environment and to have a new set of problems to solve.</p>
 <p>My hope is to continue being deeply engaged with the hard sciences, even outside of the academic ivory tower, just because it's a fun thing to do. Here's to hoping I can find a good match with a company out there.</p>
@@ -136,19 +149,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/6/10/insight-week-2/">Insight Week 2</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-10
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This week has been intense, mostly because I knew in advance that I'd be spending two days wearing a fancy hat, funky robe, and yellow sash. Because I was missing two days of Insight, I had to get my Minimum Viable Product (MVP) out by Wednesday - thankfully, I did!</p>
 <p>If you've followed my blog post series on Insight (this is the 2nd post), my project is forecasting influenza sequences. This week, I hacked out my MVP and deployed it to <a href="https://fluforecaster.herokuapp.com/">Heroku</a> as a hybrid HTML report + dashboard. I also picked up and incorporated a few new things along the way.</p>
 <p>The first is the use of tooltips on my Bokeh plots. Bokeh is really powerful, and in some of the exploratory analyses, I desired having tooltips as a UI element to help a reader (who might need some introduction) understand the nature of the problem and the data involved.</p>
@@ -172,19 +191,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/6/2/insight-week-1/">Insight Week 1</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-02
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Insight's Week 1 is done! Here's some of my thoughts so far.</p>
 <p>Firstly, the Fellows at Insight is very fast at learning things. Everybody is either a PhD or MD, some have done post-doctoral work, and even fewer have become professors, but everybody is interested in doing data stuff, and are very fast at picking up new things. I think at the same time, we're also good at thinking strategically upon being given feedback; once an idea sounds infeasible, new ideas come out of the pivot or even switch.</p>
 <p>Secondly, I see now the importance of developing a great data product. I think of a data product in terms of the <strong>input data</strong>, the <strong>transformation</strong> applied to the data, and the <strong>insight</strong> returned from the data. Think of it as a Python function:</p>
@@ -204,19 +229,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/5/22/pycon-2017-highlights/">PyCon 2017 Highlights</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-05-22
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Last post was about thoughts on past PyCons, having attended PyCon 2017. This post is on PyCon 2017's highlights for me.</p>
 <p><strong>(1) Serving as part of the organizing committee.</strong> I had the privilege of serving on the FinAid committee this year, and spent a large fraction of time in the staff room preparing to disburse FinAid cheques. I have very vivid memories of how slow the line was when I was receiving my cheques back in the day, and so I wanted to make sure FinAid recipients could receive their reimbursements as fast as possible, without wasting time in line (when they could instead be listening on talks).</p>
 <p><strong>(2) Teaching two tutorials.</strong> This year, I submitted two tutorial proposals, and both were accepted. In the three years that I've been teaching it, <a href="https://www.youtube.com/watch?v=E4VKzFmByhE">Network Analysis Made Simple</a> has always been popular, and I think it's because it gives participants a different way of thinking about data, thus making it an intellectually stimulating topic. I also developed a new material on <a href="https://www.youtube.com/watch?v=yACtdj1_IxE">Best Testing Practices for Data Science</a>. This one, in retrospect, was much fresher, and thus in need of more battle-testing and polish compared to Network Analysis. I have some ideas, including modifications to the workshop format, narrowing the target audience and more, to make it more useful for future iterations.</p>

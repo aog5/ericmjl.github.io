@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>SciPy 2015: Cython Tutorial</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2015-07-06
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This morning, I sat in the Cython tutorial by Kurt Smith, of Enthought, at SciPy 2015. We’re only halfway in at the time of starting the writing, but it has been a really useful tutorial!</p>
 <h3 id="tutorial-content">Tutorial Content</h3><p>Kurt has designed this tutorial to be an intermediate tutorial, where participants are expected to have had some experience with Python before.</p>
 <p>During this tutorial, we covered two practical ways to speed up Python code. One is to declare Python variables, functions or objects as C types using the <code>cdef</code> statement, and the other is to simply wrap existing C code.</p>

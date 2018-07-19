@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,25 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2016/8/18/bayesian-estimation-greater-t-test/">Bayesian Estimation &gt; t-Test</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-08-18
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Recently found a very good article on the ArXiv about Bayesian estimation for difference in sample means. Loved the fact that someone's done the work so that I don't have to!</p>
 <p>The paper essentially explores how a Bayesian estimation (BEST) is essentially much, much better than traditional Null Hypothesis Significance Testing (NHST), and the author provides a good number of convincing arguments for this. The author basically covers the most commonly-used case in the experimental sciences - inter-comparison between an experimental and control group. I'd recommend reading the paper (<a href="http://www.indiana.edu/~kruschke/articles/Kruschke2013JEPG.pdf">link</a>).</p>
 <p>While skimming through it, I then found a <a href="https://pymc-devs.github.io/pymc3/notebooks/BEST.html">PyMC3 recipe</a>, as usual, provided by the awesome <a href="http://twiecki.github.io/">Thomas Wiecki</a> and <a href="http://stronginference.com/">Chris Fonnesbeck</a>.</p>
@@ -112,19 +119,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2016/8/18/precision-and-not-hypothesis-rejectionaccpetance/">Precision, and not Hypothesis Rejection/Acceptance!</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-08-18
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I've recently been considering the problem of when to stop measuring something, especially in the biological sciences. Turns out, John Kruschke has given this a ton of thought, in the psychological sciences.</p>
 <p>I listened to a talk, freely available on <a href="https://www.youtube.com/playlist?list=PL_mlm7M63Y7j641Y7QJG3TfSxeZMGOsQ4">YouTube</a>, about how to decide when to stop collecting experimental data. It's a very good talk, in which Kruschke states why precision should be the goal of measurement, and not acceptance or rejection of some hypothesis.</p>
 <p>The main problems with stopping data collection when some rejection or acceptance criteria has been fulfilled is that the reported measured parameter estimates will have a tendency to be biased away from some true value. Yet, "collecting data till I get some p &lt; 0.05" pretty much sums up the mentality of a large swathe of experimental biologists.</p>
@@ -139,19 +152,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2016/8/16/the-problem-of-too-many-splits/">The problem of too many splits?</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-08-16
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I recently followed an interesting Twitter conversation, in which one tweet struck me as surprising:</p>
 <p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/jakevdp">@jakevdp</a> <a href="https://twitter.com/data_hope">@data_hope</a> It&#39;s not too late to use and improve common tools.<br><br>Too many splits: Py2/Py3, pip/conda, CPython/pypy/jython/pyston</p>&mdash; Gael Varoquaux (@GaelVaroquaux) <a href="https://twitter.com/GaelVaroquaux/status/765420719782109184">August 16, 2016</a></blockquote></p>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><p>(I'd recommend following the full Twitter conversation in order to get a full view of Gael Varoquaux's opinions; don't vilify or exalt a person on the basis of one tweet.)</p>
@@ -189,19 +208,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2016/8/6/variational-inference-with-pymc3-a-lightweight-demo/">Variational Inference With PyMC3: A Lightweight Demo</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-08-06
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Following on the heels of me recently attending Thomas Wiecki's Boston Bayesians talk, I decided to put up a notebook showing a lightweight example of how to do Bayesian modelling with PyMC3. Comments are welcome!</p>
 <p>The notebook can be found <a href="https://github.com/ericmjl/website/blob/master/content/blog/variational-inference-with-pymc3-a-lightweight-demo/linreg.ipynb">here</a>.</p>
 <p>Thomas Wiecki's blog post on Bayesian Deep Learning, which served as the original inspiration for my notebook example, can be found <a href="http://twiecki.github.io/blog/2016/06/01/bayesian-deep-learning/">here</a>.</p>
@@ -213,19 +238,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2016/7/28/being-able-to-learn-anything-is-an-important-skill/">Being able to learn anything is an important skill</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-07-28
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Graduate school has taught me the importance of being able to learn almost anything, and to learn that thing as quickly as possible. I think that's an important skill to have in life.</p>
 <p>(Ironically, it's taken me much of 5 years,  now going on 6, to learn this point.)</p>
 <p>Forest White, a professor in the department, once counselled me with this statement (paraphrased):</p>

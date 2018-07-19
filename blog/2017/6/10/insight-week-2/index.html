@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Insight Week 2</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-10
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This week has been intense, mostly because I knew in advance that I'd be spending two days wearing a fancy hat, funky robe, and yellow sash. Because I was missing two days of Insight, I had to get my Minimum Viable Product (MVP) out by Wednesday - thankfully, I did!</p>
 <p>If you've followed my blog post series on Insight (this is the 2nd post), my project is forecasting influenza sequences. This week, I hacked out my MVP and deployed it to <a href="https://fluforecaster.herokuapp.com/">Heroku</a> as a hybrid HTML report + dashboard. I also picked up and incorporated a few new things along the way.</p>
 <p>The first is the use of tooltips on my Bokeh plots. Bokeh is really powerful, and in some of the exploratory analyses, I desired having tooltips as a UI element to help a reader (who might need some introduction) understand the nature of the problem and the data involved.</p>

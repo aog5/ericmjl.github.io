@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Why Uncertainty Matters</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2016-09-16
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Uncertainty is part and parcel of the process of doing science; in effect it's a <a href="http://www.senseaboutscience.org/data/files/resources/127/SAS012_MSU_ONLINE.pdf">currency of science</a>. What scientists do is essentially quantitatively measure or qualitatively describe some property of the natural, physical world. Because of the limitations of our instrumentation, uncertainty in our measurements will crop up.</p>
 <p>Quantified uncertainty is especially important, because we can use it to identify which parts of the world we need to measure more, if the data are not useful enough for something practical. For example, does the uncertainty surrounding a predicted drug resistance value encompass a clinically-relevant cutoff (the cut-off problem)? If it does, perhaps we need to measure again to gain more precision in our estimated drug resistance value.</p>
 <p>Machine learning models are becoming important in science, but uncertainty isn't explicitly incorporated in most of the off-the-shelf tools that are available (e.g. <code>scikit-learn</code>). This is a limitation of the current state-of-the-art tools, but is by no means a reason not to use them. That said, without uncertainty being modelled and propagated from measurement to data to prediction, we run into the "cut-off" problem with predicted values - what if a prediction had a large uncertainty around it, and encompassed an actionable cut-off value? And what if the action taken were incorrect on the basis of the false certainty surrounding a prediction?</p>

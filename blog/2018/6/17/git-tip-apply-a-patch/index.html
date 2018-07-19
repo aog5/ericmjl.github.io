@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,43 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Git Tip: Apply a Patch</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-06-17
+  
   </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../../../../../blog/tag/git/">
+          git
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../../../../../blog/tag/version control/">
+          version control
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../../../../../blog/tag/code snippets/">
+          code snippets
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
   <p>I learned a new thing this weekend: we apparently can apply a patch onto a branch/fork using <code>git apply [patchfile]</code>.</p>
 <p>There's a few things to unpack here. First off, what's a <code>patchfile</code>?</p>
 <p>The long story cut short is that a <code>patchfile</code> is nothing more than a plain text file that contains all information about <code>diffs</code> between one commit and another. If you've ever used the <code>git diff</code> command, you'll know that it will output a <code>diff</code> between the current state of a repository, and the last committed state. Let's take a look at an example.</p>

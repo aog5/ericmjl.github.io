@@ -38,7 +38,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -88,19 +89,25 @@
         
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/1/29/refactor-notebook-code/">Refactor Notebook Code</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-01-29
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Jupyter notebooks that are filled with complex analyses can get unwieldy. Refactoring repeated code out into functions placed in modules should be standard practice, but from the sampling of Jupyter notebooks I've seen, I don't think this is standard practice.</p>
 <p>When should code be refactored? As soon as we start copying/pasting it! Making sure I have self-contained functions ensures that lingering state in my notebook doesn't cause unexpected behaviour. (Side note: learning the "functional" programming mindset can be very useful here!)</p>
 <p>But won't this slow down my pace? Isn't it faster to just copy and paste the code, and tweak what I need? Yes, but a small speed hit is going to be traded for a massive bump in rigour. Just today, I saw the effects of "lingering state" in my notebooks causing my plots to display different things before and after refactoring. It's not a good sign for any analysis if this happens.</p>
@@ -112,19 +119,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/1/18/pymc3-docs-weibull-patches-merged/">PyMC3 docs + Weibull patches merged!</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-01-18
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I recently had a few PRs merged into the PyMC3 codebase. Really happy about it, and just like my previous bug fix, I thought I'd share a bit about how those PRs came about.</p>
 <p>The <a href="https://github.com/pymc-devs/pymc3/pull/2789">first PR</a> was an update to the docs on when to specify precision and when to specify standard deviation. They're related, so only one has to be specified, but I sometimes am sloppy when reading the docs and didn't pick up on that. Thus, I added a few lines to make sure this was crystal clear to sloppy readers like me.</p>
 <p>The <a href="https://github.com/pymc-devs/pymc3/pull/2799">next PR</a> was an update to the Mixture model docs, in which I added an example of the new API for specifying components of mixture models. It previously wasn't clear how to do this, as there were no examples provided, so I put in a documentation PR specifying examples.</p>
@@ -140,19 +153,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/1/10/offline-time/">Offline Time</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-01-10
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I was locked out of my work computer due to password reasons. (It's not human error - something about corporate management tools locked me out. Okay, well, that's human error too.) That said, I inadvertently gained a full two hours of offline time on Monday.</p>
 <p>Those two hours turned out to be pretty productive. I spent some time sketching out my work projects, trying to make better sense of how the project could fit in a disease area researcher's workflow, and figuring out derivative analyses that could enhance the value to them. This was something I probably wouldn't be able to accomplish if I had the regular distractions of my computer nearby.</p>
 <p>Seems like Cal Newport's "digital distraction de-cluttering" is a good thing to do. I must do more of it.</p>
@@ -163,19 +182,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/">Bayesian Uncertainty: A More Nuanced View</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2018-01-08
-  </p>
+  
+
+  <!-- Put post body -->
   <p>The following thought hit my mind just last night.</p>
 <p>Bayesian inference requires the computation of uncertainty. Computing that uncertainty is computationally expensive compared to simply computing point estimates/summary statistics. But when exactly is uncertainty useful, and more importantly, actionable? That's something I've not really appreciated in the past. It's probably not productive to be dogmatic about always computing uncertainty if that uncertainty is not actionable.</p>
 
@@ -185,19 +210,25 @@
     <hr class="fancy">
   
     
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1><a href="../../../blog/2017/12/13/visual-studio-code-a-new-microsoft/">Visual Studio Code: A New Microsoft?</a></h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-12-13
-  </p>
+  
+
+  <!-- Put post body -->
   <p>During my week attending PyData NYC 2017, which was effectively a mini-mini-sabbatical from work, I got a chance to try out Visual Studio Code. Part of it was curiosity, having seen so many PyData participants using it; part of it was because of Steve Dowell, a core CPython contributor who works at Microsoft, who mentioned about the Python-friendly tools they added into VSCode.</p>
 <p>I think VSCode is representative of a new Microsoft.</p>
 <p>But first, let me describe what using it is like.</p>

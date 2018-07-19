@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Data Diagnostics: missingno</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-02-06
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Sometimes, all that you need is a visual cue on whether the data you have on hand are complete or not. Looking at a table can be dizzying at times, so I'm very glad I found this packaged called <a href="https://github.com/ResidentMario/missingno"><code>missingno</code></a>! It provides a way to quickly visualize the <strong>"nullity"</strong> of your dataset. See an example below:</p>
 <p><a href="../../../../../blog/2017/2/6/data-diagnostics-missingno/data-completeness.jpg"><img src="../../../../../blog/2017/2/6/data-diagnostics-missingno/data-completeness-small.jpg" alt="Displaying nullity of a data set."></a></p>
 <p>It's built on top of <code>matplotlib</code>, and takes in <code>pandas</code> DataFrames, which means it plays very nicely with the rest of the PyData stack. I recently took it for a tour when I did a quick stats consult with Mia Lieberman (DCM); the above plot was made using her data, used with permission.</p>

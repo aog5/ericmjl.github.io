@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Open Source Software</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-08-02
-  </p>
+  
+
+  <!-- Put post body -->
   <p>Open source software is awesome, and I've just been thoroughly convinced of why.</p>
 <p>Today, I put in a <a href="https://github.com/pymc-devs/pymc3/pull/2470">PR</a> to PyMC3. This was a bug fix related to the PyMC3 multinomial distribution's random variates generator, which uses <code>numpy</code>'s multinomial under the hood, which arose from floating point precision errors.</p>
 <p>I first encountered this bug last week, when I started trying out the use of PyMC3 on my GPU tower. GPU stuff is tricky. One of the issues relates to floating point precision. I'm not well-versed enough on this to write intelligently about the underlying causes, but one thing I learned is that GPUs prefer 32-bit floating point precision (<code>float32</code>), while modern CPUs can handle 64-bit (<code>float64</code>). (I'm sure this will change in the future.) In the vast majority of "large number" computations, it's no big deal, but when we deal with small numbers (decimals in the thousandths range and smaller), addition errors can crop up.</p>

@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>SciPy 2015: Bokeh &amp; Blaze Tutorial</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2015-07-06
-  </p>
+  
+
+  <!-- Put post body -->
   <p>I sat in the Bokeh/Blaze tutorial this afternoon. It was a challenging tutorial, but a good one nonetheless. I could tell that our tutorial leader, <a href="http://chdoig.github.io/">Christine</a>, put in quite a bit of effort in preparing the tutorial content, so kudos to her on that! And the rest of the <a href="http://bokeh.pydata.org/en/latest/">bokeh</a> team were on hand to support her, and act as TAs for us, so this was also a plus point for <a href="http://continuum.io/">Continuum Analytics</a>.</p>
 <h2 id="tutorial-pace">Tutorial Pace</h2><p>Initially it was challenging for most of the crowd. I had futzed around a bit with <code>bokeh</code> before, so the first three exercises were straightforward. But the rest of the package was a bit cryptic, especially for someone like me coming from the <code>matplotlib</code> world. I actually wonder if the way the objects are organized mirrors <code>matplotlib</code> somehow? For example, in <code>matplotlib</code>, we have the <code>figure</code> object, the <code>Axes</code> objects, and then all of the other objects that the <code>Axes</code> object contains as the plot is being drawn. It seemed like the <code>bokeh</code> objects are organized in a similar fashion, giving coders quite a bit of flexibility in creating a plot.</p>
 <p>Anyways, I digress. The tutorial pace was fast initially, but Christine toned it back a bit. We got quite a bit of opportunity to try our hand at coding nonetheless. I think API familiarity was the biggest issue for us in the crowd; I am guessing that if we were more familiar with the API, then we would be able to more easily figure out the coding patterns that are used, and thus have more success in our own attempts at the tutorial content.</p>

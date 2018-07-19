@@ -43,7 +43,8 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=nhKoDpoTjWz4pC6CwI-fSy4hPoJ1uXwTLCfMCT3OK_8"></script> -->
 
     <!-- FontAwesome embed -->
-    <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script>
+    <!-- <script src="https://use.fontawesome.com/cb9dbe8e41.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/custom.css">
@@ -92,19 +93,25 @@
     <div class="container">
         
   
-  <!-- <div class="blog-post"> -->
+  <!-- Import stylesheet -->
   <link rel="stylesheet" href="../../../../../static/pygments.css">
   <div>
+
+  <!-- Set title style -->
   
     <h1>Insight Week 3</h1>
   
+
+  <!-- Append author -->
   <p class="meta">
     written by
     
       <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
     
     on 2017-06-17
-  </p>
+  
+
+  <!-- Put post body -->
   <p>This week was a week of polishing our final products and getting them in shape for our demos. Pushing a product to final production really involves a lot of nitty-gritty tweaking. In this blog post, I'll detail some of what I had to work on.</p>
 <p>My <a href="https://fluforecaster.herokuapp.com">final product</a> a hybrid web dashboard + blog post. Behind the dashboard is a fairly complex set of computations, which currently are run through a Jupyter notebook. The front-end, therefore, only renders the predicted flu sequences returned from the Jupyter notebooks. As part of my forecasts, I want to show the uncertainty surrounding the predictions, and how they're associated with individual forecasted sequences. This requires computing a convex hull surrounding a point cloud, and plotting it. I spent about 3-4 hours on Tuesday figuring out the code to make this part of the visualization, which I consider integral to communicating the project.</p>
 <p>Another important thing is the user experience (UX) when interacting with my hybrid blog post + dashboard. Unlike this blog or one written in Medium (the blog of choice for Insight), I have interactive elements in the post, which meant I had to hand-craft the HTML for the page. In plotting the figures on the page, there are a set of functions in the backend that are run before the page is rendered. These compute the necessary JS for interactive web plots. They have to run fast enough, otherwise Heroku will timeout. Introducing code to plot the bounding boxes above slowed the loading time of the page beyond the 30 second limit Heroku imposed. As such, I had to carefully profile my code (mostly manually, with timing statements printed to console) to isolate the slow part, rewrite the implementation for speed, and re-deploy to Heroku. This took another good 3-4 hours, all to shave off dozens of seconds. The things we do with our lives!</p>
