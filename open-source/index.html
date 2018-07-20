@@ -196,22 +196,6 @@
             <div class="">
                 
 <div class="project-container">
-    <h3>Bokeh Plots</h3>
-    <p><p>Continuing my desire to learn more about open source and to make contributions to data visualization libraries, I contributed an implementation of horizontal (<code>HBar</code>)and vertical (<code>VBar</code>) bar glyphs.</p>
-<p>Many thanks for the help of Bryan Van de Ven and Sarah Bird, lead developers on Bokeh, who guided me through the code base line by line.</p>
-</p>
-    
-        <p>Learn More: <a href="https://github.com/bokeh/bokeh/pull/4815">Pull Request</a></p>
-    
-</div>
-
-            </div>
-        </div>
-      
-        <div class="carousel-item ">
-            <div class="">
-                
-<div class="project-container">
     <h3>PyMC3</h3>
     <p><p>I have made multiple PRs to PyMC3, which were bug fixes, documentation and small feature additions.</p>
 <h3 id="bug-fix">Bug Fix</h3><p>I found a bug in PyMC3's multinomial random variate sampler, related to floating point precision issues while moving numbers from the GPU to the CPU, when working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian analysis recipes repository</a>. Specifically, we get probability values that sum to infinitesimally larger than one. I thus submitted a patch that fixed that converts the probabilities to <code>float64</code> precision and re-normalizes the probabilities to 1, before using them for random sampling.</p>
@@ -257,6 +241,22 @@
 </p>
     
         <p>Learn More: <a href="https://github.com/matplotlib/matplotlib/pulls?q=is%3Apr+author%3Aericmjl+is%3Aclosed">Pull Requests</a></p>
+    
+</div>
+
+            </div>
+        </div>
+      
+        <div class="carousel-item ">
+            <div class="">
+                
+<div class="project-container">
+    <h3>Bokeh Plots</h3>
+    <p><p>Continuing my desire to learn more about open source and to make contributions to data visualization libraries, I contributed an implementation of horizontal (<code>HBar</code>)and vertical (<code>VBar</code>) bar glyphs.</p>
+<p>Many thanks for the help of Bryan Van de Ven and Sarah Bird, lead developers on Bokeh, who guided me through the code base line by line.</p>
+</p>
+    
+        <p>Learn More: <a href="https://github.com/bokeh/bokeh/pull/4815">Pull Request</a></p>
     
 </div>
 
