@@ -2,13 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
   <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-07-16T00:00:00Z</updated>
+  <updated>2018-07-26T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/7/26/scipy-2018/">
+    <title type="text">SciPy 2018</title>
+    <id>urn:uuid:d1504284-578a-32b3-b988-3bac646e8b8e</id>
+    <updated>2018-07-26T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/7/26/scipy-2018/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;It's been about two weeks since SciPy 2018 ended, and I've finally found some breathing room to write about it.&lt;/p&gt;
+&lt;p&gt;SciPy 2018 is the 4th year I've made it to the conference, my first one being SciPy 2015 (not 2014, as I had originally incorrectly remembered). The conference has grown over the years that I've attended it!&lt;/p&gt;
+&lt;h2 id=&quot;organizing&quot;&gt;Organizing&lt;/h2&gt;&lt;p&gt;This year, I served again as the Financial Aid Co-Chair with Scott Collis and Celia Cintas. It brings me joy to be able to help bring others to the conference, much as I was a few years back when I was still a graduate student.&lt;/p&gt;
+&lt;p&gt;Building upon last year's application process, where we implemented blinded reviews, this year, we improved the review process so that it was much less tedious and more user-friendly for reviewers, i.e. myself, Celia, Scott and our two committee reviewers, Kasia and Patrick.&lt;/p&gt;
+&lt;p&gt;The review process can always be improved; we still have some work to do. One would be making the application less intimidating for under-represented individuals. Two might be reworking how we quantify how good our selections are; rather than some aggregate &quot;total&quot; score, it might be that we ought to optimize for a breadth of worthy contributions to the community. Finally, we definitely want to ensure that our focus is on FinAid's mission: to enable us to bring deserving and new people to the conference who otherwise might not have the resources!&lt;/p&gt;
+&lt;h2 id=&quot;tutorials&quot;&gt;Tutorials&lt;/h2&gt;&lt;p&gt;I did two tutorials, one with Hugo and one with Mridul. The one with Mridul was on Network Analysis, and the one with Hugo was on Bayesian statistics. Over the years, I've developed muscle memory on Network Analysis, so it felt very natural to me. Bayesian statistics and probabilistic programming was a new topic for myself and Hugo; as such, I spent proportionally more time preparing for that tutorial instead.&lt;/p&gt;
+&lt;p&gt;What was pleasantly surprising for me was that Bayesian statistics was gaining a ton of popularity, and this tutorial just happened to be there at the right time. I had a lot of one-on-one chats with tutorial participants after the tutorial and during the conference days, where we talked about the application of Bayesian methods to problems that they had encountered. There's a lot to do until people can generally communicate about data problems using Bayesian methods, but I think we're at an upwards-inflection point right now!&lt;/p&gt;
+&lt;h2 id=&quot;conference&quot;&gt;Conference&lt;/h2&gt;&lt;p&gt;I missed the talks mostly because I was doing the Tejas Room track (sit in the Tejas room and chat with people). I nonetheless had a very fruitful and fun time doing so!&lt;/p&gt;
+&lt;p&gt;To make up for lost time, I put together a &lt;a href=&quot;https://www.youtube.com/playlist?list=PLW01hpWnEtbTORVE7o70mZqB7IVVjOr4E&quot;&gt;playlist&lt;/a&gt; of things I'd like to catch up on later.&lt;/p&gt;
+&lt;h2 id=&quot;sprints&quot;&gt;Sprints&lt;/h2&gt;&lt;p&gt;For the first time ever, I stayed on to sprint! However, I also simultaneously caught a conference bug, so I was basically knocked out for the second day of sprints. For this year's sprints, I implemented a declarative interface for geographic graph visualizations in nxviz, where node placement is prioritized according by geographic information. The intent here isn't to replace geospatial analysis packages, but rather to provide a quick, &lt;code&gt;seaborn&lt;/code&gt;-like view into a graph's geographical structure. Once a user has a feel for the data, if nothing more is needed, they can use the graph as is; otherwise, they can move onto a different package.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/">
     <title type="text">Bayesian Estimation, Group Comparison, and Workflow</title>
     <id>urn:uuid:58217c0b-67d0-3380-92be-00cbcab54a50</id>
@@ -1546,28 +1566,6 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
     <content type="html">&lt;p&gt;Finally put on a funny hat and an oversized robe, and topped it off with a yellow hood that only six of us received last Friday. Just six in the entire Institute this year - only six of us weirdos chose the SciDoc (ScD) degree! (I chose it because I like yellow over blue, and get to have a bit of fun confusing recruiters out there.) The day was too hot, and so I couldn't be bothered to dress up - who's going to see what I'm wearing underneath the robes anyways?!&lt;/p&gt;
 &lt;p&gt;Anyways, overall a good feeling to be done. A little bittersweet because I'm leaving a time where I had a ton of fun learning new things, especially in my final two years of grad school, though I also think it's nice to have a change of environment and to have a new set of problems to solve.&lt;/p&gt;
 &lt;p&gt;My hope is to continue being deeply engaged with the hard sciences, even outside of the academic ivory tower, just because it's a fun thing to do. Here's to hoping I can find a good match with a company out there.&lt;/p&gt;
-</content>
-  </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/6/2/insight-week-1/">
-    <title type="text">Insight Week 1</title>
-    <id>urn:uuid:f2edfde4-6a3c-3edb-af7b-a7b417f6d672</id>
-    <updated>2017-06-02T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/6/2/insight-week-1/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;Insight's Week 1 is done! Here's some of my thoughts so far.&lt;/p&gt;
-&lt;p&gt;Firstly, the Fellows at Insight is very fast at learning things. Everybody is either a PhD or MD, some have done post-doctoral work, and even fewer have become professors, but everybody is interested in doing data stuff, and are very fast at picking up new things. I think at the same time, we're also good at thinking strategically upon being given feedback; once an idea sounds infeasible, new ideas come out of the pivot or even switch.&lt;/p&gt;
-&lt;p&gt;Secondly, I see now the importance of developing a great data product. I think of a data product in terms of the &lt;strong&gt;input data&lt;/strong&gt;, the &lt;strong&gt;transformation&lt;/strong&gt; applied to the data, and the &lt;strong&gt;insight&lt;/strong&gt; returned from the data. Think of it as a Python function:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;def data_product(data):
-    insight = transformation(data)
-    return insight
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Most of the &quot;data products&quot; being developed are consumer-facing type projects that a user can interact with, but a small number of them, mine included, are &quot;dashboard-style&quot; products that can continually ingest continually updated data and return continually updated insights. Both are good ideas.&lt;/p&gt;
-&lt;p&gt;Thirdly, I've become clear on the importance of first clearly defining the problem we want to solve, and then working backwards to define what we build, particularly for the &lt;strong&gt;m&lt;/strong&gt;inimum &lt;strong&gt;v&lt;/strong&gt;iable &lt;strong&gt;p&lt;/strong&gt;roduct (MVP). This way of thinking keeps us agile, and prevents us from being stuck in a rut.&lt;/p&gt;
-&lt;p&gt;Fourthly, other fellows know lots of good stuff that I've been able to learn about. For example, in deep learning, there's been a few steps I wasn't sure about w.r.t. convolutional neural networks in autoencoders. One other fellow, a post-doc from UC Berkeley, gave me the master-class run-through on what happens at the vector/matrix level with convolutional neural networks.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Thus far, really nice. I've noticed we don't generally end up competing with one another, and the atmosphere is very collaborative. We're working with one another, talking with one another, building trust and the likes. I'm looking forward to the coming weeks!&lt;/p&gt;
 </content>
   </entry>
 </feed>

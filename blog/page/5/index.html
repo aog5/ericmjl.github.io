@@ -95,6 +95,42 @@
 
   <!-- Set title style -->
   
+    <h1><a href="../../../blog/2017/12/13/visual-studio-code-a-new-microsoft/">Visual Studio Code: A New Microsoft?</a></h1>
+  
+
+  <!-- Append author -->
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2017-12-13
+  
+
+  <!-- Put post body -->
+  <p>During my week attending PyData NYC 2017, which was effectively a mini-mini-sabbatical from work, I got a chance to try out Visual Studio Code. Part of it was curiosity, having seen so many PyData participants using it; part of it was because of Steve Dowell, a core CPython contributor who works at Microsoft, who mentioned about the Python-friendly tools they added into VSCode.</p>
+<p>I think VSCode is representative of a new Microsoft.</p>
+<p>But first, let me describe what using it is like.</p>
+<h2 id="user-interface">User Interface</h2><p>First off, the UI is beautiful. It's impossible to repeat enough how important the UI is. With minimal configuration, I made it basically match Atom's UI, which I had grown used to. It has an integrated terminal, and the colours are... wow. That shade of green, blue and red are amazing, ever just so slightly muted compared to the Terminal or iTerm. The background shade of black matches well with the rest of VSCode, and the colour scheme is changeable to match that of Atom's. The design feels... just right. Wow!</p>
+<h2 id="git-integration">Git Integration</h2><p>Secondly, the integration with Git rivals Atom; in fact, there's a one-click "sync" button! It also has nice <code>git commit -am</code> analog where I can add and commit all of the files simultaneously.</p>
+<h2 id="intellisense">Intellisense</h2><p>Thirdly, IntelliSense is just amazing! I like how I can use it to look up a function signature just by mousing over the function name.</p>
+<h2 id="open-source">Open Source</h2><p>Finally, it’s fully open source and back able, in the same vein as Atom, minus the bloat that comes from building on top of electron. Impressive stuff!</p>
+<h2 id="other-thoughts">Other Thoughts</h2><p>Now, on the new Microsoft.</p>
+<p>Only at the recent PyData NYC did I learn that Microsoft has hired almost half of the core CPython developers! Not only that, they are encouraged to continue their contributions into the CPython code base. In my view, that’s a pretty awesome development! It means the Python programming language will continue to have a strong corporate backing while also enjoying community support. Its a sign of a healthy ecosystem, IMO, and also a sign of Microsoft’s support for Open Source Software!</p>
+<p>I’m more and more impressed by what Microsoft is doing for the Open Source community. I’m hoping they’ll continue up with this!!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/12/13/visual-studio-code-a-new-microsoft/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- Import stylesheet -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+
+  <!-- Set title style -->
+  
     <h1><a href="../../../blog/2017/11/30/pydata-nyc-2017-recap/">PyData NYC 2017 Recap</a></h1>
   
 
@@ -272,58 +308,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- Import stylesheet -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-
-  <!-- Set title style -->
-  
-    <h1><a href="../../../blog/2017/10/31/always-check-your-data/">Always Check Your Data</a></h1>
-  
-
-  <!-- Append author -->
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2017-10-31
-  
-  </p>
-  <!-- Append tags after author -->
-  <p>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/data science/">
-          data science
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/data analysis/">
-          data analysis
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/statistics/">
-          statistics
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/bayesian/">
-          bayesian
-      </a>
-      
-  </p>
-  
-
-  <!-- Put post body -->
-  <p>True story, just happened today. I was trying to fit a Poisson likelihood to estimate event cycle times (in discreet weeks). For certain columns, everything went perfectly fine. Yet for other columns, I was getting negative infinity’s likelihoods, and was banging my head over this problem for over an hour and a half.</p>
-<p>As things turned out, those columns that gave me negative infinity likelihood initializations were doing so because of negative values in the data. Try fitting a Poisson likelihood, which only has positive support, on that!</p>
-<p><img src="https://i.imgflip.com/1yl6ki.jpg" alt=""></p>
-<p>This lost hour and a half was a good lesson in data checking/testing: <strong>always be sure to sanity check basic stats associated with the data - bounds (min/max), central tendency (mean/median/mode) and spread (variance, quartile range) - always check!</strong></p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2017/10/31/always-check-your-data/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

@@ -95,6 +95,45 @@
 
   <!-- Set title style -->
   
+    <h1><a href="../../../blog/2018/5/26/causal-modelling/">Causal Modelling</a></h1>
+  
+
+  <!-- Append author -->
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-05-26
+  
+  </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../../../blog/tag/causal inference/">
+          causal inference
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
+  <p>Finally, I have finished Judea Pearl's latest work <a href="https://www.amazon.com/Book-Why-Science-Cause-Effect-ebook/dp/B075CR9QBJ/ref=mt_kindle?_encoding=UTF8&amp;me=">"The Book of Why"</a>! Having read it, I have come to appreciate how much work had to go on in order to formalize the very intuitions that we have for causal reasoning into essentially a modelling language.</p>
+<p>"The Book of Why" is geared towards the layman reader. Thus, unlike a textbook, it does not contain "simplest complex examples" that a reader can walk through and do calculations by hand (or through simulation). Thankfully, there is a <a href="https://www.youtube.com/playlist?list=PLW01hpWnEtbTcuY0a0jhZyanHX3GPImAy">lecture series by Jonas Peters</a>, organized by the Broad Institute and held at MIT, that are available freely online.</p>
+<p>From just viewing the first of the four lectures, I am thoroughly enjoying Jonas' explanations of the core ideas in causal modelling. Indeed, Jonas is a very talented lecturer! He builds up the ideas from simple examples, finally culminating in a "simple complex example" that we can simulate on a computer. Having just freshly read "The Book of Why" also helps immensely; it's also clear to me that people in the world of causal modelling are very much familiar with the same talking points. For those interested in learning more about causal modelling, I highly recommend both the book and the lecture series!</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/5/26/causal-modelling/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- Import stylesheet -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+
+  <!-- Set title style -->
+  
     <h1><a href="../../../blog/2018/5/6/model-baselines-are-important/">Model Baselines Are Important</a></h1>
   
 
@@ -357,72 +396,6 @@ script <span class="m">2</span> was run!
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/26/joy-from-teaching/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- Import stylesheet -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-
-  <!-- Set title style -->
-  
-    <h1><a href="../../../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">Annotating code tests and selectively running tests</a></h1>
-  
-
-  <!-- Append author -->
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-02-25
-  
-  </p>
-  <!-- Append tags after author -->
-  <p>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/programming/">
-          programming
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/python/">
-          python
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/testing/">
-          testing
-      </a>
-      <i class="fas fa-tag"></i>
-      <a href="../../../blog/tag/software engineering/">
-          software engineering
-      </a>
-      
-  </p>
-  
-
-  <!-- Put post body -->
-  <p>I just learned about a neat trick when using <code>pytest</code> - the ability to "mark" tests with metadata, and the ability to selectively run groups of marked tests.</p>
-<p>Here's an example:</p>
-<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="nd">@pytest.mark.slow</span>  <span class="c1"># annotate it as a &quot;slow&quot; test</span>
-<span class="k">def</span> <span class="nf">test_that_runs_slowly</span><span class="p">():</span>
-    <span class="o">....</span>
-
-<span class="nd">@pytest.mark.slow</span>  <span class="c1"># annotate test as a &quot;slow&quot; test.</span>
-<span class="nd">@pytest.mark.integration</span>  <span class="c1"># annotate test as being an &quot;integration&quot; test</span>
-<span class="k">def</span> <span class="nf">test_that_does_integration</span><span class="p">():</span>
-    <span class="o">....</span>
-</pre></div>
-<p>What's really cool here is that I can selectively run slow tests or selectively run integration tests:</p>
-<div class="hll"><pre><span></span>$ py.test -m <span class="s2">&quot;slow&quot;</span>   <span class="c1"># only runs &quot;slow&quot; tests</span>
-$ py.test -m <span class="s2">&quot;integration&quot;</span>  <span class="c1"># only runs &quot;integration&quot; tests</span>
-$ py.test -m <span class="s2">&quot;not integration&quot;</span>  <span class="c1"># only runs tests that are not &quot;integration&quot; tests.</span>
-</pre></div>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 
