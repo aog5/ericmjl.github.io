@@ -9,11 +9,11 @@
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
-  <entry xml:base="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0.3-released">
+  <entry xml:base="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0-3-released/">
     <title type="text">pyjanitor 0.3 released!</title>
-    <id>urn:uuid:ef06536b-5ed1-3f5a-b676-a6bfa3979fa1</id>
+    <id>urn:uuid:29fca9b1-eb7a-36e2-a1fa-081631d4fdf7</id>
     <updated>2018-07-27T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0.3-released" />
+    <link href="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0-3-released/" />
     <author>
       <name>Eric J. Ma</name>
     </author>
@@ -27,7 +27,7 @@
 &lt;p&gt;For example, concatenating a few columns together oftentimes lets us create an unique index based sample properties.&lt;/p&gt;
 &lt;p&gt;On the other hand, deconcatenating columns into multiple columns can be useful when our index is used to store metadata. (This really shouldn't be happening, but... sometimes that's just how the world works right now...)&lt;/p&gt;
 &lt;p&gt;Here's an example of how it works:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../../../../../blog/2018/7/27/pyjanitor-0.3-released/carbon-original.png&quot;&gt;&lt;img src=&quot;../../../../../blog/2018/7/27/pyjanitor-0.3-released/carbon-small.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../../../../blog/2018/7/27/pyjanitor-0-3-released/carbon-original.png&quot;&gt;&lt;img src=&quot;../../../../../blog/2018/7/27/pyjanitor-0-3-released/carbon-small.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;To install &lt;code&gt;pyjanitor&lt;/code&gt;, grab it from PyPI:&lt;/p&gt;
 &lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pyjanitor&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
