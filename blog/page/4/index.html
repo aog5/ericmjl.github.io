@@ -95,6 +95,57 @@
 
   <!-- Set title style -->
   
+    <h1><a href="../../../blog/2018/2/7/bayesian-inference-and-testing-sets/">Bayesian Inference &amp; Testing Sets</a></h1>
+  
+
+  <!-- Append author -->
+  <p class="meta">
+    written by
+    
+      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
+    
+    on 2018-02-07
+  
+  </p>
+  <!-- Append tags after author -->
+  <p>
+      <i class="fas fa-tag"></i>
+      <a href="../../../blog/tag/bayesian/">
+          bayesian
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../../../blog/tag/statistics/">
+          statistics
+      </a>
+      <i class="fas fa-tag"></i>
+      <a href="../../../blog/tag/data science/">
+          data science
+      </a>
+      
+  </p>
+  
+
+  <!-- Put post body -->
+  <p>This topic recently came up again on the <a href="https://discourse.pymc.io/t/do-we-need-a-testing-set/759/5">PyMC3 discourse</a>. I had an opportunity to further clarify what I was thinking about when I first uttered the train/test split comment <a href="https://www.youtube.com/watch?v=s0S6HFdPtlA">at PyData NYC</a>.</p>
+<p>After a little while, my thoughts for a layperson are a bit clearer, and I thought I'd re-iterate them here.</p>
+<ol>
+<li>Model specification uncertainty: Did we get the conditional relationships correct? Did we specify enough of the explanatory variables?</li>
+<li>Model parameter uncertainty: Given a model, can we quantify the uncertainty in the parameter values?</li>
+</ol>
+<p>These are different uncertainties to deal with. We must be clear: where we are pretty sure about the model spec, Bayesian inference is about quantifying the uncertainty in the parameter values. Under this paradigm, if we use more data, we get narrower posterior distributions, and if we use less data, we get wider posterior distributions. If we split the data, we're just feeding in fewer data points to the model; if we don't, then we're just feeding in more data points.</p>
+
+  </div>
+
+    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/2/7/bayesian-inference-and-testing-sets/#disqus">Let's discuss more</a>!</i></p>
+    <hr class="fancy">
+  
+    
+  <!-- Import stylesheet -->
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <div>
+
+  <!-- Set title style -->
+  
     <h1><a href="../../../blog/2018/2/6/pycon-program-committee-review/">PyCon Program Committee Review</a></h1>
   
 
@@ -298,34 +349,6 @@
   </div>
 
     <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/1/10/offline-time/#disqus">Let's discuss more</a>!</i></p>
-    <hr class="fancy">
-  
-    
-  <!-- Import stylesheet -->
-  <link rel="stylesheet" href="../../../static/pygments.css">
-  <div>
-
-  <!-- Set title style -->
-  
-    <h1><a href="../../../blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/">Bayesian Uncertainty: A More Nuanced View</a></h1>
-  
-
-  <!-- Append author -->
-  <p class="meta">
-    written by
-    
-      <a href="https://twitter.com/ericmjl">Eric J. Ma</a>
-    
-    on 2018-01-08
-  
-
-  <!-- Put post body -->
-  <p>The following thought hit my mind just last night.</p>
-<p>Bayesian inference requires the computation of uncertainty. Computing that uncertainty is computationally expensive compared to simply computing point estimates/summary statistics. But when exactly is uncertainty useful, and more importantly, actionable? That's something I've not really appreciated in the past. It's probably not productive to be dogmatic about always computing uncertainty if that uncertainty is not actionable.</p>
-
-  </div>
-
-    <p><i>Did you enjoy this blog post? <a href="../../../blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/#disqus">Let's discuss more</a>!</i></p>
     <hr class="fancy">
   
 

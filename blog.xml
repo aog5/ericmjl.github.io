@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Eric Ma's Blog</title>
-  <id>urn:uuid:8e5496e4-8606-3632-a35c-1d9694b4313d</id>
-  <updated>2018-07-26T00:00:00Z</updated>
+  <id>urn:uuid:a6058c91-b2ec-3293-92f4-6c8535935525</id>
+  <updated>2018-07-27T00:00:00Z</updated>
   <link href="http://www.ericmjl.com/blog/" />
   <link href="http://www.ericmjl.com/blog.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0.3-released">
+    <title type="text">pyjanitor 0.3 released!</title>
+    <id>urn:uuid:ef06536b-5ed1-3f5a-b676-a6bfa3979fa1</id>
+    <updated>2018-07-27T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2018/7/27/pyjanitor-0.3-released" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;A new release of &lt;a href=&quot;https://github.com/ericmjl/pyjanitor&quot;&gt;&lt;code&gt;pyjanitor&lt;/code&gt;&lt;/a&gt; is out!&lt;/p&gt;
+&lt;p&gt;Two new features that I have added in include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Concatenating column names into a single column, such that each item is separated by a delimiter.&lt;/li&gt;
+&lt;li&gt;Deconcatenating a column into multiple columns, separating on the basis of a delimiter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both of these tasks come up frequently in data preparation.&lt;/p&gt;
+&lt;p&gt;For example, concatenating a few columns together oftentimes lets us create an unique index based sample properties.&lt;/p&gt;
+&lt;p&gt;On the other hand, deconcatenating columns into multiple columns can be useful when our index is used to store metadata. (This really shouldn't be happening, but... sometimes that's just how the world works right now...)&lt;/p&gt;
+&lt;p&gt;Here's an example of how it works:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../../../../blog/2018/7/27/pyjanitor-0.3-released/carbon-original.png&quot;&gt;&lt;img src=&quot;../../../../../blog/2018/7/27/pyjanitor-0.3-released/carbon-small.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To install &lt;code&gt;pyjanitor&lt;/code&gt;, grab it from PyPI:&lt;/p&gt;
+&lt;div class=&quot;hll&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pyjanitor&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The conda-forge build will be coming soon!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/7/26/scipy-2018/">
     <title type="text">SciPy 2018</title>
-    <id>urn:uuid:d1504284-578a-32b3-b988-3bac646e8b8e</id>
+    <id>urn:uuid:facc96ac-e7b5-3133-8337-554af67b2c5d</id>
     <updated>2018-07-26T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/7/26/scipy-2018/" />
     <author>
@@ -31,7 +56,7 @@
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/">
     <title type="text">Bayesian Estimation, Group Comparison, and Workflow</title>
-    <id>urn:uuid:58217c0b-67d0-3380-92be-00cbcab54a50</id>
+    <id>urn:uuid:64633193-d4d3-383a-9d4e-93cc0d59b8ec</id>
     <updated>2018-07-16T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/7/16/bayesian-estimation-group-comparison-and-workflow/" />
     <author>
@@ -54,7 +79,7 @@
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/7/14/ecdfs/">
     <title type="text">ECDFs</title>
-    <id>urn:uuid:dcedf06f-59ec-360f-9711-7e4db71e3ef1</id>
+    <id>urn:uuid:722d1463-699e-333c-98e8-1bf49765bda4</id>
     <updated>2018-07-14T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/7/14/ecdfs/" />
     <author>
@@ -111,7 +136,7 @@
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/6/17/git-tip-apply-a-patch/">
     <title type="text">Git Tip: Apply a Patch</title>
-    <id>urn:uuid:91a163e7-561a-3b01-937e-dd71a96974c3</id>
+    <id>urn:uuid:524d6bf5-7d9f-3e26-88c9-528c7bf88719</id>
     <updated>2018-06-17T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/6/17/git-tip-apply-a-patch/" />
     <author>
@@ -215,7 +240,7 @@ $ git apply /tmp/patch.txt
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/">
     <title type="text">My Latent Dissatisfaction with Modern ML</title>
-    <id>urn:uuid:2e5732c7-78fb-320e-a57e-6d2164ced345</id>
+    <id>urn:uuid:f72b7f69-3450-36b2-8372-de49629de8e5</id>
     <updated>2018-06-05T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/6/5/my-latent-dissatisfaction-with-modern-ml/" />
     <author>
@@ -242,7 +267,7 @@ $ git apply /tmp/patch.txt
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/5/26/causal-modelling/">
     <title type="text">Causal Modelling</title>
-    <id>urn:uuid:0d2239fc-b359-3a37-abfa-d50e0d2a6f01</id>
+    <id>urn:uuid:c379dc08-8c4b-3098-afc8-f3c3bd97b8c8</id>
     <updated>2018-05-26T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/5/26/causal-modelling/" />
     <author>
@@ -255,7 +280,7 @@ $ git apply /tmp/patch.txt
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/5/6/model-baselines-are-important/">
     <title type="text">Model Baselines Are Important</title>
-    <id>urn:uuid:f3d55548-fb27-39e0-bc0d-86413913fe59</id>
+    <id>urn:uuid:9e425835-4049-3e1d-a460-a61bec0783ce</id>
     <updated>2018-05-06T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/5/6/model-baselines-are-important/" />
     <author>
@@ -270,7 +295,7 @@ $ git apply /tmp/patch.txt
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/">
     <title type="text">Consolidate your scripts using click</title>
-    <id>urn:uuid:beec04f1-f5b9-3932-9d12-92337ec70fbb</id>
+    <id>urn:uuid:0a6ff3a5-a269-3603-a184-fb79eb6153a7</id>
     <updated>2018-03-30T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/3/30/consolidate-your-scripts-using-click/" />
     <author>
@@ -336,7 +361,7 @@ script &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; was run!
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/">
     <title type="text">Lessons learned and reinforced from writing my own deep learning package</title>
-    <id>urn:uuid:390270b7-9d7b-306c-9ead-2617aac7af0a</id>
+    <id>urn:uuid:9ea49ae6-b524-3249-911e-681d772c9086</id>
     <updated>2018-02-28T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/28/lessons-learned-and-reinforced-from-writing-my-own-deep-learning-package/" />
     <author>
@@ -356,7 +381,7 @@ script &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; was run!
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/26/joy-from-teaching/">
     <title type="text">Joy from teaching</title>
-    <id>urn:uuid:5c9209f0-4531-3b75-b34a-ceb067bc526c</id>
+    <id>urn:uuid:e547dcd7-e53b-3eb3-b3ef-a0d0bbfc8796</id>
     <updated>2018-02-26T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/26/joy-from-teaching/" />
     <author>
@@ -370,7 +395,7 @@ script &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; was run!
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/">
     <title type="text">Annotating code tests and selectively running tests</title>
-    <id>urn:uuid:58ec5548-622e-3171-a4e9-74776a93d076</id>
+    <id>urn:uuid:21841009-0758-3896-b3b3-db8cc8b78b15</id>
     <updated>2018-02-25T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/25/annotating-code-tests-and-selectively-running-tests/" />
     <author>
@@ -398,7 +423,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/21/nxviz-first-pr-merged/">
     <title type="text">nxviz first PR merged!</title>
-    <id>urn:uuid:12691a84-54fb-355f-a79b-2f656232a743</id>
+    <id>urn:uuid:abc678e9-023b-3ff8-a4d7-39e8074029a4</id>
     <updated>2018-02-21T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/21/nxviz-first-pr-merged/" />
     <author>
@@ -411,7 +436,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/">
     <title type="text">Deep Learning and the Importance of a Good Teacher</title>
-    <id>urn:uuid:06ad28dc-a618-3792-a8d5-1cc5645cb01b</id>
+    <id>urn:uuid:9b8292c9-df88-35cc-82ee-e18accb82c36</id>
     <updated>2018-02-20T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/20/deep-learning-and-the-importance-of-a-good-teacher/" />
     <author>
@@ -425,7 +450,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/13/data-scientists-need-to-write-good-apis/">
     <title type="text">Data scientists need to write good APIs</title>
-    <id>urn:uuid:53402dcb-b8ee-3f08-923d-b30a8e94a285</id>
+    <id>urn:uuid:94c56710-a5f8-3127-bf04-47df862e5b84</id>
     <updated>2018-02-13T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/13/data-scientists-need-to-write-good-apis/" />
     <author>
@@ -438,7 +463,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/7/bayesian-inference-and-testing-sets/">
     <title type="text">Bayesian Inference &amp; Testing Sets</title>
-    <id>urn:uuid:ef48ae04-9b7a-3b04-a221-bf4e0f46d296</id>
+    <id>urn:uuid:01bf564f-afd4-36b9-916b-7ecca522ff68</id>
     <updated>2018-02-07T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/7/bayesian-inference-and-testing-sets/" />
     <author>
@@ -455,7 +480,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/2/6/pycon-program-committee-review/">
     <title type="text">PyCon Program Committee Review</title>
-    <id>urn:uuid:017a77c3-861d-34cd-82ec-12512e56f66f</id>
+    <id>urn:uuid:0ba436c8-ef55-39f9-917e-614337a32f3e</id>
     <updated>2018-02-06T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/2/6/pycon-program-committee-review/" />
     <author>
@@ -508,7 +533,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/29/refactor-notebook-code/">
     <title type="text">Refactor Notebook Code</title>
-    <id>urn:uuid:d502b49d-f207-3319-a533-01b3b17c9330</id>
+    <id>urn:uuid:2cbac964-c713-3f74-912c-6289003b826b</id>
     <updated>2018-01-29T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/1/29/refactor-notebook-code/" />
     <author>
@@ -522,7 +547,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/18/pymc3-docs-weibull-patches-merged/">
     <title type="text">PyMC3 docs + Weibull patches merged!</title>
-    <id>urn:uuid:337ce668-8116-366a-b9dc-903308b761a6</id>
+    <id>urn:uuid:ab68759f-0fd9-3b1f-aa2b-2f7d3ea4865c</id>
     <updated>2018-01-18T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/1/18/pymc3-docs-weibull-patches-merged/" />
     <author>
@@ -540,7 +565,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/10/offline-time/">
     <title type="text">Offline Time</title>
-    <id>urn:uuid:9c643c98-4cfc-3fe2-ac9a-d2ee9f8ad34f</id>
+    <id>urn:uuid:e9468e73-0550-349c-be80-a54a0e92340c</id>
     <updated>2018-01-10T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/1/10/offline-time/" />
     <author>
@@ -553,7 +578,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/">
     <title type="text">Bayesian Uncertainty: A More Nuanced View</title>
-    <id>urn:uuid:c8e9b5e3-9f3c-38d6-9605-cd46842f22ae</id>
+    <id>urn:uuid:a64a48e0-79df-392e-8d5c-130cc239e3e2</id>
     <updated>2018-01-08T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2018/1/8/bayesian-uncertainty-a-more-nuanced-view/" />
     <author>
@@ -565,7 +590,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/12/13/visual-studio-code-a-new-microsoft/">
     <title type="text">Visual Studio Code: A New Microsoft?</title>
-    <id>urn:uuid:06b625f2-4e15-3653-91b0-2f759200dd68</id>
+    <id>urn:uuid:f63fd7f6-ece6-31d3-acfc-5d4f054c130f</id>
     <updated>2017-12-13T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/12/13/visual-studio-code-a-new-microsoft/" />
     <author>
@@ -585,7 +610,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/">
     <title type="text">PyData NYC 2017 Recap</title>
-    <id>urn:uuid:69d8bdba-18aa-34f8-961d-a08fcc38cc72</id>
+    <id>urn:uuid:3928a375-1062-3846-9024-be002b5014cd</id>
     <updated>2017-11-30T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/11/30/pydata-nyc-2017-recap/" />
     <author>
@@ -625,7 +650,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/16/bayesian-learning-and-overfitting/">
     <title type="text">Bayesian Learning and Overfitting</title>
-    <id>urn:uuid:8ac4ab4c-3233-3ebe-8191-80fadf3a82c5</id>
+    <id>urn:uuid:1785be6f-199e-33f1-9d07-3f499eef3115</id>
     <updated>2017-11-16T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/11/16/bayesian-learning-and-overfitting/" />
     <author>
@@ -647,7 +672,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/14/the-value-of-thinking-simply/">
     <title type="text">The Value of Thinking Simply</title>
-    <id>urn:uuid:fd45d251-9956-3192-839f-cf23a0455b66</id>
+    <id>urn:uuid:7e98d396-c1b0-3d47-ace1-cf093101db14</id>
     <updated>2017-11-14T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/11/14/the-value-of-thinking-simply/" />
     <author>
@@ -672,7 +697,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/">
     <title type="text">Boston Bayesians Talk: An Attempt at Demystifying Bayesian Deep Learning</title>
-    <id>urn:uuid:16575827-ed23-3dba-8acf-172b01b148f7</id>
+    <id>urn:uuid:5c78ec22-5f13-3e67-b918-3e77176cdf49</id>
     <updated>2017-11-03T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/11/3/boston-bayesians-talk-an-attempt-at-demystifying-bayesian-deep-learning/" />
     <author>
@@ -689,7 +714,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/31/always-check-your-data/">
     <title type="text">Always Check Your Data</title>
-    <id>urn:uuid:5aa6b7fd-5346-3f68-a35b-83bb0dc0b0b6</id>
+    <id>urn:uuid:381b8625-445b-3809-a0eb-a15e15af7404</id>
     <updated>2017-10-31T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/31/always-check-your-data/" />
     <author>
@@ -703,7 +728,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/27/random-forests-a-good-default-model/">
     <title type="text">Random Forests: A Good Default Model?</title>
-    <id>urn:uuid:2570438e-960b-3197-8bf0-6a690f53f864</id>
+    <id>urn:uuid:57ba1309-fb7c-3501-8cd0-0014da929de6</id>
     <updated>2017-10-27T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/27/random-forests-a-good-default-model/" />
     <author>
@@ -730,7 +755,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/22/network-propagation/">
     <title type="text">Network Propagation</title>
-    <id>urn:uuid:8092c56f-71cb-389a-ab28-5d3168f9e6c9</id>
+    <id>urn:uuid:3cfd1061-8ead-37d1-80de-6c28fc04493d</id>
     <updated>2017-10-22T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/22/network-propagation/" />
     <author>
@@ -802,7 +827,7 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/11/pypy-impressive/">
     <title type="text">PyPy: Impressive!</title>
-    <id>urn:uuid:d33ee57d-b161-39f0-9b6d-9821ba7c6a11</id>
+    <id>urn:uuid:f70547d1-63cd-32af-ad75-0612e0e068b5</id>
     <updated>2017-10-11T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/11/pypy-impressive/" />
     <author>
@@ -900,29 +925,9 @@ $ py.test -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;not integration&amp;quot
 &lt;/pre&gt;&lt;/div&gt;
 </content>
   </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/10/10/pydata-nyc-2017/">
-    <title type="text">PyData NYC 2017</title>
-    <id>urn:uuid:e720c68f-51c8-3391-9f3c-97ce2ba8267c</id>
-    <updated>2017-10-10T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/10/10/pydata-nyc-2017/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;I'm seriously looking forward to PyData NYC this year -- there's a great lineup of talks that I'm particularly looking forward to hearing! The theme for my set of must-see talks this year is &quot;Bayesian machine learning&quot; - there's much for me to learn!&lt;/p&gt;
-&lt;p&gt;The first is by my fellow Boston Bayesian &lt;strong&gt;&lt;a href=&quot;https://colindcarroll.com/&quot;&gt;Colin Caroll&lt;/a&gt;&lt;/strong&gt; with his talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/12/&quot;&gt;Two views on regression with PyMC3 and scikit-learn&lt;/a&gt;. Colin is a mathematician at heart, even though he does software engineering for living now, and I can't wait to hear about regularization strategies!&lt;/p&gt;
-&lt;p&gt;The second is by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/6/&quot;&gt;Nicole Carlson&lt;/a&gt;&lt;/strong&gt;, with her talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/24/&quot;&gt;Turning PyMC3 into scikit-learn&lt;/a&gt;. Nicole's talk is of interest to me because I've implemented models in PyMC3 before, and now would like to know how to make them reusable!&lt;/p&gt;
-&lt;p&gt;The third talk is by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/118/&quot;&gt;Chaya Stern&lt;/a&gt;&lt;/strong&gt;, with her talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/53/&quot;&gt;Bayesian inference in computational chemistry&lt;/a&gt;. Super relevant to my work at Novartis!&lt;/p&gt;
-&lt;p&gt;The fourth is by my fellow Boston Pythonista &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/34/&quot;&gt;Joe Jevnik&lt;/a&gt;&lt;/strong&gt;, who will be speaking on the first day about his journey into deep learning on some really cool time-series data. He works at Quantopian, BUT the spoiler here is that his talk is NOT about financial data! (I've heard his talk outline already.)&lt;/p&gt;
-&lt;p&gt;The fifth is a tutorial by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/29/&quot;&gt;Jacob Schrieber&lt;/a&gt;&lt;/strong&gt;, with his talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/30/&quot;&gt;pomegranate: fast and flexible probabilistic modeling in python&lt;/a&gt;. &lt;code&gt;pomegranate&lt;/code&gt;'s API models after the &lt;code&gt;scikit-learn&lt;/code&gt;'s API; with the API being the user-facing interface, and &lt;code&gt;scikit-learn&lt;/code&gt; being the &lt;em&gt;de facto&lt;/em&gt; go-to library for machine learning, I'd be interested to see how much more &lt;code&gt;pomegranate&lt;/code&gt; adds to the ecosystem, particularly w.r.t. Bayesian models.&lt;/p&gt;
-&lt;p&gt;There are a swathe of other good talks that I'm expecting to be able to catch online later on. &lt;strong&gt;&lt;a href=&quot;https://matthewrocklin.com/&quot;&gt;Matt Rocklin&lt;/a&gt;&lt;/strong&gt;, who is the lead developer of Dask, has done a ton of work on speeding Python up through parallelism. His talk will be on &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/22/&quot;&gt;the use of Cython &amp;amp; Dask to speed up GeoPandas&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Also, &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/80/&quot;&gt;Thomas Caswell&lt;/a&gt;&lt;/strong&gt;, one of the &lt;a href=&quot;http://matplotlib.org/&quot;&gt;&lt;code&gt;matplotlib&lt;/code&gt;&lt;/a&gt; lead devs who helped guide my first foray into open source contributions, is giving a tutorial on &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/3/&quot;&gt;developing interactive figures in matplotlib&lt;/a&gt;. Highly recommended if you're into the visualization world!&lt;/p&gt;
-&lt;p&gt;Finally, the always-interesting, always entertaining &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/25/&quot;&gt;en zyme&lt;/a&gt;&lt;/strong&gt; will be speaking on an &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/25/&quot;&gt;interesting topic&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Looking forward to being at the conference, and meeting old and new friends there!&lt;/p&gt;
-</content>
-  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/10/recursive-programming-and-dags/">
     <title type="text">Recursive Programming and DAGs</title>
-    <id>urn:uuid:5b939f02-8808-3e54-938f-21843ac5e60b</id>
+    <id>urn:uuid:12a61689-8dd4-31d6-a9b4-c36a99df6421</id>
     <updated>2017-10-10T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/10/recursive-programming-and-dags/" />
     <author>
@@ -1011,9 +1016,29 @@ J -&amp;gt; I -&amp;gt; F -&amp;gt; root
 &lt;p&gt;If you were wondering why linked lists, trees and other data structures might be useful as a data scientist, I hope this illustrates on productive example!&lt;/p&gt;
 </content>
   </entry>
+  <entry xml:base="http://www.ericmjl.com/blog/2017/10/10/pydata-nyc-2017/">
+    <title type="text">PyData NYC 2017</title>
+    <id>urn:uuid:b8ef9281-6ea2-3cf7-b334-a7ad6f3997b1</id>
+    <updated>2017-10-10T00:00:00Z</updated>
+    <link href="http://www.ericmjl.com/blog/2017/10/10/pydata-nyc-2017/" />
+    <author>
+      <name>Eric J. Ma</name>
+    </author>
+    <content type="html">&lt;p&gt;I'm seriously looking forward to PyData NYC this year -- there's a great lineup of talks that I'm particularly looking forward to hearing! The theme for my set of must-see talks this year is &quot;Bayesian machine learning&quot; - there's much for me to learn!&lt;/p&gt;
+&lt;p&gt;The first is by my fellow Boston Bayesian &lt;strong&gt;&lt;a href=&quot;https://colindcarroll.com/&quot;&gt;Colin Caroll&lt;/a&gt;&lt;/strong&gt; with his talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/12/&quot;&gt;Two views on regression with PyMC3 and scikit-learn&lt;/a&gt;. Colin is a mathematician at heart, even though he does software engineering for living now, and I can't wait to hear about regularization strategies!&lt;/p&gt;
+&lt;p&gt;The second is by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/6/&quot;&gt;Nicole Carlson&lt;/a&gt;&lt;/strong&gt;, with her talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/24/&quot;&gt;Turning PyMC3 into scikit-learn&lt;/a&gt;. Nicole's talk is of interest to me because I've implemented models in PyMC3 before, and now would like to know how to make them reusable!&lt;/p&gt;
+&lt;p&gt;The third talk is by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/118/&quot;&gt;Chaya Stern&lt;/a&gt;&lt;/strong&gt;, with her talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/53/&quot;&gt;Bayesian inference in computational chemistry&lt;/a&gt;. Super relevant to my work at Novartis!&lt;/p&gt;
+&lt;p&gt;The fourth is by my fellow Boston Pythonista &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/34/&quot;&gt;Joe Jevnik&lt;/a&gt;&lt;/strong&gt;, who will be speaking on the first day about his journey into deep learning on some really cool time-series data. He works at Quantopian, BUT the spoiler here is that his talk is NOT about financial data! (I've heard his talk outline already.)&lt;/p&gt;
+&lt;p&gt;The fifth is a tutorial by &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/29/&quot;&gt;Jacob Schrieber&lt;/a&gt;&lt;/strong&gt;, with his talk titled &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/30/&quot;&gt;pomegranate: fast and flexible probabilistic modeling in python&lt;/a&gt;. &lt;code&gt;pomegranate&lt;/code&gt;'s API models after the &lt;code&gt;scikit-learn&lt;/code&gt;'s API; with the API being the user-facing interface, and &lt;code&gt;scikit-learn&lt;/code&gt; being the &lt;em&gt;de facto&lt;/em&gt; go-to library for machine learning, I'd be interested to see how much more &lt;code&gt;pomegranate&lt;/code&gt; adds to the ecosystem, particularly w.r.t. Bayesian models.&lt;/p&gt;
+&lt;p&gt;There are a swathe of other good talks that I'm expecting to be able to catch online later on. &lt;strong&gt;&lt;a href=&quot;https://matthewrocklin.com/&quot;&gt;Matt Rocklin&lt;/a&gt;&lt;/strong&gt;, who is the lead developer of Dask, has done a ton of work on speeding Python up through parallelism. His talk will be on &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/22/&quot;&gt;the use of Cython &amp;amp; Dask to speed up GeoPandas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also, &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/speaker/profile/80/&quot;&gt;Thomas Caswell&lt;/a&gt;&lt;/strong&gt;, one of the &lt;a href=&quot;http://matplotlib.org/&quot;&gt;&lt;code&gt;matplotlib&lt;/code&gt;&lt;/a&gt; lead devs who helped guide my first foray into open source contributions, is giving a tutorial on &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/3/&quot;&gt;developing interactive figures in matplotlib&lt;/a&gt;. Highly recommended if you're into the visualization world!&lt;/p&gt;
+&lt;p&gt;Finally, the always-interesting, always entertaining &lt;strong&gt;&lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/25/&quot;&gt;en zyme&lt;/a&gt;&lt;/strong&gt; will be speaking on an &lt;a href=&quot;https://pydata.org/nyc2017/schedule/presentation/25/&quot;&gt;interesting topic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Looking forward to being at the conference, and meeting old and new friends there!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/7/a-data-scientists-guide-to-environment-variables/">
     <title type="text">A Data Scientist's Guide to Environment Variables</title>
-    <id>urn:uuid:0005f631-a0b5-3be2-8e59-9c6c40922a33</id>
+    <id>urn:uuid:6db00b27-e3f6-3a06-8c72-22ed75f4bb01</id>
     <updated>2017-10-07T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/7/a-data-scientists-guide-to-environment-variables/" />
     <author>
@@ -1123,7 +1148,7 @@ $ echo $PATH
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/10/3/new-habits/">
     <title type="text">New Habits</title>
-    <id>urn:uuid:7877ee11-bf8d-39a4-b1e5-9c18a698d76f</id>
+    <id>urn:uuid:be86358d-c9c0-3ad3-8c2e-b667d5b5e156</id>
     <updated>2017-10-03T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/10/3/new-habits/" />
     <author>
@@ -1148,7 +1173,7 @@ $ echo $PATH
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/9/14/visualize-large-datasets-by-sampling/">
     <title type="text">Visualize Large Datasets by Sampling</title>
-    <id>urn:uuid:97b636b4-2b94-388a-ad54-67a2e65f392d</id>
+    <id>urn:uuid:e73ae663-9ee9-399f-84f2-5a068e43bb88</id>
     <updated>2017-09-14T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/9/14/visualize-large-datasets-by-sampling/" />
     <author>
@@ -1163,7 +1188,7 @@ $ echo $PATH
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/9/11/nano-text-editor-hacks/">
     <title type="text">nano text editor hacks</title>
-    <id>urn:uuid:5d36c0a2-5bef-39b9-835c-bd5784574506</id>
+    <id>urn:uuid:9412673f-ebaf-3237-8d5b-16705c50af33</id>
     <updated>2017-09-11T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/9/11/nano-text-editor-hacks/" />
     <author>
@@ -1206,7 +1231,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/8/31/what-would-be-useful-for-aspiring-data-scientists-to-know/">
     <title type="text">What would be useful for aspiring data scientists to know?</title>
-    <id>urn:uuid:ac5e7fea-ac8d-3bec-bed0-8c017fad3ed5</id>
+    <id>urn:uuid:76dedd70-95de-3513-a6fb-6994fa0b31c1</id>
     <updated>2017-08-31T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/8/31/what-would-be-useful-for-aspiring-data-scientists-to-know/" />
     <author>
@@ -1287,7 +1312,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/8/24/reading-and-writing-docs-the-overlooked-programming-skill/">
     <title type="text">Reading &amp; Writing Docs: The Overlooked Programming Skill?</title>
-    <id>urn:uuid:4182b54b-1dbb-3681-9bcd-01e6851eb7c4</id>
+    <id>urn:uuid:03834ecd-752b-3536-83a6-3cea8d2af8cf</id>
     <updated>2017-08-24T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/8/24/reading-and-writing-docs-the-overlooked-programming-skill/" />
     <author>
@@ -1303,7 +1328,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/8/10/next-steps/">
     <title type="text">Next Steps</title>
-    <id>urn:uuid:7eda5309-b803-3c48-9d79-c9535e1e28bf</id>
+    <id>urn:uuid:b0065d76-ab43-3764-b560-0b508f530289</id>
     <updated>2017-08-10T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/8/10/next-steps/" />
     <author>
@@ -1317,7 +1342,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/8/2/open-source-software/">
     <title type="text">Open Source Software</title>
-    <id>urn:uuid:c474ff5a-5342-34a8-abc9-81ea30c5ca0c</id>
+    <id>urn:uuid:8b424858-bc93-313d-8c4b-fc2dc86743aa</id>
     <updated>2017-08-02T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/8/2/open-source-software/" />
     <author>
@@ -1334,7 +1359,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/22/bayesian-neural-networks/">
     <title type="text">Bayesian Neural Networks</title>
-    <id>urn:uuid:91bffec6-e833-3f8e-8d9e-01a12e06bb4e</id>
+    <id>urn:uuid:8ac3dc41-c545-3ef7-b08b-0c1717bf1b24</id>
     <updated>2017-07-22T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/22/bayesian-neural-networks/" />
     <author>
@@ -1354,7 +1379,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/17/lessons-learned-during-insight/">
     <title type="text">Lessons Learned During Insight</title>
-    <id>urn:uuid:94213d9c-1919-363d-a3a8-ef2bf605cb81</id>
+    <id>urn:uuid:5e9ea8aa-cbdd-389a-b64d-71a36e1dcdbe</id>
     <updated>2017-07-17T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/17/lessons-learned-during-insight/" />
     <author>
@@ -1378,7 +1403,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/15/insight-week-7/">
     <title type="text">Insight Week 7</title>
-    <id>urn:uuid:ac1b8134-3672-3195-8642-f1a29ae6f733</id>
+    <id>urn:uuid:df1e7d31-f4fd-3dd3-a726-fcbdd2031205</id>
     <updated>2017-07-15T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/15/insight-week-7/" />
     <author>
@@ -1399,7 +1424,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/12/scipy-2017/">
     <title type="text">SciPy 2017</title>
-    <id>urn:uuid:2c603928-9acb-38b4-916c-cc3edd590b7e</id>
+    <id>urn:uuid:4389ed1b-9b57-302e-8e4f-3f6f1a1fa2ba</id>
     <updated>2017-07-12T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/12/scipy-2017/" />
     <author>
@@ -1422,7 +1447,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/8/insight-week-6/">
     <title type="text">Insight Week 6</title>
-    <id>urn:uuid:cee9eb4d-7a48-332d-a06c-ed17e1ff1b28</id>
+    <id>urn:uuid:67d31ba9-6f21-36a8-9e15-6e874474d360</id>
     <updated>2017-07-08T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/8/insight-week-6/" />
     <author>
@@ -1443,7 +1468,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/7/1/insight-week-5/">
     <title type="text">Insight Week 5</title>
-    <id>urn:uuid:a1b7ad70-771c-3183-821a-60f700b77600</id>
+    <id>urn:uuid:a81f7d18-a991-32d7-bf37-559a0c44afb0</id>
     <updated>2017-07-01T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/7/1/insight-week-5/" />
     <author>
@@ -1465,7 +1490,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/6/30/using-bokeh-in-fluforecaster/">
     <title type="text">Using Bokeh in FluForecaster</title>
-    <id>urn:uuid:c11e7beb-02e6-34d1-8a57-5d26a00844bc</id>
+    <id>urn:uuid:a94818d8-cc89-3fb9-a458-1a149536ee0a</id>
     <updated>2017-06-30T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/6/30/using-bokeh-in-fluforecaster/" />
     <author>
@@ -1496,7 +1521,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/6/24/insight-week-4/">
     <title type="text">Insight Week 4</title>
-    <id>urn:uuid:96696a9c-0bdb-3a80-8138-781fb368c17d</id>
+    <id>urn:uuid:70a376a6-40be-3d85-b8b8-39703931f160</id>
     <updated>2017-06-24T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/6/24/insight-week-4/" />
     <author>
@@ -1516,7 +1541,7 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
   </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/6/17/insight-week-3/">
     <title type="text">Insight Week 3</title>
-    <id>urn:uuid:a1e1c38d-57ab-3aef-b95a-07116118da6d</id>
+    <id>urn:uuid:cf06a2fb-4a32-3fdd-ba8c-7f6f10d4f99d</id>
     <updated>2017-06-17T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/6/17/insight-week-3/" />
     <author>
@@ -1529,35 +1554,9 @@ include /usr/local/share/nano/sh.nanorc  # gives you bash shell syntax highlight
 &lt;p&gt;The final part is in getting the presentation overall looking polished and understandable. This involves many tasks, from tweaking the text to making static figures and more. I have spent time with column layouts and configuring modals to get my page content looking overall fresh and yet also informative. Requires a lot of thought!&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="http://www.ericmjl.com/blog/2017/6/10/insight-week-2/">
-    <title type="text">Insight Week 2</title>
-    <id>urn:uuid:4cb2d5e3-a9eb-3e41-a8ea-d4a7e56cfe74</id>
-    <updated>2017-06-10T00:00:00Z</updated>
-    <link href="http://www.ericmjl.com/blog/2017/6/10/insight-week-2/" />
-    <author>
-      <name>Eric J. Ma</name>
-    </author>
-    <content type="html">&lt;p&gt;This week has been intense, mostly because I knew in advance that I'd be spending two days wearing a fancy hat, funky robe, and yellow sash. Because I was missing two days of Insight, I had to get my Minimum Viable Product (MVP) out by Wednesday - thankfully, I did!&lt;/p&gt;
-&lt;p&gt;If you've followed my blog post series on Insight (this is the 2nd post), my project is forecasting influenza sequences. This week, I hacked out my MVP and deployed it to &lt;a href=&quot;https://fluforecaster.herokuapp.com/&quot;&gt;Heroku&lt;/a&gt; as a hybrid HTML report + dashboard. I also picked up and incorporated a few new things along the way.&lt;/p&gt;
-&lt;p&gt;The first is the use of tooltips on my Bokeh plots. Bokeh is really powerful, and in some of the exploratory analyses, I desired having tooltips as a UI element to help a reader (who might need some introduction) understand the nature of the problem and the data involved.&lt;/p&gt;
-&lt;p&gt;The second is further mastery of Bootstrap CSS &amp;amp; JS. Now, Insight's Program Directors have told us clearly that we're not gunning to become front-end designers (and the likes). Keeping that in mind, I still think it's important to know at least one front-end framework well enough to produce pleasant-looking interactive tools or reports - knowing front-end elements potentiates us to communicate with front-end designers on final data products.&lt;/p&gt;
-&lt;p&gt;For the MVP, I tried further experiments with the Grid layout and Modal JS. The key idea behind Grid layouts was easier to grasp - prioritize rows, then columns.&lt;/p&gt;
-&lt;p&gt;With the Modal, stepping back for a moment, my goal was to display the science behind the project. However, it gets really technical. My audience is probably going to fall into one of two personas: the &quot;business person&quot; who just wants to see the final result and doesn't really care about the techniques, and the &quot;technical person&quot; who wants to dig deeper. I chose to use the Modal effect to satisfy both. The scientific methods are described at a high level on the main page, and the Modal element is used to show further information, graphics, and the likes.&lt;/p&gt;
-&lt;p&gt;The third was deployment to Heroku itself! &lt;a href=&quot;https://www.davidbaumgold.com/&quot;&gt;David Baumgold&lt;/a&gt; first showed me how to use Heroku at PyCon 2016, but I could never wrap my head around it at first. I think I didn't understand how &quot;deployment&quot; worked. A year later, stuff that DB taught me came to fruition, as I hacked on deploying a minimal Flask app to Heroku with my younger brother. That gave me enough of the Heroku-specific concepts to hack together the necessary &lt;code&gt;requirements.txt&lt;/code&gt; and &lt;code&gt;Procfile&lt;/code&gt; files to deploy Flu Forecaster to the web.&lt;/p&gt;
-&lt;p&gt;For next week, these are my plans:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Solve the problem of &quot;average sequences per quarter&quot; being ~10 amino acids different from actual sequences. Two approaches I'm thinking of:&lt;ul&gt;
-&lt;li&gt;Use GPflow to train a Sparse Variational GP regressor on my dataset. This should allow me to scale up the forecasts beyond 67 quarters and into 700+ weeks, which is a greater time resolution and thus will give me greater sequence resolution in forecasts.&lt;/li&gt;
-&lt;li&gt;Try forecasting variance in addition to mean coordinates. This will give me a full probability distribution to sample from, which may allow me to stick with PyMC3 and quarterly forecasts.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Still not sure which of the above two approaches are the better one, so I'll be sure to give each a shot.&lt;/p&gt;
-</content>
-  </entry>
   <entry xml:base="http://www.ericmjl.com/blog/2017/6/10/walk-the-stage-2017-edition/">
     <title type="text">&quot;Walk the Stage&quot; 2017 Edition</title>
-    <id>urn:uuid:7a996565-b51a-33f8-9bcd-2f08ea626ff5</id>
+    <id>urn:uuid:b089280a-bcf0-3c91-8c27-79c0c1b74992</id>
     <updated>2017-06-10T00:00:00Z</updated>
     <link href="http://www.ericmjl.com/blog/2017/6/10/walk-the-stage-2017-edition/" />
     <author>
