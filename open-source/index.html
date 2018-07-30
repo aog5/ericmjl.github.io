@@ -148,7 +148,11 @@
                 
 <div class="project-container">
     <h3>nxviz</h3>
-    <p><p>I am consolidating my Hive Plot and Circos Plot implementations into a single visualization package. Design goals include:</p>
+    <!--  -->
+
+    
+      
+          <p>I am consolidating my Hive Plot and Circos Plot implementations into a single visualization package. Design goals include:</p>
 <ul>
 <li>A rational naming system (where not already existent) for each plot.<ul>
 <li>Hive Plots</li>
@@ -168,10 +172,12 @@
 </li>
 </ul>
 <p>Contributors include <a href="http://jonchar.net/">Jon</a>, <a href="https://github.com/leotrs">Leo</a>, and <a href="http://nelsonliu.me/">Nelson</a> - very happy to be working with them!</p>
-</p>
+
+      
+          <p>The GitHub repository can be found <a href="https://github.com/ericmjl/nxviz/">here</a>.</p>
+      
     
-        <p>Learn More: <a href="https://github.com/ericmjl/nxviz/">GitHub Repository</a></p>
-    
+
 </div>
 
             </div>
@@ -182,11 +188,17 @@
                 
 <div class="project-container">
     <h3>pyjanitor</h3>
-    <p><p>I developed <code>pyjanitor</code>, an open source port of the R package <a href="https://github.com/sfirke/janitor">janitor</a>, to bring friendly APIs to data cleaning tasks for data scientists. It features a sane API that wraps other tools (pandas, missingno, etc.) to help data scientists accomplish common data cleaning tasks.</p>
-</p>
+    <!--  -->
+
     
-        <p>Learn More: <a href="https://github.com/ericmjl/pyjanitor">GitHub repository</a></p>
+      
+          <p>I developed <code>pyjanitor</code>, an open source port of the R package <a href="https://github.com/sfirke/janitor">janitor</a>, to bring friendly APIs to data cleaning tasks for data scientists. It features a sane API that wraps other tools (pandas, missingno, etc.) to help data scientists accomplish common data cleaning tasks.</p>
+
+      
+          <p>The GitHub repository can be found <a href="https://github.com/ericmjl/pyjanitor">here</a>.</p>
+      
     
+
 </div>
 
             </div>
@@ -197,14 +209,20 @@
                 
 <div class="project-container">
     <h3>PyMC3</h3>
-    <p><p>I have made multiple PRs to PyMC3, which were bug fixes, documentation and small feature additions.</p>
+    <!--  -->
+
+    
+      
+          <p>I have made multiple PRs to PyMC3, which were bug fixes, documentation and small feature additions.</p>
 <h3 id="bug-fix">Bug Fix</h3><p>I found a bug in PyMC3's multinomial random variate sampler, related to floating point precision issues while moving numbers from the GPU to the CPU, when working on my <a href="https://github.com/ericmjl/bayesian-analysis-recipes">Bayesian analysis recipes repository</a>. Specifically, we get probability values that sum to infinitesimally larger than one. I thus submitted a patch that fixed that converts the probabilities to <code>float64</code> precision and re-normalizes the probabilities to 1, before using them for random sampling.</p>
 <h3 id="documentation">Documentation</h3><p>I contributed small changes to the docs, to make it super clear that precision and standard deviation parameterizations were alternate parameterizations, and only one was needed.</p>
 <h3 id="feature-addition">Feature Addition</h3><p>I contributed the definition of a "mode" for the Weibull distribution, so that I could use it in a Mixture Weibull.</p>
-</p>
+
+      
+          <p><a href="https://github.com/pymc-devs/pymc3/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+author%3Aericmjl+">Please click here to see the pull requests.</a></p>
+      
     
-        <p>Learn More: <a href="https://github.com/pymc-devs/pymc3/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+author%3Aericmjl+">Pull Requests</a></p>
-    
+
 </div>
 
             </div>
@@ -215,11 +233,17 @@
                 
 <div class="project-container">
     <h3>CuPy</h3>
-    <p><p>In my experiments with new array libraries, I contributed a matrix power implementation to CuPy. My goal was to enable fast network science operations on the GPU.</p>
-</p>
+    <!--  -->
+
     
-        <p>Learn More: <a href="https://github.com/cupy/cupy/pull/1374#event-1687619071">Pull Request</a></p>
+      
+          <p>In my experiments with new array libraries, I contributed a matrix power implementation to CuPy. My goal was to enable fast network science operations on the GPU.</p>
+
+      
+          <p><a href="https://github.com/cupy/cupy/pull/1374#event-1687619071">Please click here to see the pull request.</a></p>
+      
     
+
 </div>
 
             </div>
@@ -230,7 +254,11 @@
                 
 <div class="project-container">
     <h3>matplotlib</h3>
-    <p><p>I contributed to the <a href="https://github.com/matplotlib/matplotlib/blob/1572a7e53ae255e7adda55b3a84d708b226edaa6/doc/devel/MEP/MEP12.rst"><code>matplotlib</code> enhancement proposal 12</a>, which proposed reorganizing the examples gallery to make it easier for <code>matplotlib</code> users to find relevant examples.</p>
+    <!--  -->
+
+    
+      
+          <p>I contributed to the <a href="https://github.com/matplotlib/matplotlib/blob/1572a7e53ae255e7adda55b3a84d708b226edaa6/doc/devel/MEP/MEP12.rst"><code>matplotlib</code> enhancement proposal 12</a>, which proposed reorganizing the examples gallery to make it easier for <code>matplotlib</code> users to find relevant examples.</p>
 <p>Part of the problem was that there were old <code>pylab</code> examples, but the new <code>pyplot</code> API was now preferred over the old <code>pylab</code> API (which was really present mostly to convert MATLAB users).  I helped fix all the <code>pylab</code> examples by changing</p>
 <div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -238,10 +266,12 @@
 <div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
-</p>
+
+      
+          <p><a href="https://github.com/matplotlib/matplotlib/pulls?q=is%3Apr+author%3Aericmjl+is%3Aclosed">Please click here to see the pull requests.</a></p>
+      
     
-        <p>Learn More: <a href="https://github.com/matplotlib/matplotlib/pulls?q=is%3Apr+author%3Aericmjl+is%3Aclosed">Pull Requests</a></p>
-    
+
 </div>
 
             </div>
@@ -252,12 +282,18 @@
                 
 <div class="project-container">
     <h3>Bokeh Plots</h3>
-    <p><p>Continuing my desire to learn more about open source and to make contributions to data visualization libraries, I contributed an implementation of horizontal (<code>HBar</code>)and vertical (<code>VBar</code>) bar glyphs.</p>
+    <!--  -->
+
+    
+      
+          <p>Continuing my desire to learn more about open source and to make contributions to data visualization libraries, I contributed an implementation of horizontal (<code>HBar</code>)and vertical (<code>VBar</code>) bar glyphs.</p>
 <p>Many thanks for the help of Bryan Van de Ven and Sarah Bird, lead developers on Bokeh, who guided me through the code base line by line.</p>
-</p>
+
+      
+          <p><a href="https://github.com/bokeh/bokeh/pull/4815">Please click here to see the pull request.</a></p>
+      
     
-        <p>Learn More: <a href="https://github.com/bokeh/bokeh/pull/4815">Pull Request</a></p>
-    
+
 </div>
 
             </div>
@@ -268,11 +304,17 @@
                 
 <div class="project-container">
     <h3>pyflatten</h3>
-    <p><p><code>pyflatten</code> is a package for flattening nested data structures. Developed originally by David Duvenaud, Matt Johnson and Dougal MacLaurin, I packaged it into an independent utility.</p>
-</p>
+    <!--  -->
+
     
-        <p>Learn More: <a href="https://github.com/ericmjl/pyflatten">GitHub Repository</a></p>
+      
+          <p><code>pyflatten</code> is a package for flattening nested data structures. Developed originally by David Duvenaud, Matt Johnson and Dougal MacLaurin, I packaged it into an independent utility.</p>
+
+      
+          <p>The GitHub repository can be found <a href="https://github.com/ericmjl/pyflatten">here</a>.</p>
+      
     
+
 </div>
 
             </div>

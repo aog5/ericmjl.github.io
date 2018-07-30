@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="/static/css/custom.css">
 </head>
 
-<title>Bokeh Plots - Eric J. Ma's Personal Site</title>
+<title>An Attempt at Demystifying Bayesian Deep Learning - Eric J. Ma's Personal Site</title>
 <body class="body">
     <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#local-links" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,17 +90,20 @@
         
     
 <div class="project-container">
-    <h3>Bokeh Plots</h3>
-    <!--  -->
+    <h3>An Attempt at Demystifying Bayesian Deep Learning</h3>
+    <p></p>
+    
+        <p>Learn More: <a href="http://ericmjl.github.io/bayesian-deep-learning-demystified">Slides</a></p>
+    
 
     
-      
-          <p>Continuing my desire to learn more about open source and to make contributions to data visualization libraries, I contributed an implementation of horizontal (<code>HBar</code>)and vertical (<code>VBar</code>) bar glyphs.</p>
-<p>Many thanks for the help of Bryan Van de Ven and Sarah Bird, lead developers on Bokeh, who guided me through the code base line by line.</p>
-
-      
-          <p><a href="https://github.com/bokeh/bokeh/pull/4815">Please click here to see the pull request.</a></p>
-      
+      [could not find snippet template]
+    
+      <div class="youtube-video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/s0S6HFdPtlA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+    
+      [could not find snippet template]
     
 
 </div>
